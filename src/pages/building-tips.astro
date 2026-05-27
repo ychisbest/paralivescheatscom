@@ -3,63 +3,85 @@ import Layout from '../layouts/Layout.astro';
 
 const tips = [
   {
+    title: 'Use Cheats to Unlock All Build Items',
+    content: 'Open the cheat console with Ctrl + F1 or Ctrl + Shift + C and use the "help" command to see what build-related cheats are available. Cheats can help you unlock items and build freely without budget constraints — just use setmoney to give yourself unlimited funds first.',
+    color: 'bg-[#22c55e]',
+  },
+  {
+    title: 'Plan Your Floor Plan Before Building',
+    content: 'Before placing walls, sketch out your layout on paper or in your head. Consider traffic flow between rooms, where natural light hits from windows, and how outdoor spaces connect to indoor areas.',
+    color: 'bg-[#6366f1]',
+  },
+  {
     title: 'Use the Grid Toggle for Precision',
-    content: 'Toggle the grid on and off to place objects with pixel-perfect precision. This is essential for creating detailed interiors and custom furniture arrangements.',
+    content: 'Toggle the grid on and off to place objects with pixel-perfect precision. This is essential for creating detailed interiors, aligning furniture, and getting clean wall placements.',
+    color: 'bg-[#a855f7]',
   },
   {
     title: 'Master the Copy Tool',
-    content: 'Select any object and use the copy tool to duplicate it instantly. This saves time when creating symmetrical designs or repeating patterns in your builds.',
+    content: 'Select any object and use the copy tool to duplicate it instantly. This saves time when creating symmetrical designs, repeating patterns, or furnishing multiple rooms with matching pieces.',
+    color: 'bg-[#ec4899]',
   },
   {
     title: 'Layer Objects for Depth',
-    content: 'Place objects at different heights and depths to create visual interest. Use wall shelves, hanging lights, and floor plants to add dimension to rooms.',
+    content: 'Place objects at different heights and depths to create visual interest. Use wall shelves, hanging lights, and floor plants to add dimension and make rooms feel lived-in.',
+    color: 'bg-[#f59e0b]',
   },
   {
     title: 'Customize Colors and Textures',
-    content: 'Paralives offers deep customization for every object. Experiment with different color combinations and textures to create unique looks for each room.',
+    content: 'Paralives offers deep customization for every object. Experiment with different color combinations and textures to create unique looks. Try matching accent colors across a room for a cohesive design.',
+    color: 'bg-[#3b82f6]',
   },
   {
-    title: 'Use the Terrain Tools',
-    content: 'Shape the land around your house with terrain tools. Create hills, slopes, and multi-level yards to make your lot more interesting and realistic.',
+    title: 'Shape the Terrain Around Your Lot',
+    content: 'Use terrain tools to create hills, slopes, and multi-level yards. Raised areas can create privacy for outdoor spaces, while slopes add realism and visual interest to your lot.',
+    color: 'bg-[#22c55e]',
   },
   {
-    title: 'Plan Your Layout First',
-    content: 'Before building, sketch out your floor plan. Consider traffic flow between rooms, natural lighting from windows, and how outdoor spaces connect to indoor areas.',
+    title: 'Save Room Templates for Reuse',
+    content: 'Once you create a room layout you love, save it as a template. You can reuse it across different builds or share it with the Paralives community.',
+    color: 'bg-[#6366f1]',
   },
   {
-    title: 'Save Room Templates',
-    content: 'Once you create a room you love, save it as a template. You can reuse it in future builds or share it with the community.',
+    title: 'Use Undo Freely (Ctrl+Z)',
+    content: 'Paralives has a robust undo system. Use Ctrl+Z (Cmd+Z on Mac) to undo multiple steps. Don\'t be afraid to experiment — you can always roll back changes.',
+    color: 'bg-[#a855f7]',
   },
   {
-    title: 'Use the Undo Stack',
-    content: 'Made a mistake? Paralives has a robust undo system. Use Ctrl+Z (Cmd+Z on Mac) to undo multiple steps without losing progress.',
+    title: 'Mix Roof Styles for Unique Architecture',
+    content: 'Combine flat roofs with angled sections for modern architectural looks. Try different roof slopes and overhangs to create distinctive silhouettes.',
+    color: 'bg-[#ec4899]',
   },
   {
-    title: 'Experiment with Roof Styles',
-    content: 'Try different roof shapes and slopes. Combine flat roofs with angled sections for modern architectural looks, or use traditional peaked roofs for classic homes.',
+    title: 'Create Outdoor Living Spaces',
+    content: 'Extend your living area beyond the walls. Build patios, decks, gardens, and pools to make your lot feel complete. Outdoor spaces add personality and give your Paras more room to live.',
+    color: 'bg-[#f59e0b]',
   },
   {
-    title: 'Add Outdoor Living Spaces',
-    content: 'Don\'t forget about outdoor areas. Create patios, decks, gardens, and pools to extend your living space and add value to your lot.',
+    title: 'Repair and Clean with Cheats',
+    content: 'If objects break or get dirty during gameplay, use "repairallitems" and "cleanallitems" cheats to fix everything on the lot instantly.',
+    color: 'bg-[#3b82f6]',
   },
 ];
 ---
 
-<Layout title="Building Tips" description="Expert building tips and tricks for Paralives. Learn how to create stunning homes and unique architectural designs.">
-  <section class="max-w-4xl mx-auto px-4 py-16">
-    <h1 class="text-4xl font-bold text-center mb-4">Building Tips & Tricks</h1>
-    <p class="text-center text-[#94a3b8] mb-12 max-w-2xl mx-auto">
-      Master the building system in Paralives with these expert tips. From basic layouts to advanced techniques, these guides will help you create stunning homes.
+<Layout title="Building Tips" description="Expert building tips and tricks for Paralives. Learn how to create stunning homes, use cheats in build mode, and master the building system.">
+  <section class="max-w-4xl mx-auto px-6 py-20">
+    <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-center mb-4">
+      Building <span class="bg-[#22c55e] text-white px-3 border-[3px] border-black inline-block rotate-[-1deg]">Tips</span>
+    </h1>
+    <p class="text-center text-gray-600 font-bold text-lg mb-16 max-w-2xl mx-auto">
+      Master the building system in Paralives with these tips. From basic layouts to advanced techniques.
     </p>
 
-    <div class="space-y-8">
+    <div class="space-y-6">
       {tips.map((tip, i) => (
-        <div class="bg-[#1e293b] border border-[#334155] rounded-xl p-6 hover:border-[#6366f1] transition-colors">
-          <h2 class="text-xl font-bold mb-3 flex items-start gap-3">
-            <span class="text-[#6366f1] text-sm font-mono bg-[#6366f1]/10 px-2 py-1 rounded">#{i + 1}</span>
+        <div class="bg-white border-[3px] border-black rounded-3xl p-6 md:p-8 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+          <h2 class="text-xl md:text-2xl font-extrabold mb-3 flex items-start gap-4">
+            <span class={`${tip.color} text-white text-sm font-bold border-[3px] border-black px-3 py-1 rounded-full brutal-shadow flex-shrink-0`}>#{i + 1}</span>
             {tip.title}
           </h2>
-          <p class="text-[#94a3b8] leading-relaxed">{tip.content}</p>
+          <p class="text-gray-700 font-medium text-lg leading-relaxed ml-0 md:ml-16">{tip.content}</p>
         </div>
       ))}
     </div>

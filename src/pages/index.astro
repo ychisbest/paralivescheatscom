@@ -1,129 +1,212 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import heroImg from '../images/hero.png';
 
-const cheatCategories = [
-  {
-    title: 'Money Cheats',
-    description: 'Unlimited funds to build your dream home and live the perfect life.',
-    icon: '💰',
-    href: '/cheats#money',
-  },
-  {
-    title: 'Building Cheats',
-    description: 'Unlock advanced building tools, free placement, and hidden objects.',
-    icon: '🏗️',
-    href: '/cheats#building',
-  },
-  {
-    title: 'Skill Cheats',
-    description: 'Max out any skill instantly and unlock all abilities.',
-    icon: '⭐',
-    href: '/cheats#skills',
-  },
-  {
-    title: 'Relationship Cheats',
-    description: 'Control relationships, friendships, and romantic connections.',
-    icon: '💕',
-    href: '/cheats#relationships',
-  },
+const moneyCheats = [
+  { code: 'PIGGYBANK', desc: 'Add 1,000 Paradimes to your household funds.' },
+  { code: 'MAKEITRAIN', desc: 'Add 10,000 Paradimes to your household funds.' },
+  { code: 'JACKPOT', desc: 'Add 50,000 Paradimes to your household funds.' },
+  { code: 'LOTTERY', desc: 'Receive a random amount between 1 and 100,000 Paradimes.' },
+  { code: 'setmoney [amount]', desc: 'Set household funds to an exact amount. Example: setmoney 500000' },
+  { code: 'PAYDAY', desc: 'Receive the salary amount of the currently selected Para.' },
 ];
 
-const latestGuides = [
-  {
-    title: 'How to Use Console Commands in Paralives',
-    description: 'A complete guide to opening the cheat console and entering commands.',
-    href: '/cheats',
-  },
-  {
-    title: 'Best Building Tips for Beginners',
-    description: 'Learn the fundamentals of building beautiful homes in Paralives.',
-    href: '/building-tips',
-  },
-  {
-    title: 'Complete Gameplay Guide 2026',
-    description: 'Everything you need to know to master Paralives from day one.',
-    href: '/gameplay-guides',
-  },
+const needsCheats = [
+  { code: 'reliefallneeds', desc: 'Instantly fill all needs for the selected Para.' },
+  { code: 'maxneeds', desc: 'Alternative command to instantly max all needs.' },
+];
+
+const skillCheats = [
+  { code: 'setskilllevel [skill] [level]', desc: 'Set a specific skill to a given level. Example: setskilllevel cooking 10' },
+  { code: 'leveluppersonality', desc: 'Level up the personality traits of the selected Para.' },
+];
+
+const careerCheats = [
+  { code: 'clearstrikes', desc: 'Remove all work strikes from the selected Para.' },
+  { code: 'endworkday', desc: 'Immediately end the current work day for the selected Para.' },
+  { code: 'clearalloccupations', desc: 'Remove all occupation assignments from the selected Para.' },
+];
+
+const utilityCheats = [
+  { code: 'completecurrentwants', desc: 'Instantly complete all current wants/goals for the selected Para.' },
+  { code: 'repairallitems', desc: 'Repair all broken objects on the current lot.' },
+  { code: 'cleanallitems', desc: 'Clean all dirty objects on the current lot.' },
+];
+
+const sections = [
+  { id: 'money', title: 'Money Cheats', icon: '💰', color: 'bg-[#22c55e]', cheats: moneyCheats },
+  { id: 'needs', title: 'Needs Cheats', icon: '🔋', color: 'bg-[#f59e0b]', cheats: needsCheats },
+  { id: 'skills', title: 'Skill Cheats', icon: '⭐', color: 'bg-[#a855f7]', cheats: skillCheats },
+  { id: 'career', title: 'Career Cheats', icon: '💼', color: 'bg-[#ec4899]', cheats: careerCheats },
+  { id: 'utility', title: 'Utility Cheats', icon: '🔧', color: 'bg-[#3b82f6]', cheats: utilityCheats },
 ];
 
 const faqs = [
-  { q: 'How do I open the cheat console?', a: 'Press Ctrl + Shift + C (or Cmd + Shift + C on Mac) to open the cheat console.' },
-  { q: 'Are cheats available in early access?', a: 'Yes, many cheats are available during the early access period. More will be added as the game develops.' },
-  { q: 'Will using cheats disable achievements?', a: 'No, Paralives allows cheats without disabling any achievements or features.' },
-  { q: 'Can I use cheats on console versions?', a: 'Currently Paralives is PC/Mac only. Console support with cheats may be added later.' },
+  { q: 'How do I open the cheat console in Paralives?', a: 'Press Ctrl + F1 or Ctrl + Shift + C on Windows to open the cheat console. On Mac, try Cmd + FN + F1. Once open, type "help" to see all available commands.' },
+  { q: 'What are the money cheats in Paralives?', a: 'The main money cheats are: PIGGYBANK (+1,000 Paradimes), MAKEITRAIN (+10,000), JACKPOT (+50,000), and LOTTERY (random 1-100,000). You can also use "setmoney [amount]" to set an exact value, or PAYDAY to receive your selected Para\'s salary.' },
+  { q: 'How do I fill all needs instantly?', a: 'Type "reliefallneeds" or "maxneeds" in the cheat console to instantly fill all needs for the currently selected Para.' },
+  { q: 'How do I set a skill to a specific level?', a: 'Use "setskilllevel [skill name] [level]" — for example, "setskilllevel cooking 10" sets cooking to level 10. You can also use "leveluppersonality" to boost personality traits.' },
+  { q: 'Are cheats available during early access?', a: 'Yes, cheats are available in the 2026 Early Access release. Type "help" in the console for the current list. More codes may be added as development continues.' },
+  { q: 'Will using cheats disable achievements?', a: 'Paralives allows cheats without disabling achievements or features. You can use cheat codes freely without worrying about losing progress.' },
+  { q: 'Can I use cheats on console?', a: 'Currently Paralives is only available on PC and Mac. There are no announced plans for console versions yet.' },
+  { q: 'What career cheats are available?', a: 'Use "clearstrikes" to remove work strikes, "endworkday" to end the current work day immediately, and "clearalloccupations" to remove all job assignments from a Para.' },
+  { q: 'How do I fix broken or dirty objects?', a: 'Type "repairallitems" to repair all broken objects on the lot, or "cleanallitems" to clean all dirty objects instantly.' },
+  { q: 'What does completecurrentwants do?', a: 'The "completecurrentwants" cheat instantly completes all current wants and goals for the selected Para, helping you progress quickly.' },
+  { q: 'Are there external trainers for Paralives?', a: 'External tools like WeMod and MrAntiFun offer graphical interfaces for game modifications. These work differently from the built-in console cheats — always back up your saves before using third-party tools.' },
+  { q: 'Can I undo cheat effects?', a: 'Some cheats are reversible (e.g., you can use "setmoney 0" to reset funds), but others like "clearalloccupations" may require re-assigning jobs manually. Always back up your saves before experimenting.' },
+  { q: 'Will more cheats be added in future updates?', a: 'Yes, Paralives is in active Early Access development. The cheat system will likely expand with future updates. Use the "help" command in the console to check for new codes.' },
+  { q: 'Does Paralives support mods?', a: 'Paralives supports some modding capabilities, including public lot editing. The modding scene is still developing as the game is in Early Access.' },
+  { q: 'What does the help command do?', a: 'Typing "help" in the cheat console displays a list of all currently available cheat commands. This is the best way to discover new cheats, especially after game updates.' },
+];
+
+const latestGuides = [
+  { title: 'Building Tips & Tricks', description: 'Master the build mode with tips on grid placement, terrain tools, and creative layouts.', href: '/building-tips' },
+  { title: 'Gameplay Guides', description: 'From creating your first Para to mastering careers and relationships.', href: '/gameplay-guides' },
 ];
 ---
 
 <Layout title="Home">
   <!-- Hero Section -->
-  <section class="relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-[#6366f1]/20 to-[#f59e0b]/10"></div>
-    <div class="max-w-6xl mx-auto px-4 py-20 relative">
-      <div class="text-center">
-        <h1 class="text-4xl md:text-6xl font-bold mb-6">
-          <span class="text-[#6366f1]">Paralives</span> Cheats & Guides
-        </h1>
-        <p class="text-xl text-[#94a3b8] mb-8 max-w-2xl mx-auto">
-          Your ultimate resource for Paralives cheats, money codes, building tips, and gameplay strategies. Master every aspect of the game.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/cheats" class="inline-block bg-[#6366f1] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#4f46e5] transition-colors">
-            View All Cheats
-          </a>
-          <a href="/gameplay-guides" class="inline-block border border-[#6366f1] text-[#6366f1] px-8 py-3 rounded-lg font-semibold hover:bg-[#6366f1]/10 transition-colors">
-            Gameplay Guides
-          </a>
-        </div>
+  <header class="max-w-7xl mx-auto px-6 py-20 md:py-32 text-center">
+    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.1] mb-8">
+      All <span class="bg-[#6366f1] text-white px-3 py-1 border-[3px] border-black inline-block rotate-[-1deg]">Paralives</span> Cheats<br>
+      <span class="text-gray-600">in One Place.</span>
+    </h1>
+    <p class="text-xl md:text-2xl text-gray-700 max-w-2xl mx-auto leading-relaxed font-medium mb-4">
+      Click to copy, paste into the console. Updated for 2026 Early Access.
+    </p>
+    <p class="text-lg text-gray-500 font-bold mb-10 max-w-2xl mx-auto">
+      Press <span class="bg-[#FFD54F] px-2 border-2 border-black">Ctrl + F1</span> or <span class="bg-[#FFD54F] px-2 border-2 border-black">Ctrl + Shift + C</span> to open the console. Type <span class="bg-[#FFD54F] px-2 border-2 border-black">help</span> for all commands.
+    </p>
+    <a href="#cheats" class="brutal-btn bg-[#6366f1] text-white font-extrabold text-xl py-4 px-10 rounded-full border-[3px] border-black brutal-shadow inline-flex items-center gap-2">
+      Browse All Cheats
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+    </a>
+    <div class="mt-12 max-w-4xl mx-auto">
+      <img src={heroImg.src} alt="Paralives gameplay" class="w-full rounded-3xl border-[3px] border-black brutal-shadow" />
+    </div>
+  </header>
+
+  <!-- Stats Bar -->
+  <section class="bg-black text-white py-10 border-y-[3px] border-black">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-5 gap-8 text-center divide-x-2 divide-gray-700">
+      <div><div class="text-3xl md:text-4xl font-extrabold text-[#22c55e]">6</div><div class="mt-1 font-bold text-gray-300 text-sm">Money Codes</div></div>
+      <div><div class="text-3xl md:text-4xl font-extrabold text-[#f59e0b]">2</div><div class="mt-1 font-bold text-gray-300 text-sm">Needs Codes</div></div>
+      <div><div class="text-3xl md:text-4xl font-extrabold text-[#a855f7]">2</div><div class="mt-1 font-bold text-gray-300 text-sm">Skill Codes</div></div>
+      <div><div class="text-3xl md:text-4xl font-extrabold text-[#ec4899]">3</div><div class="mt-1 font-bold text-gray-300 text-sm">Career Codes</div></div>
+      <div><div class="text-3xl md:text-4xl font-extrabold text-[#3b82f6]">3</div><div class="mt-1 font-bold text-gray-300 text-sm">Utility Codes</div></div>
+    </div>
+  </section>
+
+  <!-- All Cheats -->
+  <section id="cheats" class="py-24 bg-white border-b-[3px] border-black">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl md:text-5xl font-extrabold mb-16 text-center">
+        All Paralives <span class="bg-[#FFD54F] px-2 border-2 border-black inline-block">Cheat Codes</span>
+      </h2>
+
+      <div class="space-y-16">
+        {sections.map(section => (
+          <div id={section.id}>
+            <h3 class="text-2xl font-extrabold mb-6 flex items-center gap-3">
+              <span class={`w-12 h-12 ${section.color} border-[3px] border-black rounded-2xl flex items-center justify-center brutal-shadow text-xl`}>{section.icon}</span>
+              {section.title}
+            </h3>
+            <div class="space-y-3">
+              {section.cheats.map(cheat => (
+                <div class="flex items-center justify-between gap-4 bg-[#F9FAFB] border-[3px] border-black rounded-2xl p-4 md:p-5 hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all brutal-shadow">
+                  <div class="flex-1 min-w-0">
+                    <code class={`${section.color} text-white px-3 py-1 rounded-full text-sm font-bold border-[2px] border-black`}>{cheat.code}</code>
+                    <span class="ml-3 text-gray-700 font-medium">{cheat.desc}</span>
+                  </div>
+                  <button
+                    class="copy-btn flex-shrink-0 w-10 h-10 bg-white border-[3px] border-black rounded-full flex items-center justify-center hover:bg-[#FFD54F] transition-colors brutal-shadow"
+                    data-code={cheat.code.replace(/\s*\[.*?\]/g, '').trim()}
+                    title="Copy to clipboard"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                    </svg>
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-16 bg-[#FFD54F] border-[3px] border-black rounded-3xl p-8 brutal-shadow">
+        <h3 class="text-2xl font-extrabold mb-4">Tips &amp; Warnings</h3>
+        <ul class="space-y-3 text-gray-800 font-medium">
+          <li class="flex items-start gap-3">
+            <span class="text-xl">⚠️</span>
+            <span>Paralives is in Early Access (2026). Cheat codes may change with updates. Type <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">help</code> in the console for the latest list.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-xl">💡</span>
+            <span>Back up your save files before using cheats, especially <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">setmoney</code> or career-related commands.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-xl">💡</span>
+            <span>External trainers (WeMod, MrAntiFun) offer graphical interfaces for similar modifications, but use at your own risk.</span>
+          </li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- Cheat Categories -->
-  <section class="max-w-6xl mx-auto px-4 py-16">
-    <h2 class="text-3xl font-bold text-center mb-12">Popular Cheat Categories</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      {cheatCategories.map(cat => (
-        <a href={cat.href} class="bg-[#1e293b] border border-[#334155] rounded-xl p-6 hover:border-[#6366f1] transition-all hover:shadow-lg hover:shadow-[#6366f1]/10">
-          <div class="text-4xl mb-4">{cat.icon}</div>
-          <h3 class="text-lg font-bold mb-2">{cat.title}</h3>
-          <p class="text-sm text-[#94a3b8]">{cat.description}</p>
-        </a>
-      ))}
+  <!-- Guides -->
+  <section class="py-24 bg-[#E0F2FE] border-b-[3px] border-black">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-extrabold text-center mb-12">Guides</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        {latestGuides.map(guide => (
+          <a href={guide.href} class="bg-white border-[3px] border-black rounded-3xl p-8 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
+            <h3 class="text-2xl font-extrabold mb-3">{guide.title}</h3>
+            <p class="text-gray-700 font-medium mb-4">{guide.description}</p>
+            <span class="font-bold text-[#6366f1] underline underline-offset-4 decoration-2">Read Guide →</span>
+          </a>
+        ))}
+      </div>
     </div>
   </section>
 
-  <!-- Latest Guides -->
-  <section class="max-w-6xl mx-auto px-4 py-16">
-    <h2 class="text-3xl font-bold text-center mb-12">Latest Guides</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {latestGuides.map(guide => (
-        <a href={guide.href} class="bg-[#1e293b] border border-[#334155] rounded-xl p-6 hover:border-[#6366f1] transition-all">
-          <h3 class="text-xl font-bold mb-3">{guide.title}</h3>
-          <p class="text-[#94a3b8] mb-4">{guide.description}</p>
-          <span class="text-[#6366f1] font-semibold text-sm">Read Guide →</span>
-        </a>
-      ))}
-    </div>
-  </section>
-
-  <!-- FAQ Preview -->
-  <section class="max-w-6xl mx-auto px-4 py-16">
-    <h2 class="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
-    <div class="max-w-3xl mx-auto space-y-4">
-      {faqs.map(faq => (
-        <details class="bg-[#1e293b] border border-[#334155] rounded-lg overflow-hidden group">
-          <summary class="px-6 py-4 cursor-pointer font-semibold hover:bg-[#334155] transition-colors flex justify-between items-center">
-            <span>{faq.q}</span>
-            <span class="text-[#94a3b8] group-open:rotate-180 transition-transform">▼</span>
-          </summary>
-          <div class="px-6 py-4 border-t border-[#334155] text-[#94a3b8]">
-            {faq.a}
+  <!-- FAQ -->
+  <section class="py-24 bg-white border-b-[3px] border-black">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="text-4xl font-extrabold text-center mb-12">
+        Frequently Asked <span class="bg-[#a855f7] text-white px-2 border-2 border-black inline-block rotate-[1deg]">Questions</span>
+      </h2>
+      <div class="space-y-4">
+        {faqs.map(faq => (
+          <div class="border-[3px] border-black rounded-2xl p-6 bg-[#F9FAFB] brutal-shadow">
+            <h3 class="text-xl font-extrabold mb-2">{faq.q}</h3>
+            <p class="text-gray-700 font-medium text-lg">{faq.a}</p>
           </div>
-        </details>
-      ))}
-    </div>
-    <div class="text-center mt-8">
-      <a href="/faq" class="text-[#6366f1] font-semibold hover:underline">View All FAQs →</a>
+        ))}
+      </div>
     </div>
   </section>
 </Layout>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const code = btn.getAttribute('data-code');
+      if (!code) return;
+      try {
+        await navigator.clipboard.writeText(code);
+      } catch {
+        const ta = document.createElement('textarea');
+        ta.value = code;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+      }
+      btn.classList.add('bg-[#22c55e]', 'text-white');
+      setTimeout(() => btn.classList.remove('bg-[#22c55e]', 'text-white'), 1000);
+    });
+  });
+</script>

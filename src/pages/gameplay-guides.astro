@@ -4,51 +4,64 @@ import Layout from '../layouts/Layout.astro';
 const guides = [
   {
     title: 'Getting Started with Paralives',
-    content: 'New to Paralives? This guide covers everything you need to know about creating your first Para, building your first home, and understanding the basic gameplay mechanics. Learn about needs, skills, careers, and relationships to get the most out of your experience.',
+    content: 'New to Paralives? Start by creating your first Para using the detailed character creator, then build a basic home. Learn how needs work — keep your Para fed, rested, and happy. Use "reliefallneeds" in the cheat console (Ctrl + F1) if you want to skip the grind and focus on building and storytelling.',
+    color: 'bg-[#6366f1]',
   },
   {
     title: 'Creating the Perfect Para',
-    content: 'The character creator in Paralives is incredibly detailed. Learn how to use the body sculpting tools, facial feature sliders, and personality traits to create a Para that\'s truly unique. We cover genetics, heredity, and how traits affect gameplay.',
+    content: 'The character creator in Paralives offers deep customization. Use body sculpting tools, facial feature sliders, and personality traits to make a unique Para. Personality traits affect gameplay behavior, and you can use the "leveluppersonality" cheat to quickly develop them.',
+    color: 'bg-[#ec4899]',
   },
   {
-    title: 'Career Guide: All Jobs & How to Succeed',
-    content: 'Explore every career path available in Paralives. From traditional jobs to freelance work and creative careers, we break down the requirements, promotion tracks, and best strategies for climbing the career ladder.',
+    title: 'Career Guide: Jobs & Promotions',
+    content: 'Explore every career path in Paralives. From traditional jobs to freelance work, each career has its own promotion track. If your Para gets too many strikes, use "clearstrikes" to reset them. Use "endworkday" to skip long shifts, or "clearalloccupations" to start fresh.',
+    color: 'bg-[#f59e0b]',
   },
   {
     title: 'Relationship System Explained',
-    content: 'Understanding the relationship system is key to creating compelling stories. Learn how friendships, romances, and rivalries work. Discover how to build deep connections, propose marriage, start families, and navigate breakups.',
+    content: 'Build friendships, romances, and rivalries in Paralives. Relationships develop through social interactions, shared activities, and time spent together. Use "completecurrentwants" to fast-track relationship goals when you want to speed things up.',
+    color: 'bg-[#22c55e]',
   },
   {
-    title: 'Skill Guide: How to Level Up Fast',
-    content: 'Skills are essential for career advancement and personal fulfillment. This guide covers every skill in the game, the best ways to train them, and how they interact with careers and relationships.',
+    title: 'Skill Guide: How to Level Up',
+    content: 'Skills are essential for career advancement and personal fulfillment. Practice activities to level up naturally, or use "setskilllevel [skill] [level]" to set any skill to a specific level instantly. Combine with career cheats to fast-track your Para\'s professional life.',
+    color: 'bg-[#a855f7]',
   },
   {
     title: 'Money Making Guide',
-    content: 'Running low on funds? Learn the best ways to earn money in Paralives. From high-paying careers to creative income streams and smart investing, we cover every money-making strategy.',
+    content: 'Earning money in Paralives takes time — careers pay salaries, and you can use the PAYDAY cheat to collect your Para\'s earnings on demand. For quick cash, use PIGGYBANK (1,000), MAKEITRAIN (10,000), JACKPOT (50,000), or LOTTERY (random up to 100,000) Paradimes.',
+    color: 'bg-[#22c55e]',
   },
   {
-    title: 'Family & Legacy Challenges',
-    content: 'Want to create multi-generational stories? This guide covers family planning, raising children, inheritance systems, and popular legacy challenges that will keep you playing for hundreds of hours.',
+    title: 'Family & Legacy Play',
+    content: 'Create multi-generational stories in Paralives. Plan families, raise children, and build a legacy. Use cheats to adjust life stages and keep your story flowing. Combine with money cheats to set up each generation with the resources they need.',
+    color: 'bg-[#3b82f6]',
   },
   {
-    title: 'Neighborhood & Community Guide',
-    content: 'Explore the neighborhoods available in Paralives. Learn about community lots, local events, NPCs, and how to make the most of your surroundings. Discover hidden locations and special interactions.',
+    title: 'Neighborhood & Community',
+    content: 'Explore the neighborhoods in Paralives. Visit community lots, meet NPCs, and discover hidden interactions. Use cheats to keep your Para\'s needs topped up while you explore, so you can focus on discovering everything the world has to offer.',
+    color: 'bg-[#ec4899]',
   },
 ];
 ---
 
-<Layout title="Gameplay Guides" description="Complete Paralives gameplay guides covering careers, relationships, skills, money, and more.">
-  <section class="max-w-4xl mx-auto px-4 py-16">
-    <h1 class="text-4xl font-bold text-center mb-4">Gameplay Guides</h1>
-    <p class="text-center text-[#94a3b8] mb-12 max-w-2xl mx-auto">
-      Comprehensive guides to help you master every aspect of Paralives gameplay. From beginner basics to advanced strategies.
+<Layout title="Gameplay Guides" description="Complete Paralives gameplay guides covering careers, relationships, skills, money cheats, and more. Updated for 2026 Early Access.">
+  <section class="max-w-4xl mx-auto px-6 py-20">
+    <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-center mb-4">
+      Gameplay <span class="bg-[#a855f7] text-white px-3 border-[3px] border-black inline-block rotate-[1deg]">Guides</span>
+    </h1>
+    <p class="text-center text-gray-600 font-bold text-lg mb-16 max-w-2xl mx-auto">
+      Comprehensive guides to master every aspect of Paralives. Includes cheat tips for each topic.
     </p>
 
     <div class="space-y-8">
       {guides.map(guide => (
-        <article class="bg-[#1e293b] border border-[#334155] rounded-xl p-8 hover:border-[#6366f1] transition-colors">
-          <h2 class="text-2xl font-bold mb-4">{guide.title}</h2>
-          <p class="text-[#94a3b8] leading-relaxed">{guide.content}</p>
+        <article class="bg-white border-[3px] border-black rounded-3xl p-8 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+          <div class="flex items-start gap-4 mb-4">
+            <span class={`${guide.color} w-4 h-4 rounded-full border-[2px] border-black flex-shrink-0 mt-1`}></span>
+            <h2 class="text-2xl font-extrabold">{guide.title}</h2>
+          </div>
+          <p class="text-gray-700 font-medium text-lg leading-relaxed ml-0 md:ml-8">{guide.content}</p>
         </article>
       ))}
     </div>
