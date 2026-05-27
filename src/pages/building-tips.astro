@@ -4,7 +4,7 @@ import Layout from '../layouts/Layout.astro';
 const tips = [
   {
     title: 'Use Cheats to Unlock All Build Items',
-    content: 'Open the cheat console with Ctrl + F1 or Ctrl + Shift + C and use the "help" command to see what build-related cheats are available. Cheats can help you unlock items and build freely without budget constraints — just use setmoney to give yourself unlimited funds first.',
+    content: 'Open the cheat console with Ctrl + F1 or Ctrl + Shift + C and use "setmoney 100000" for unlimited funds. Use "showiteminfos" to get the ID of any Build Mode object. "additemtoinventory" adds items directly to a Para\'s inventory. "spawnallitems" spawns every item in the world (use only for testing — it makes a mess). Always save before using build cheats.',
     color: 'bg-[#22c55e]',
   },
   {
@@ -58,8 +58,8 @@ const tips = [
     color: 'bg-[#f59e0b]',
   },
   {
-    title: 'Repair and Clean with Cheats',
-    content: 'If objects break or get dirty during gameplay, use "repairallitems" and "cleanallitems" cheats to fix everything on the lot instantly.',
+    title: 'Manage Items with Cheats',
+    content: 'Use "repairallitems" to fix all broken objects and "unspoilallitems" to restore spoiled food. "setitemstate IsOn 1" toggles item states. "showitemstates" displays animation and interaction data for the selected object. "countitems" tells you how many objects exist in the world — useful for spotting duplicates that "cleanupduplicateditems" can remove.',
     color: 'bg-[#3b82f6]',
   },
 ];

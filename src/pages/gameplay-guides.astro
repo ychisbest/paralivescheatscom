@@ -4,43 +4,53 @@ import Layout from '../layouts/Layout.astro';
 const guides = [
   {
     title: 'Getting Started with Paralives',
-    content: 'New to Paralives? Start by creating your first Para using the detailed character creator, then build a basic home. Learn how needs work — keep your Para fed, rested, and happy. Use "reliefallneeds" in the cheat console (Ctrl + F1) if you want to skip the grind and focus on building and storytelling.',
+    content: 'New to Paralives? Start by creating your first Para using the detailed character creator (the Paramaker), then build a basic home. Learn how needs work — keep your Para fed, rested, and happy. Use "reliefallneeds" to fill all needs instantly, or "setneed Hunger 10" for a specific one. The game supports color wheels, height sliders, body sculpting, and layered clothing right from day one of Early Access.',
     color: 'bg-[#6366f1]',
   },
   {
     title: 'Creating the Perfect Para',
-    content: 'The character creator in Paralives offers deep customization. Use body sculpting tools, facial feature sliders, and personality traits to make a unique Para. Personality traits affect gameplay behavior, and you can use the "leveluppersonality" cheat to quickly develop them.',
+    content: 'The Paramaker offers deep customization: color wheel, height slider, body and face sliders, tattoo placement, layered clothing, asymmetry options, and a genetics system. Use "editcharacter" to return to the creator at any time. Personality traits affect behavior — use "showpersonalitytraits" to inspect them, "leveluppersonality" to boost, or "resetpersonality" to start over.',
     color: 'bg-[#ec4899]',
   },
   {
     title: 'Career Guide: Jobs & Promotions',
-    content: 'Explore every career path in Paralives. From traditional jobs to freelance work, each career has its own promotion track. If your Para gets too many strikes, use "clearstrikes" to reset them. Use "endworkday" to skip long shifts, or "clearalloccupations" to start fresh.',
+    content: 'Each career has its own promotion track and upgrade paths. Use "printalloccupations" to see all jobs held by a Para, and "upgradeoccupations" to unlock upgrades. If your Para gets strikes, use "clearstrikes" to reset them. "endworkday" skips a shift and grants salary. "addvacationday" adds time off. To quit everything: "unenrollfromalloccupations".',
     color: 'bg-[#f59e0b]',
   },
   {
     title: 'Relationship System Explained',
-    content: 'Build friendships, romances, and rivalries in Paralives. Relationships develop through social interactions, shared activities, and time spent together. Use "completecurrentwants" to fast-track relationship goals when you want to speed things up.',
+    content: 'Build friendships, romances, and rivalries through social interactions and shared activities. Use "showcharacterrelationships" to inspect all relationships and labels. "becomeacquaintancewitheveryone" adds an acquaintance label with every Para in town. "completecurrentwants" fast-tracks relationship goals, and "clearwantcooldowns" lets new wants appear from emotions.',
     color: 'bg-[#22c55e]',
   },
   {
     title: 'Skill Guide: How to Level Up',
-    content: 'Skills are essential for career advancement and personal fulfillment. Practice activities to level up naturally, or use "setskilllevel [skill] [level]" to set any skill to a specific level instantly. Combine with career cheats to fast-track your Para\'s professional life.',
+    content: 'Skills include Music, Piano, Guitar, Fitness, Dancing, Science, Astronomy, Biology, Technology, Programming, GraphicDesign, Cooking, Painting, Repair, Language, and more. Use "showskills" to see current levels, "setskilllevel Cooking 10" to set a level, or "levelupskill Programming" to add one. Some skills may not work in the current Early Access build — verify with "showskills".',
     color: 'bg-[#a855f7]',
   },
   {
     title: 'Money Making Guide',
-    content: 'Earning money in Paralives takes time — careers pay salaries, and you can use the PAYDAY cheat to collect your Para\'s earnings on demand. For quick cash, use PIGGYBANK (1,000), MAKEITRAIN (10,000), JACKPOT (50,000), or LOTTERY (random up to 100,000) Paradimes.',
+    content: 'Careers pay salaries — use PAYDAY to collect on demand. For quick cash: PIGGYBANK (+1,000), MAKEITRAIN (+10,000), JACKPOT (+50,000), or LOTTERY (random up to 100,000) Paradimes. "setmoney 100000" sets an exact balance, "printmoney 20000" adds to your current amount. Use "generatebill" to check bills, "clearbills" to clear them, and "printhouseholdfunds" to see every household\'s balance.',
     color: 'bg-[#22c55e]',
   },
   {
-    title: 'Family & Legacy Play',
-    content: 'Create multi-generational stories in Paralives. Plan families, raise children, and build a legacy. Use cheats to adjust life stages and keep your story flowing. Combine with money cheats to set up each generation with the resources they need.',
-    color: 'bg-[#3b82f6]',
+    title: 'Pregnancy, Babies & Family',
+    content: 'Start a family with "getpregnant" (add 1-3 for multiples), "givebirth" for instant delivery, or "makebabies" for two selected Paras. Check progress with "pregnantstatus". Control aging with "nextlifestage" and "previouslifestage", or trigger growth spurts with "nextgrowthspurt". If tragedy strikes, "reviveallselectedcharacters" brings Paras back. Use money cheats to set up each generation with the resources they need.',
+    color: 'bg-[#f472b6]',
   },
   {
-    title: 'Neighborhood & Community',
-    content: 'Explore the neighborhoods in Paralives. Visit community lots, meet NPCs, and discover hidden interactions. Use cheats to keep your Para\'s needs topped up while you explore, so you can focus on discovering everything the world has to offer.',
-    color: 'bg-[#ec4899]',
+    title: 'Household & NPC Management',
+    content: 'Manage your household with "addselectedcharacterstohousehold" to recruit NPCs, "createcharacter HumanAdult" to spawn new Paras, or "kickselectedcharactersfromhousehold" to remove members. Use "showcharacterposition" to find a Para\'s coordinates, "warpcharacter x,y,z" to teleport them, and "unstuck" or "unstuckall" to fix pathing issues.',
+    color: 'bg-[#14b8a6]',
+  },
+  {
+    title: 'Time Control & Events',
+    content: 'Control the clock with "sethour 12" to jump to noon, "advanceday" to skip 24 hours, or "advancehour" for smaller jumps. "skipto5minutesbeforework" is perfect for getting Para to their job on time. Manage emergencies with "extinguishallfires" and handle mail with "generatemail" or "resetmailbox".',
+    color: 'bg-[#8b5cf6]',
+  },
+  {
+    title: 'Performance & Debugging',
+    content: 'Monitor performance with "fps" and "benchmarkfps". Cap your framerate with "capfps 60". Switch display modes with "fullscreen" or "windowed". Fix issues with "unstuck" for pathing, "cleanupduplicateditems" for duplicate objects, and "repairallitems" for broken objects. Use "save" and "zipsavefile" before experimenting with debug commands.',
+    color: 'bg-[#64748b]',
   },
 ];
 ---
