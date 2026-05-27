@@ -1,17 +1,129 @@
 ---
+import Layout from '../layouts/Layout.astro';
 
+const cheatCategories = [
+  {
+    title: 'Money Cheats',
+    description: 'Unlimited funds to build your dream home and live the perfect life.',
+    icon: '💰',
+    href: '/cheats#money',
+  },
+  {
+    title: 'Building Cheats',
+    description: 'Unlock advanced building tools, free placement, and hidden objects.',
+    icon: '🏗️',
+    href: '/cheats#building',
+  },
+  {
+    title: 'Skill Cheats',
+    description: 'Max out any skill instantly and unlock all abilities.',
+    icon: '⭐',
+    href: '/cheats#skills',
+  },
+  {
+    title: 'Relationship Cheats',
+    description: 'Control relationships, friendships, and romantic connections.',
+    icon: '💕',
+    href: '/cheats#relationships',
+  },
+];
+
+const latestGuides = [
+  {
+    title: 'How to Use Console Commands in Paralives',
+    description: 'A complete guide to opening the cheat console and entering commands.',
+    href: '/cheats',
+  },
+  {
+    title: 'Best Building Tips for Beginners',
+    description: 'Learn the fundamentals of building beautiful homes in Paralives.',
+    href: '/building-tips',
+  },
+  {
+    title: 'Complete Gameplay Guide 2026',
+    description: 'Everything you need to know to master Paralives from day one.',
+    href: '/gameplay-guides',
+  },
+];
+
+const faqs = [
+  { q: 'How do I open the cheat console?', a: 'Press Ctrl + Shift + C (or Cmd + Shift + C on Mac) to open the cheat console.' },
+  { q: 'Are cheats available in early access?', a: 'Yes, many cheats are available during the early access period. More will be added as the game develops.' },
+  { q: 'Will using cheats disable achievements?', a: 'No, Paralives allows cheats without disabling any achievements or features.' },
+  { q: 'Can I use cheats on console versions?', a: 'Currently Paralives is PC/Mac only. Console support with cheats may be added later.' },
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Home">
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#6366f1]/20 to-[#f59e0b]/10"></div>
+    <div class="max-w-6xl mx-auto px-4 py-20 relative">
+      <div class="text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">
+          <span class="text-[#6366f1]">Paralives</span> Cheats & Guides
+        </h1>
+        <p class="text-xl text-[#94a3b8] mb-8 max-w-2xl mx-auto">
+          Your ultimate resource for Paralives cheats, money codes, building tips, and gameplay strategies. Master every aspect of the game.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/cheats" class="inline-block bg-[#6366f1] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#4f46e5] transition-colors">
+            View All Cheats
+          </a>
+          <a href="/gameplay-guides" class="inline-block border border-[#6366f1] text-[#6366f1] px-8 py-3 rounded-lg font-semibold hover:bg-[#6366f1]/10 transition-colors">
+            Gameplay Guides
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cheat Categories -->
+  <section class="max-w-6xl mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold text-center mb-12">Popular Cheat Categories</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {cheatCategories.map(cat => (
+        <a href={cat.href} class="bg-[#1e293b] border border-[#334155] rounded-xl p-6 hover:border-[#6366f1] transition-all hover:shadow-lg hover:shadow-[#6366f1]/10">
+          <div class="text-4xl mb-4">{cat.icon}</div>
+          <h3 class="text-lg font-bold mb-2">{cat.title}</h3>
+          <p class="text-sm text-[#94a3b8]">{cat.description}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Latest Guides -->
+  <section class="max-w-6xl mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold text-center mb-12">Latest Guides</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {latestGuides.map(guide => (
+        <a href={guide.href} class="bg-[#1e293b] border border-[#334155] rounded-xl p-6 hover:border-[#6366f1] transition-all">
+          <h3 class="text-xl font-bold mb-3">{guide.title}</h3>
+          <p class="text-[#94a3b8] mb-4">{guide.description}</p>
+          <span class="text-[#6366f1] font-semibold text-sm">Read Guide →</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- FAQ Preview -->
+  <section class="max-w-6xl mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+    <div class="max-w-3xl mx-auto space-y-4">
+      {faqs.map(faq => (
+        <details class="bg-[#1e293b] border border-[#334155] rounded-lg overflow-hidden group">
+          <summary class="px-6 py-4 cursor-pointer font-semibold hover:bg-[#334155] transition-colors flex justify-between items-center">
+            <span>{faq.q}</span>
+            <span class="text-[#94a3b8] group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <div class="px-6 py-4 border-t border-[#334155] text-[#94a3b8]">
+            {faq.a}
+          </div>
+        </details>
+      ))}
+    </div>
+    <div class="text-center mt-8">
+      <a href="/faq" class="text-[#6366f1] font-semibold hover:underline">View All FAQs →</a>
+    </div>
+  </section>
+</Layout>

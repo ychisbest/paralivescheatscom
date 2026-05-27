@@ -1,0 +1,56 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const guides = [
+  {
+    title: 'Getting Started with Paralives',
+    content: 'New to Paralives? This guide covers everything you need to know about creating your first Para, building your first home, and understanding the basic gameplay mechanics. Learn about needs, skills, careers, and relationships to get the most out of your experience.',
+  },
+  {
+    title: 'Creating the Perfect Para',
+    content: 'The character creator in Paralives is incredibly detailed. Learn how to use the body sculpting tools, facial feature sliders, and personality traits to create a Para that\'s truly unique. We cover genetics, heredity, and how traits affect gameplay.',
+  },
+  {
+    title: 'Career Guide: All Jobs & How to Succeed',
+    content: 'Explore every career path available in Paralives. From traditional jobs to freelance work and creative careers, we break down the requirements, promotion tracks, and best strategies for climbing the career ladder.',
+  },
+  {
+    title: 'Relationship System Explained',
+    content: 'Understanding the relationship system is key to creating compelling stories. Learn how friendships, romances, and rivalries work. Discover how to build deep connections, propose marriage, start families, and navigate breakups.',
+  },
+  {
+    title: 'Skill Guide: How to Level Up Fast',
+    content: 'Skills are essential for career advancement and personal fulfillment. This guide covers every skill in the game, the best ways to train them, and how they interact with careers and relationships.',
+  },
+  {
+    title: 'Money Making Guide',
+    content: 'Running low on funds? Learn the best ways to earn money in Paralives. From high-paying careers to creative income streams and smart investing, we cover every money-making strategy.',
+  },
+  {
+    title: 'Family & Legacy Challenges',
+    content: 'Want to create multi-generational stories? This guide covers family planning, raising children, inheritance systems, and popular legacy challenges that will keep you playing for hundreds of hours.',
+  },
+  {
+    title: 'Neighborhood & Community Guide',
+    content: 'Explore the neighborhoods available in Paralives. Learn about community lots, local events, NPCs, and how to make the most of your surroundings. Discover hidden locations and special interactions.',
+  },
+];
+---
+
+<Layout title="Gameplay Guides" description="Complete Paralives gameplay guides covering careers, relationships, skills, money, and more.">
+  <section class="max-w-4xl mx-auto px-4 py-16">
+    <h1 class="text-4xl font-bold text-center mb-4">Gameplay Guides</h1>
+    <p class="text-center text-[#94a3b8] mb-12 max-w-2xl mx-auto">
+      Comprehensive guides to help you master every aspect of Paralives gameplay. From beginner basics to advanced strategies.
+    </p>
+
+    <div class="space-y-8">
+      {guides.map(guide => (
+        <article class="bg-[#1e293b] border border-[#334155] rounded-xl p-8 hover:border-[#6366f1] transition-colors">
+          <h2 class="text-2xl font-bold mb-4">{guide.title}</h2>
+          <p class="text-[#94a3b8] leading-relaxed">{guide.content}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+</Layout>

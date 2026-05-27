@@ -1,0 +1,44 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact Us">
+  <section class="max-w-4xl mx-auto px-4 py-16">
+    <h1 class="text-4xl font-bold text-center mb-4">Contact Us</h1>
+    <p class="text-center text-[#94a3b8] mb-12 max-w-2xl mx-auto">
+      Have questions, suggestions, or found an error? We'd love to hear from you.
+    </p>
+
+    <div class="max-w-2xl mx-auto">
+      <div class="bg-[#1e293b] border border-[#334155] rounded-xl p-8">
+        <form class="space-y-6">
+          <div>
+            <label for="name" class="block text-sm font-semibold mb-2">Name</label>
+            <input type="text" id="name" name="name" class="w-full bg-[#0f172a] border border-[#334155] rounded-lg px-4 py-3 text-[#e2e8f0] focus:border-[#6366f1] focus:outline-none" placeholder="Your name" />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-semibold mb-2">Email</label>
+            <input type="email" id="email" name="email" class="w-full bg-[#0f172a] border border-[#334155] rounded-lg px-4 py-3 text-[#e2e8f0] focus:border-[#6366f1] focus:outline-none" placeholder="your@email.com" />
+          </div>
+          <div>
+            <label for="subject" class="block text-sm font-semibold mb-2">Subject</label>
+            <select id="subject" name="subject" class="w-full bg-[#0f172a] border border-[#334155] rounded-lg px-4 py-3 text-[#e2e8f0] focus:border-[#6366f1] focus:outline-none">
+              <option>General Question</option>
+              <option>Report an Error</option>
+              <option>Suggest a Cheat</option>
+              <option>DMCA Request</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-semibold mb-2">Message</label>
+            <textarea id="message" name="message" rows="5" class="w-full bg-[#0f172a] border border-[#334155] rounded-lg px-4 py-3 text-[#e2e8f0] focus:border-[#6366f1] focus:outline-none" placeholder="Your message..."></textarea>
+          </div>
+          <button type="submit" class="w-full bg-[#6366f1] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#4f46e5] transition-colors">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+</Layout>

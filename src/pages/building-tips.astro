@@ -1,0 +1,67 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const tips = [
+  {
+    title: 'Use the Grid Toggle for Precision',
+    content: 'Toggle the grid on and off to place objects with pixel-perfect precision. This is essential for creating detailed interiors and custom furniture arrangements.',
+  },
+  {
+    title: 'Master the Copy Tool',
+    content: 'Select any object and use the copy tool to duplicate it instantly. This saves time when creating symmetrical designs or repeating patterns in your builds.',
+  },
+  {
+    title: 'Layer Objects for Depth',
+    content: 'Place objects at different heights and depths to create visual interest. Use wall shelves, hanging lights, and floor plants to add dimension to rooms.',
+  },
+  {
+    title: 'Customize Colors and Textures',
+    content: 'Paralives offers deep customization for every object. Experiment with different color combinations and textures to create unique looks for each room.',
+  },
+  {
+    title: 'Use the Terrain Tools',
+    content: 'Shape the land around your house with terrain tools. Create hills, slopes, and multi-level yards to make your lot more interesting and realistic.',
+  },
+  {
+    title: 'Plan Your Layout First',
+    content: 'Before building, sketch out your floor plan. Consider traffic flow between rooms, natural lighting from windows, and how outdoor spaces connect to indoor areas.',
+  },
+  {
+    title: 'Save Room Templates',
+    content: 'Once you create a room you love, save it as a template. You can reuse it in future builds or share it with the community.',
+  },
+  {
+    title: 'Use the Undo Stack',
+    content: 'Made a mistake? Paralives has a robust undo system. Use Ctrl+Z (Cmd+Z on Mac) to undo multiple steps without losing progress.',
+  },
+  {
+    title: 'Experiment with Roof Styles',
+    content: 'Try different roof shapes and slopes. Combine flat roofs with angled sections for modern architectural looks, or use traditional peaked roofs for classic homes.',
+  },
+  {
+    title: 'Add Outdoor Living Spaces',
+    content: 'Don\'t forget about outdoor areas. Create patios, decks, gardens, and pools to extend your living space and add value to your lot.',
+  },
+];
+---
+
+<Layout title="Building Tips" description="Expert building tips and tricks for Paralives. Learn how to create stunning homes and unique architectural designs.">
+  <section class="max-w-4xl mx-auto px-4 py-16">
+    <h1 class="text-4xl font-bold text-center mb-4">Building Tips & Tricks</h1>
+    <p class="text-center text-[#94a3b8] mb-12 max-w-2xl mx-auto">
+      Master the building system in Paralives with these expert tips. From basic layouts to advanced techniques, these guides will help you create stunning homes.
+    </p>
+
+    <div class="space-y-8">
+      {tips.map((tip, i) => (
+        <div class="bg-[#1e293b] border border-[#334155] rounded-xl p-6 hover:border-[#6366f1] transition-colors">
+          <h2 class="text-xl font-bold mb-3 flex items-start gap-3">
+            <span class="text-[#6366f1] text-sm font-mono bg-[#6366f1]/10 px-2 py-1 rounded">#{i + 1}</span>
+            {tip.title}
+          </h2>
+          <p class="text-[#94a3b8] leading-relaxed">{tip.content}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+</Layout>
