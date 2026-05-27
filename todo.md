@@ -1,2 +1,3 @@
 - [x] 请你根据 context.md 重构网站所有内容
 - [x] 现在更新了 context.md，请你把更多内容添加到网站中去，保持网页阅读友好性
+- [x] 写网站内容写一个 readme.md 文件，添加 https://paralives-cheats.com/ 外链
