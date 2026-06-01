@@ -68,7 +68,7 @@ const tips = [
 <Layout title="Building Tips" description="Expert building tips and tricks for Paralives. Learn how to create stunning homes, use cheats in build mode, and master the building system.">
   <section class="max-w-4xl mx-auto px-6 py-20">
     <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-center mb-4">
-      Building <span class="bg-[#22c55e] text-white px-3 border-[3px] border-black inline-block rotate-[-1deg]">Tips</span>
+      Building <span class="bg-[#22c55e] text-white px-3 border border-black inline-block rotate-[-1deg]">Tips</span>
     </h1>
     <p class="text-center text-gray-600 font-bold text-lg mb-16 max-w-2xl mx-auto">
       Master the building system in Paralives with these tips. From basic layouts to advanced techniques.
@@ -76,9 +76,9 @@ const tips = [
 
     <div class="space-y-6">
       {tips.map((tip, i) => (
-        <div class="bg-white border-[3px] border-black rounded-3xl p-6 md:p-8 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+        <div class="bg-white border border-black rounded-3xl p-6 md:p-8 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
           <h2 class="text-xl md:text-2xl font-extrabold mb-3 flex items-start gap-4">
-            <span class={`${tip.color} text-white text-sm font-bold border-[3px] border-black px-3 py-1 rounded-full brutal-shadow flex-shrink-0`}>#{i + 1}</span>
+            <span class={`${tip.color} text-white text-sm font-bold border border-black px-3 py-1 rounded-full brutal-shadow flex-shrink-0`}>#{i + 1}</span>
             {tip.title}
           </h2>
           <p class="text-gray-700 font-medium text-lg leading-relaxed ml-0 md:ml-16">{tip.content}</p>

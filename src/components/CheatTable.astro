@@ -14,13 +14,13 @@ const { cheats, color = 'bg-[#6366f1]' } = Astro.props;
 
 <div class="space-y-3">
   {cheats.map((cheat: Cheat) => (
-    <div class="flex items-center justify-between gap-4 bg-[#F9FAFB] border-[3px] border-black rounded-2xl p-4 md:p-5 hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all brutal-shadow">
+    <div class="flex items-center justify-between gap-4 bg-[#F9FAFB] border border-black rounded-2xl p-4 md:p-5 hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all brutal-shadow">
       <div class="flex-1 min-w-0">
-        <code class={`${color} text-white px-3 py-1 rounded-full text-sm font-bold border-[2px] border-black`}>{cheat.code}</code>
+        <code class={`${color} text-white px-3 py-1 rounded-full text-sm font-bold border border-black`}>{cheat.code}</code>
         <span class="ml-3 text-gray-700 font-medium">{cheat.desc}</span>
       </div>
       <button
-        class="copy-btn flex-shrink-0 w-10 h-10 bg-white border-[3px] border-black rounded-full flex items-center justify-center hover:bg-[#FFD54F] transition-colors brutal-shadow"
+        class="copy-btn flex-shrink-0 w-10 h-10 bg-white border border-black rounded-full flex items-center justify-center hover:bg-[#FFD54F] transition-colors brutal-shadow"
         data-code={cheat.code.replace(/\s*\[.*?\]/g, '').trim()}
         title="Copy to clipboard"
       >

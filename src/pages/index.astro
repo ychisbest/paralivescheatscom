@@ -195,7 +195,7 @@ const faqSchema = {
   <!-- Hero Section -->
   <header class="max-w-7xl mx-auto px-6 py-20 md:py-32 text-center">
     <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.1] mb-8">
-      All <span class="bg-[#6366f1] text-white px-3 py-1 border-[3px] border-black inline-block rotate-[-1deg]">Paralives</span> Cheats<br>
+      All <span class="bg-[#6366f1] text-white px-3 py-1 border border-black inline-block rotate-[-1deg]">Paralives</span> Cheats<br>
       <span class="text-gray-600">in One Place.</span>
     </h1>
     <p class="text-sm font-bold text-gray-400 mb-4 uppercase tracking-wider">Updated: June 2026</p>
@@ -205,12 +205,12 @@ const faqSchema = {
     <p class="text-lg text-gray-500 font-bold mb-10 max-w-2xl mx-auto">
       Press <span class="bg-[#FFD54F] px-2 border-2 border-black">Ctrl + F1</span> or <span class="bg-[#FFD54F] px-2 border-2 border-black">Ctrl + Shift + C</span> to open the console. Type <span class="bg-[#FFD54F] px-2 border-2 border-black">help</span> for all commands.
     </p>
-    <a href="#cheats" class="brutal-btn bg-[#6366f1] text-white font-extrabold text-xl py-4 px-10 rounded-full border-[3px] border-black brutal-shadow inline-flex items-center gap-2">
+    <a href="#cheats" class="brutal-btn bg-[#6366f1] text-white font-extrabold text-xl py-4 px-10 rounded-full border border-black brutal-shadow inline-flex items-center gap-2">
       Browse All Cheats
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
     </a>
     <div class="mt-12 max-w-4xl mx-auto">
-      <img src={heroImg.src} alt="Paralives gameplay" class="w-full rounded-3xl border-[3px] border-black brutal-shadow" />
+      <img src={heroImg.src} alt="Paralives gameplay" class="w-full rounded-3xl border border-black brutal-shadow" />
     </div>
   </header>
 
@@ -240,7 +240,7 @@ const faqSchema = {
       <!-- Category Navigation -->
       <nav class="flex flex-wrap justify-center gap-2 mb-16 max-w-4xl mx-auto">
         {sections.map(section => (
-          <a href={`#${section.id}`} class={`${section.color} text-white text-sm font-bold px-3 py-1.5 rounded-full border-[2px] border-black hover:opacity-80 transition-opacity`}>
+          <a href={`#${section.id}`} class={`${section.color} text-white text-sm font-bold px-3 py-1.5 rounded-full border border-black hover:opacity-80 transition-opacity`}>
             {section.icon} {section.title}
           </a>
         ))}
@@ -250,19 +250,19 @@ const faqSchema = {
         {sections.map(section => (
           <div id={section.id}>
             <h3 class="text-2xl font-extrabold mb-2 flex items-center gap-3">
-              <span class={`w-12 h-12 ${section.color} border-[3px] border-black rounded-2xl flex items-center justify-center brutal-shadow text-xl`}>{section.icon}</span>
+              <span class={`w-12 h-12 ${section.color} border border-black rounded-2xl flex items-center justify-center brutal-shadow text-xl`}>{section.icon}</span>
               {section.title}
             </h3>
             <p class="text-gray-600 font-medium mb-6 ml-15">{section.desc}</p>
             <div class="space-y-3">
               {section.cheats.map(cheat => (
-                <div class="flex items-center justify-between gap-4 bg-[#F9FAFB] border-[3px] border-black rounded-2xl p-4 md:p-5 hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all brutal-shadow">
+                <div class="flex items-center justify-between gap-4 bg-[#F9FAFB] border border-black rounded-2xl p-4 md:p-5 hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all brutal-shadow">
                   <div class="flex-1 min-w-0">
-                    <code class={`${section.color} text-white px-3 py-1 rounded-full text-sm font-bold border-[2px] border-black`}>{cheat.code}</code>
+                    <code class={`${section.color} text-white px-3 py-1 rounded-full text-sm font-bold border border-black`}>{cheat.code}</code>
                     <span class="ml-3 text-gray-700 font-medium">{cheat.desc}</span>
                   </div>
                   <button
-                    class="copy-btn flex-shrink-0 w-10 h-10 bg-white border-[3px] border-black rounded-full flex items-center justify-center hover:bg-[#FFD54F] transition-colors brutal-shadow"
+                    class="copy-btn flex-shrink-0 w-10 h-10 bg-white border border-black rounded-full flex items-center justify-center hover:bg-[#FFD54F] transition-colors brutal-shadow"
                     data-code={cheat.code.replace(/\s*\[.*?\]/g, '').trim()}
                     title="Copy to clipboard"
                   >
@@ -282,7 +282,7 @@ const faqSchema = {
       </div>
 
       <!-- Quick Reference -->
-      <div class="mt-16 bg-[#E0F2FE] border-[3px] border-black rounded-3xl p-8 brutal-shadow">
+      <div class="mt-16 bg-[#E0F2FE] border border-black rounded-3xl p-8 brutal-shadow">
         <h3 class="text-2xl font-extrabold mb-2">Quick Reference: Most Used Paralives Cheats</h3>
         <p class="text-gray-600 font-medium mb-4">These are the Paralives cheats every player should know. Copy any code below and paste it into the console.</p>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-800 font-medium">
@@ -299,7 +299,7 @@ const faqSchema = {
         </div>
       </div>
 
-      <div class="mt-8 bg-[#FFD54F] border-[3px] border-black rounded-3xl p-8 brutal-shadow">
+      <div class="mt-8 bg-[#FFD54F] border border-black rounded-3xl p-8 brutal-shadow">
         <h3 class="text-2xl font-extrabold mb-4">Tips for Using Paralives Cheats</h3>
         <ul class="space-y-3 text-gray-800 font-medium">
           <li class="flex items-start gap-3">
@@ -330,7 +330,7 @@ const faqSchema = {
       <p class="text-center text-gray-600 font-medium text-lg max-w-2xl mx-auto mb-12">Go beyond Paralives cheats with our detailed guides on building, gameplay, and more.</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
         {latestGuides.map(guide => (
-          <a href={guide.href} class="bg-white border-[3px] border-black rounded-3xl p-8 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
+          <a href={guide.href} class="bg-white border border-black rounded-3xl p-8 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
             <h3 class="text-2xl font-extrabold mb-3">{guide.title}</h3>
             <p class="text-gray-700 font-medium mb-4">{guide.description}</p>
             <span class="font-bold text-[#6366f1] underline underline-offset-4 decoration-2">Read Guide →</span>
@@ -346,32 +346,32 @@ const faqSchema = {
       <h2 class="text-4xl font-extrabold text-center mb-4">Browse by <span class="bg-[#22c55e] text-white px-2 border-2 border-black inline-block">Category</span></h2>
       <p class="text-center text-gray-600 font-medium text-lg max-w-2xl mx-auto mb-12">Find specific Paralives cheats for what you need.</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-        <a href="/money-cheats" class="bg-[#F0FDF4] border-[3px] border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
+        <a href="/money-cheats" class="bg-[#F0FDF4] border border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
           <div class="text-3xl mb-2">💰</div>
           <h3 class="font-extrabold text-lg mb-1">Money Cheats</h3>
           <p class="text-gray-600 font-medium text-sm">PIGGYBANK, JACKPOT, setmoney & more</p>
         </a>
-        <a href="/needs-cheats" class="bg-[#FFFBEB] border-[3px] border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
+        <a href="/needs-cheats" class="bg-[#FFFBEB] border border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
           <div class="text-3xl mb-2">🔋</div>
           <h3 class="font-extrabold text-lg mb-1">Needs Cheats</h3>
           <p class="text-gray-600 font-medium text-sm">reliefallneeds, setneed & more</p>
         </a>
-        <a href="/skill-cheats" class="bg-[#FAF5FF] border-[3px] border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
+        <a href="/skill-cheats" class="bg-[#FAF5FF] border border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
           <div class="text-3xl mb-2">⭐</div>
           <h3 class="font-extrabold text-lg mb-1">Skill Cheats</h3>
           <p class="text-gray-600 font-medium text-sm">setskilllevel, levelupskill & more</p>
         </a>
-        <a href="/pregnancy-cheats" class="bg-[#FDF2F8] border-[3px] border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
+        <a href="/pregnancy-cheats" class="bg-[#FDF2F8] border border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
           <div class="text-3xl mb-2">👶</div>
           <h3 class="font-extrabold text-lg mb-1">Pregnancy Cheats</h3>
           <p class="text-gray-600 font-medium text-sm">getpregnant, givebirth & more</p>
         </a>
-        <a href="/teleport-cheats" class="bg-[#F5F3FF] border-[3px] border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
+        <a href="/teleport-cheats" class="bg-[#F5F3FF] border border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
           <div class="text-3xl mb-2">📍</div>
           <h3 class="font-extrabold text-lg mb-1">Teleport Cheats</h3>
           <p class="text-gray-600 font-medium text-sm">warpcharacter, unstuck & more</p>
         </a>
-        <a href="/wemod-trainer" class="bg-[#EEF2FF] border-[3px] border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
+        <a href="/wemod-trainer" class="bg-[#EEF2FF] border border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
           <div class="text-3xl mb-2">🎮</div>
           <h3 class="font-extrabold text-lg mb-1">WeMod Trainer</h3>
           <p class="text-gray-600 font-medium text-sm">No WeMod needed — use built-in cheats</p>
@@ -385,19 +385,19 @@ const faqSchema = {
     <div class="max-w-4xl mx-auto px-6">
       <h2 class="text-4xl font-extrabold text-center mb-8">Why Use <span class="bg-[#14b8a6] text-white px-2 border-2 border-black inline-block">Paralives Cheats</span>?</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="bg-white border-[3px] border-black rounded-2xl p-6 brutal-shadow">
+        <div class="bg-white border border-black rounded-2xl p-6 brutal-shadow">
           <h3 class="font-extrabold text-lg mb-2">Skip the Grind</h3>
           <p class="text-gray-700 font-medium">Paralives cheats let you skip repetitive tasks like earning money or filling needs. Jump straight into the creative parts of the game.</p>
         </div>
-        <div class="bg-white border-[3px] border-black rounded-2xl p-6 brutal-shadow">
+        <div class="bg-white border border-black rounded-2xl p-6 brutal-shadow">
           <h3 class="font-extrabold text-lg mb-2">Test Everything</h3>
           <p class="text-gray-700 font-medium">Use Paralives cheats to explore every career, skill, and life stage without hours of gameplay. Perfect for content creators and testers.</p>
         </div>
-        <div class="bg-white border-[3px] border-black rounded-2xl p-6 brutal-shadow">
+        <div class="bg-white border border-black rounded-2xl p-6 brutal-shadow">
           <h3 class="font-extrabold text-lg mb-2">Fix Bugs & Stuck Paras</h3>
           <p class="text-gray-700 font-medium">Paralives cheats like "unstuck" and "unstuckall" help fix pathing issues. The "save" and "zipsavefile" commands protect your progress.</p>
         </div>
-        <div class="bg-white border-[3px] border-black rounded-2xl p-6 brutal-shadow">
+        <div class="bg-white border border-black rounded-2xl p-6 brutal-shadow">
           <h3 class="font-extrabold text-lg mb-2">No Achievements Lost</h3>
           <p class="text-gray-700 font-medium">Unlike some games, Paralives cheats do not disable achievements. Use every cheat code freely without worrying about locked content.</p>
         </div>
@@ -414,7 +414,7 @@ const faqSchema = {
       <p class="text-center text-gray-600 font-medium text-lg max-w-2xl mx-auto mb-12">Everything you need to know about using Paralives cheats in the 2026 Early Access.</p>
       <div class="space-y-4">
         {faqs.map(faq => (
-          <div class="border-[3px] border-black rounded-2xl p-6 bg-[#F9FAFB] brutal-shadow">
+          <div class="border border-black rounded-2xl p-6 bg-[#F9FAFB] brutal-shadow">
             <h3 class="text-xl font-extrabold mb-2">{faq.q}</h3>
             <p class="text-gray-700 font-medium text-lg">{faq.a}</p>
           </div>

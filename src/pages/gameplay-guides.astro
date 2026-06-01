@@ -58,7 +58,7 @@ const guides = [
 <Layout title="Gameplay Guides" description="Complete Paralives gameplay guides covering careers, relationships, skills, money cheats, and more. Updated for 2026 Early Access.">
   <section class="max-w-4xl mx-auto px-6 py-20">
     <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-center mb-4">
-      Gameplay <span class="bg-[#a855f7] text-white px-3 border-[3px] border-black inline-block rotate-[1deg]">Guides</span>
+      Gameplay <span class="bg-[#a855f7] text-white px-3 border border-black inline-block rotate-[1deg]">Guides</span>
     </h1>
     <p class="text-center text-gray-600 font-bold text-lg mb-16 max-w-2xl mx-auto">
       Comprehensive guides to master every aspect of Paralives. Includes cheat tips for each topic.
@@ -66,9 +66,9 @@ const guides = [
 
     <div class="space-y-8">
       {guides.map(guide => (
-        <article class="bg-white border-[3px] border-black rounded-3xl p-8 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+        <article class="bg-white border border-black rounded-3xl p-8 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
           <div class="flex items-start gap-4 mb-4">
-            <span class={`${guide.color} w-4 h-4 rounded-full border-[2px] border-black flex-shrink-0 mt-1`}></span>
+            <span class={`${guide.color} w-4 h-4 rounded-full border border-black flex-shrink-0 mt-1`}></span>
             <h2 class="text-2xl font-extrabold">{guide.title}</h2>
           </div>
           <p class="text-gray-700 font-medium text-lg leading-relaxed ml-0 md:ml-8">{guide.content}</p>
