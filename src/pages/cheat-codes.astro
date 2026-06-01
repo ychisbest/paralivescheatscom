@@ -1,0 +1,172 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const allCheats = [
+  { category: 'Money', code: 'PIGGYBANK', desc: 'Add 1,000 Paradimes' },
+  { category: 'Money', code: 'MAKEITRAIN', desc: 'Add 10,000 Paradimes' },
+  { category: 'Money', code: 'JACKPOT', desc: 'Add 50,000 Paradimes' },
+  { category: 'Money', code: 'LOTTERY', desc: 'Random 1-100,000 Paradimes' },
+  { category: 'Money', code: 'setmoney [amount]', desc: 'Set exact balance' },
+  { category: 'Money', code: 'printmoney [amount]', desc: 'Add to balance' },
+  { category: 'Money', code: 'PAYDAY', desc: 'Get Para salary' },
+  { category: 'Needs', code: 'reliefallneeds', desc: 'Fill all needs' },
+  { category: 'Needs', code: 'reliefallneedsofallcharacters', desc: 'Fill all household needs' },
+  { category: 'Needs', code: 'reliefneed [ID]', desc: 'Restore one need' },
+  { category: 'Needs', code: 'setneed [ID] [1-10]', desc: 'Set need value' },
+  { category: 'Needs', code: 'decayneed [ID] [amt]', desc: 'Reduce a need' },
+  { category: 'Needs', code: 'showneeds', desc: 'Show all need values' },
+  { category: 'Skills', code: 'setskilllevel [skill] [lv]', desc: 'Set skill level' },
+  { category: 'Skills', code: 'levelupskill [skill]', desc: 'Add one skill level' },
+  { category: 'Skills', code: 'showskills', desc: 'Show all skills' },
+  { category: 'Skills', code: 'leveluppersonality', desc: 'Level up personality' },
+  { category: 'Career', code: 'clearalloccupations', desc: 'Remove all jobs' },
+  { category: 'Career', code: 'endworkday', desc: 'End work & collect pay' },
+  { category: 'Career', code: 'clearstrikes', desc: 'Remove work strikes' },
+  { category: 'Career', code: 'upgradeoccupations', desc: 'Unlock job upgrades' },
+  { category: 'Career', code: 'addvacationday', desc: 'Add vacation day' },
+  { category: 'Career', code: 'unenrollfromalloccupations', desc: 'Quit all jobs' },
+  { category: 'Character', code: 'editcharacter', desc: 'Reopen character creator' },
+  { category: 'Character', code: 'setage [number]', desc: 'Set Para age' },
+  { category: 'Character', code: 'printage', desc: 'Show current age' },
+  { category: 'Character', code: 'showpersonalitytraits', desc: 'Show personality' },
+  { category: 'Character', code: 'resetpersonality', desc: 'Reset personality' },
+  { category: 'Character', code: 'showstatuseffects', desc: 'Show status effects' },
+  { category: 'Character', code: 'clearstatuseffects', desc: 'Clear status effects' },
+  { category: 'Character', code: 'gainstorycard', desc: 'Add story card' },
+  { category: 'Pregnancy', code: 'getpregnant [1-3]', desc: 'Make Para pregnant' },
+  { category: 'Pregnancy', code: 'givebirth', desc: 'Instant birth' },
+  { category: 'Pregnancy', code: 'makebabies', desc: 'Two Paras have baby' },
+  { category: 'Pregnancy', code: 'pregnantstatus', desc: 'Check pregnancy' },
+  { category: 'Aging', code: 'nextlifestage', desc: 'Advance life stage' },
+  { category: 'Aging', code: 'previouslifestage', desc: 'Revert life stage' },
+  { category: 'Aging', code: 'nextgrowthspurt', desc: 'Trigger growth spurt' },
+  { category: 'Aging', code: 'previousgrowthspurt', desc: 'Revert growth spurt' },
+  { category: 'Aging', code: 'killcharacter', desc: 'Kill selected Para' },
+  { category: 'Aging', code: 'reviveallselectedcharacters', desc: 'Revive Paras' },
+  { category: 'Household', code: 'addselectedcharacterstohousehold', desc: 'Add NPC to household' },
+  { category: 'Household', code: 'createcharacter [name]', desc: 'Create a Para' },
+  { category: 'Household', code: 'kickselectedcharactersfromhousehold', desc: 'Remove from household' },
+  { category: 'Household', code: 'showcharacterrelationships', desc: 'Show relationships' },
+  { category: 'Household', code: 'becomeacquaintancewitheveryone', desc: 'Know everyone' },
+  { category: 'Time', code: 'sethour [hour]', desc: 'Set time to hour' },
+  { category: 'Time', code: 'advanceday', desc: 'Skip 24 hours' },
+  { category: 'Time', code: 'advancehour', desc: 'Skip 1 hour' },
+  { category: 'Time', code: 'skipto5minutesbeforework', desc: 'Jump before work' },
+  { category: 'Items', code: 'additemtoinventory [ID]', desc: 'Add item' },
+  { category: 'Items', code: 'printinventory', desc: 'Show inventory' },
+  { category: 'Items', code: 'clearinventory', desc: 'Clear inventory' },
+  { category: 'Items', code: 'repairallitems', desc: 'Repair all objects' },
+  { category: 'Items', code: 'unspoilallitems', desc: 'Fresh food' },
+  { category: 'Items', code: 'showiteminfos', desc: 'Show item IDs' },
+  { category: 'Utility', code: 'completecurrentwants', desc: 'Complete all wants' },
+  { category: 'Utility', code: 'clearwantcooldowns', desc: 'Clear want cooldowns' },
+  { category: 'Utility', code: 'extinguishallfires', desc: 'Put out fires' },
+  { category: 'Utility', code: 'unstuck', desc: 'Fix stuck Para' },
+  { category: 'Utility', code: 'unstuckall', desc: 'Fix all Paras' },
+  { category: 'Utility', code: 'save', desc: 'Save game' },
+  { category: 'Utility', code: 'zipsavefile', desc: 'Backup save' },
+  { category: 'Debug', code: 'fps', desc: 'Show FPS' },
+  { category: 'Debug', code: 'capfps [number]', desc: 'Cap frame rate' },
+  { category: 'Debug', code: 'benchmarkfps', desc: 'FPS benchmark' },
+  { category: 'Debug', code: 'fullscreen', desc: 'Fullscreen mode' },
+  { category: 'Debug', code: 'windowed', desc: 'Windowed mode' },
+  { category: 'Debug', code: 'showcharacterposition', desc: 'Show coordinates' },
+  { category: 'Debug', code: 'warpcharacter [x,y,z]', desc: 'Teleport Para' },
+  { category: 'Debug', code: 'countitems', desc: 'Count all items' },
+  { category: 'Fun', code: 'BEAR', desc: 'ASCII bear art' },
+  { category: 'Fun', code: 'CAT', desc: 'Cat image' },
+  { category: 'Fun', code: 'EIGHTBALL', desc: 'Magic 8 Ball' },
+  { category: 'Fun', code: 'SPIN [chance]', desc: 'Spin wheel' },
+  { category: 'Fun', code: 'RAGEQUIT', desc: 'Exit game' },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many cheat codes are in Paralives?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Paralives has 76+ cheat codes across 13 categories including money, needs, skills, career, character editing, pregnancy, aging, household, time control, items, utility, debug, and fun Easter eggs." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the most useful cheat in Paralives?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The most useful Paralives cheats are: reliefallneeds (fill all needs), setmoney (set exact money), setskilllevel (max skills), and unstuck (fix stuck Paras)." }
+    }
+  ]
+};
+
+const relatedPages = [
+  { title: 'Money Cheats', href: '/money-cheats', desc: 'Detailed money guide' },
+  { title: 'Needs Cheats', href: '/needs-cheats', desc: 'Detailed needs guide' },
+  { title: 'Console Commands', href: '/console-commands', desc: 'How to use the console' },
+  { title: 'WeMod Trainer', href: '/wemod-trainer', desc: 'WeMod alternatives' },
+];
+---
+
+<Layout
+  title="Cheat Codes"
+  fullTitle="Paralives Cheat Codes 2026 - Complete Quick Reference (76+ Codes) | Paralives Cheats"
+  description="Complete list of all Paralives cheat codes in one table. 76+ codes for money, needs, skills, pregnancy, career, and more. Quick reference for the 2026 Early Access."
+  canonicalPath="/cheat-codes"
+  schema={[faqSchema]}
+>
+  <Breadcrumb items={[
+    { name: 'Home', href: '/' },
+    { name: 'Cheat Codes' }
+  ]} />
+
+  <header class="max-w-7xl mx-auto px-6 py-16 md:py-24 text-center">
+    <p class="text-sm font-bold text-gray-400 mb-4 uppercase tracking-wider">Updated: June 2026</p>
+    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6">
+      All Paralives <span class="bg-[#e11d48] text-white px-3 py-1 border-[3px] border-black inline-block rotate-[-1deg]">Cheat Codes</span>
+    </h1>
+    <p class="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed font-medium">
+      The complete quick reference list of all 76+ Paralives cheat codes. Find any cheat code fast.
+    </p>
+  </header>
+
+  <section class="py-16 bg-white border-y-[3px] border-black">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="overflow-x-auto">
+        <table class="w-full border-[3px] border-black rounded-2xl overflow-hidden brutal-shadow">
+          <thead class="bg-black text-white">
+            <tr>
+              <th class="p-3 text-left font-extrabold text-sm">Category</th>
+              <th class="p-3 text-left font-extrabold text-sm">Code</th>
+              <th class="p-3 text-left font-extrabold text-sm">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            {allCheats.map((cheat, i) => (
+              <tr class={i % 2 === 0 ? 'bg-white' : 'bg-[#F9FAFB]'}>
+                <td class="p-3 font-bold text-sm border-b border-gray-200">{cheat.category}</td>
+                <td class="p-3 border-b border-gray-200">
+                  <code class="bg-[#6366f1] text-white px-2 py-0.5 rounded-full text-xs font-bold">{cheat.code}</code>
+                </td>
+                <td class="p-3 text-gray-700 font-medium text-sm border-b border-gray-200">{cheat.desc}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-[#F9FAFB] border-b-[3px] border-black">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-extrabold mb-8 text-center">Related Paralives Cheats</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {relatedPages.map(page => (
+          <a href={page.href} class="bg-white border-[3px] border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
+            <h3 class="font-extrabold text-lg mb-1">{page.title}</h3>
+            <p class="text-gray-600 font-medium">{page.desc}</p>
+            <span class="font-bold text-[#6366f1] underline underline-offset-4 decoration-2 text-sm">View Cheats →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

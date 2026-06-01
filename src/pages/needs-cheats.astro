@@ -1,0 +1,150 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CheatTable from '../components/CheatTable.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const cheats = [
+  { code: 'reliefallneeds', desc: 'Instantly fill all needs for the selected Para.' },
+  { code: 'reliefallneedsofallcharacters', desc: 'Restore all needs for every Para in the household.' },
+  { code: 'reliefneed [NeedID]', desc: 'Fully restore one specific need. Example: reliefneed Hunger' },
+  { code: 'setneed [NeedID] [1-10]', desc: 'Set a specific need to a value. Example: setneed Sleep 10' },
+  { code: 'decayneed [NeedID] [amount]', desc: 'Reduce a need by a value. Example: decayneed Hygiene 2' },
+  { code: 'showneeds', desc: 'Display all current need values for the selected Para.' },
+];
+
+const faqs = [
+  { q: 'How do I fill all needs instantly?', a: 'Type "reliefallneeds" to fill all needs for the selected Para. Use "reliefallneedsofallcharacters" to fill needs for every Para in the household at once.' },
+  { q: 'What need IDs can I use?', a: 'Reported need IDs include: Affection, Bathroom, Fun, Grump, Hunger, Hygiene, Peace, Sleep, MeTime, EnergySurplus, GetAwayFromFire, and NeedToMove. Use "showneeds" to see current values.' },
+  { q: 'How do I set a specific need to a value?', a: 'Use "setneed [NeedID] [1-10]" — for example, "setneed Sleep 10" sets Sleep to maximum. The value range is 1-10.' },
+  { q: 'Can I decrease a need?', a: 'Yes! Use "decayneed [NeedID] [amount]" to reduce a need. For example, "decayneed Hygiene 2" reduces Hygiene by 2 points.' },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+  }))
+};
+
+const relatedPages = [
+  { title: 'Money Cheats', href: '/money-cheats', desc: 'Get unlimited Paradimes' },
+  { title: 'Skill Cheats', href: '/skill-cheats', desc: 'Max out any skill' },
+  { title: 'Teleport Cheats', href: '/teleport-cheats', desc: 'Teleport anywhere' },
+  { title: 'All Cheats', href: '/#cheats', desc: 'Browse all 76+ cheats' },
+];
+---
+
+<Layout
+  title="Needs Cheats"
+  fullTitle="Paralives Needs Cheats 2026 - reliefallneeds & All Need Codes | Paralives Cheats"
+  description="All Paralives needs cheats: reliefallneeds, setneed, reliefneed, decayneed, showneeds. Fill all needs instantly or control individual needs."
+  canonicalPath="/needs-cheats"
+  schema={[faqSchema]}
+>
+  <Breadcrumb items={[
+    { name: 'Home', href: '/' },
+    { name: 'Needs Cheats' }
+  ]} />
+
+  <header class="max-w-7xl mx-auto px-6 py-16 md:py-24 text-center">
+    <p class="text-sm font-bold text-gray-400 mb-4 uppercase tracking-wider">Updated: June 2026</p>
+    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6">
+      Paralives <span class="bg-[#f59e0b] text-white px-3 py-1 border-[3px] border-black inline-block rotate-[-1deg]">Needs Cheats</span>
+    </h1>
+    <p class="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed font-medium mb-6">
+      Fill all needs instantly or control individual needs with Paralives needs cheats. Use reliefallneeds, setneed, and more to keep your Paras happy.
+    </p>
+    <p class="text-lg text-gray-500 font-bold">
+      Press <span class="bg-[#FFD54F] px-2 border-2 border-black">Ctrl + F1</span> to open the console, then type any code below.
+    </p>
+  </header>
+
+  <section class="py-16 bg-white border-y-[3px] border-black">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-extrabold mb-2">All Needs Cheat Codes</h2>
+      <p class="text-gray-600 font-medium mb-8">Click any code to copy it to your clipboard, then paste into the console.</p>
+      <CheatTable cheats={cheats} color="bg-[#f59e0b]" />
+
+      <div class="mt-12 bg-[#FEF3C7] border-[3px] border-black rounded-3xl p-8 brutal-shadow">
+        <h3 class="text-2xl font-extrabold mb-4">🔋 Needs Cheat Tips</h3>
+        <ul class="space-y-3 text-gray-800 font-medium">
+          <li class="flex items-start gap-3">
+            <span class="text-xl">⚡</span>
+            <span><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">reliefallneeds</code> is the fastest way to fill all needs at once.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-xl">👨‍👩‍👧‍👦</span>
+            <span>Use <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">reliefallneedsofallcharacters</code> to fix the entire household in one command.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-xl">📋</span>
+            <span>Run <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">showneeds</code> first to see all need IDs and current values.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-xl">🎚️</span>
+            <span><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">setneed Sleep 10</code> sets Sleep to max. Values range from 1 (empty) to 10 (full).</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-[#F9FAFB] border-b-[3px] border-black">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-extrabold mb-8 text-center">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {faqs.map(faq => (
+          <div class="border-[3px] border-black rounded-2xl p-6 bg-white brutal-shadow">
+            <h3 class="text-xl font-extrabold mb-2">{faq.q}</h3>
+            <p class="text-gray-700 font-medium text-lg">{faq.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-[#E0F2FE] border-b-[3px] border-black">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-extrabold mb-8 text-center">Related Paralives Cheats</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {relatedPages.map(page => (
+          <a href={page.href} class="bg-white border-[3px] border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
+            <h3 class="font-extrabold text-lg mb-1">{page.title}</h3>
+            <p class="text-gray-600 font-medium">{page.desc}</p>
+            <span class="font-bold text-[#6366f1] underline underline-offset-4 decoration-2 text-sm">View Cheats →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const code = btn.getAttribute('data-code');
+      if (!code) return;
+      try {
+        await navigator.clipboard.writeText(code);
+      } catch {
+        const ta = document.createElement('textarea');
+        ta.value = code;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+      }
+      const copyIcon = btn.querySelector('.copy-icon');
+      const checkIcon = btn.querySelector('.check-icon');
+      copyIcon.classList.add('hidden');
+      checkIcon.classList.remove('hidden');
+      setTimeout(() => {
+        copyIcon.classList.remove('hidden');
+        checkIcon.classList.add('hidden');
+      }, 1500);
+    });
+  });
+</script>

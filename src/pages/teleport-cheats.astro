@@ -1,0 +1,148 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CheatTable from '../components/CheatTable.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const cheats = [
+  { code: 'warpcharacter [x,y,z]', desc: 'Teleport the selected Para to specific coordinates. Example: warpcharacter 100,50,200' },
+  { code: 'showcharacterposition', desc: 'Show the selected Para\'s current coordinates and lot data.' },
+  { code: 'unstuck', desc: 'Fix the selected Para\'s location and pathing if they\'re stuck.' },
+  { code: 'unstuckall', desc: 'Fix pathing for all Parafolks in the world.' },
+];
+
+const faqs = [
+  { q: 'How do I teleport in Paralives?', a: 'Use "warpcharacter [x,y,z]" to teleport the selected Para to specific coordinates. First use "showcharacterposition" to see current coordinates, then warp to your desired location.' },
+  { q: 'How do I find my Para\'s current position?', a: 'Type "showcharacterposition" to display the selected Para\'s X, Y, Z coordinates and lot information.' },
+  { q: 'What if my Para is stuck?', a: 'Use "unstuck" to fix the selected Para\'s pathing. If multiple Paras are stuck, use "unstuckall" to fix everyone in the world at once.' },
+  { q: 'Can I teleport to a specific lot?', a: 'You need to know the lot\'s coordinates. Use "showcharacterposition" while on a lot to learn its coordinates, then use "warpcharacter" to go there from anywhere.' },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+  }))
+};
+
+const relatedPages = [
+  { title: 'Needs Cheats', href: '/needs-cheats', desc: 'Fill all needs instantly' },
+  { title: 'Money Cheats', href: '/money-cheats', desc: 'Get unlimited Paradimes' },
+  { title: 'Console Commands', href: '/console-commands', desc: 'How to use the console' },
+  { title: 'All Cheats', href: '/#cheats', desc: 'Browse all 76+ cheats' },
+];
+---
+
+<Layout
+  title="Teleport Cheats"
+  fullTitle="Paralives Teleport Cheats 2026 - warpcharacter & Location Codes | Paralives Cheats"
+  description="All Paralives teleport cheats: warpcharacter, showcharacterposition, unstuck, unstuckall. Teleport your Para anywhere and fix stuck characters."
+  canonicalPath="/teleport-cheats"
+  schema={[faqSchema]}
+>
+  <Breadcrumb items={[
+    { name: 'Home', href: '/' },
+    { name: 'Teleport Cheats' }
+  ]} />
+
+  <header class="max-w-7xl mx-auto px-6 py-16 md:py-24 text-center">
+    <p class="text-sm font-bold text-gray-400 mb-4 uppercase tracking-wider">Updated: June 2026</p>
+    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6">
+      Paralives <span class="bg-[#8b5cf6] text-white px-3 py-1 border-[3px] border-black inline-block rotate-[-1deg]">Teleport Cheats</span>
+    </h1>
+    <p class="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed font-medium mb-6">
+      Teleport your Para anywhere in Paralives with these location cheats. Use warpcharacter to move instantly, or unstuck to fix pathing issues.
+    </p>
+    <p class="text-lg text-gray-500 font-bold">
+      Press <span class="bg-[#FFD54F] px-2 border-2 border-black">Ctrl + F1</span> to open the console, then type any code below.
+    </p>
+  </header>
+
+  <section class="py-16 bg-white border-y-[3px] border-black">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-extrabold mb-2">All Teleport Cheat Codes</h2>
+      <p class="text-gray-600 font-medium mb-8">Click any code to copy it to your clipboard, then paste into the console.</p>
+      <CheatTable cheats={cheats} color="bg-[#8b5cf6]" />
+
+      <div class="mt-12 bg-[#EDE9FE] border-[3px] border-black rounded-3xl p-8 brutal-shadow">
+        <h3 class="text-2xl font-extrabold mb-4">📍 Teleport Cheat Tips</h3>
+        <ul class="space-y-3 text-gray-800 font-medium">
+          <li class="flex items-start gap-3">
+            <span class="text-xl">🗺️</span>
+            <span>Use <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">showcharacterposition</code> first to see your current coordinates.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-xl">✈️</span>
+            <span>Coordinates use X,Y,Z format. Example: <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">warpcharacter 100,50,200</code></span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-xl">🔧</span>
+            <span>If a Para gets stuck, <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">unstuck</code> fixes their pathing without teleporting.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-xl">🌐</span>
+            <span><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">unstuckall</code> fixes every Para in the world at once — great for mass pathing bugs.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-[#F9FAFB] border-b-[3px] border-black">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-extrabold mb-8 text-center">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {faqs.map(faq => (
+          <div class="border-[3px] border-black rounded-2xl p-6 bg-white brutal-shadow">
+            <h3 class="text-xl font-extrabold mb-2">{faq.q}</h3>
+            <p class="text-gray-700 font-medium text-lg">{faq.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-[#E0F2FE] border-b-[3px] border-black">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-extrabold mb-8 text-center">Related Paralives Cheats</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {relatedPages.map(page => (
+          <a href={page.href} class="bg-white border-[3px] border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
+            <h3 class="font-extrabold text-lg mb-1">{page.title}</h3>
+            <p class="text-gray-600 font-medium">{page.desc}</p>
+            <span class="font-bold text-[#6366f1] underline underline-offset-4 decoration-2 text-sm">View Cheats →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const code = btn.getAttribute('data-code');
+      if (!code) return;
+      try {
+        await navigator.clipboard.writeText(code);
+      } catch {
+        const ta = document.createElement('textarea');
+        ta.value = code;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+      }
+      const copyIcon = btn.querySelector('.copy-icon');
+      const checkIcon = btn.querySelector('.check-icon');
+      copyIcon.classList.add('hidden');
+      checkIcon.classList.remove('hidden');
+      setTimeout(() => {
+        copyIcon.classList.remove('hidden');
+        checkIcon.classList.add('hidden');
+      }, 1500);
+    });
+  });
+</script>

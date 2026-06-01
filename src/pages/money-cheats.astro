@@ -1,0 +1,151 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CheatTable from '../components/CheatTable.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const cheats = [
+  { code: 'PIGGYBANK', desc: 'Add 1,000 Paradimes to your household funds.' },
+  { code: 'MAKEITRAIN', desc: 'Add 10,000 Paradimes to your household funds.' },
+  { code: 'JACKPOT', desc: 'Add 50,000 Paradimes to your household funds.' },
+  { code: 'LOTTERY', desc: 'Receive a random amount between 1 and 100,000 Paradimes.' },
+  { code: 'setmoney [amount]', desc: 'Set household funds to an exact amount. Example: setmoney 500000' },
+  { code: 'printmoney [amount]', desc: 'Add a specified amount without replacing your balance. Example: printmoney 20000' },
+  { code: 'PAYDAY', desc: 'Receive the salary amount of the currently selected Para.' },
+];
+
+const faqs = [
+  { q: 'What is the fastest money cheat in Paralives?', a: 'The fastest Paralives money cheat is JACKPOT, which adds 50,000 Paradimes instantly. For more, use MAKEITRAIN (+10,000) or setmoney to set an exact amount.' },
+  { q: 'How do I set an exact money amount in Paralives?', a: 'Use the cheat "setmoney [amount]" — for example, "setmoney 500000" sets your household funds to exactly 500,000 Paradimes. This replaces your current balance.' },
+  { q: 'What is the difference between setmoney and printmoney?', a: 'setmoney replaces your balance with the exact amount you specify. printmoney adds to your current balance. For example, if you have 1,000 and use "printmoney 5000", you\'ll have 6,000. With "setmoney 5000", you\'d have exactly 5,000.' },
+  { q: 'Can I get money from a Para\'s salary?', a: 'Yes! Use the PAYDAY cheat to receive the salary of the currently selected Para. This is a great way to earn money quickly without going to work.' },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+  }))
+};
+
+const relatedPages = [
+  { title: 'Needs Cheats', href: '/needs-cheats', desc: 'Fill all needs instantly' },
+  { title: 'Skill Cheats', href: '/skill-cheats', desc: 'Max out any skill' },
+  { title: 'Career Cheats', href: '/#career', desc: 'Advance your career' },
+  { title: 'All Cheats', href: '/#cheats', desc: 'Browse all 76+ cheats' },
+];
+---
+
+<Layout
+  title="Money Cheats"
+  fullTitle="Paralives Money Cheats 2026 - All Money Cheat Codes | Paralives Cheats"
+  description="All Paralives money cheats: PIGGYBANK, MAKEITRAIN, JACKPOT, setmoney, printmoney, and PAYDAY. Get unlimited Paradimes with these tested cheat codes."
+  canonicalPath="/money-cheats"
+  schema={[faqSchema]}
+>
+  <Breadcrumb items={[
+    { name: 'Home', href: '/' },
+    { name: 'Money Cheats' }
+  ]} />
+
+  <header class="max-w-7xl mx-auto px-6 py-16 md:py-24 text-center">
+    <p class="text-sm font-bold text-gray-400 mb-4 uppercase tracking-wider">Updated: June 2026</p>
+    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6">
+      Paralives <span class="bg-[#22c55e] text-white px-3 py-1 border-[3px] border-black inline-block rotate-[-1deg]">Money Cheats</span>
+    </h1>
+    <p class="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed font-medium mb-6">
+      Get unlimited Paradimes with these Paralives money cheats. From PIGGYBANK to JACKPOT, here are all the cheat codes for instant wealth in the 2026 Early Access.
+    </p>
+    <p class="text-lg text-gray-500 font-bold">
+      Press <span class="bg-[#FFD54F] px-2 border-2 border-black">Ctrl + F1</span> to open the console, then type any code below.
+    </p>
+  </header>
+
+  <section class="py-16 bg-white border-y-[3px] border-black">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-extrabold mb-2">All Money Cheat Codes</h2>
+      <p class="text-gray-600 font-medium mb-8">Click any code to copy it to your clipboard, then paste into the console.</p>
+      <CheatTable cheats={cheats} color="bg-[#22c55e]" />
+
+      <div class="mt-12 bg-[#FFD54F] border-[3px] border-black rounded-3xl p-8 brutal-shadow">
+        <h3 class="text-2xl font-extrabold mb-4">💡 Money Cheat Tips</h3>
+        <ul class="space-y-3 text-gray-800 font-medium">
+          <li class="flex items-start gap-3">
+            <span class="text-xl">💰</span>
+            <span>Use <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">setmoney</code> to set an exact amount, or <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">printmoney</code> to add to your current balance.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-xl">🎰</span>
+            <span>The LOTTERY cheat gives a random amount — great for a surprise windfall!</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-xl">💼</span>
+            <span>PAYDAY gives your Para's salary without going to work. Select the highest-paid Para first.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-xl">⚠️</span>
+            <span>Very large numbers (over 999,999) may cause UI display issues. Use moderate amounts.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-[#F9FAFB] border-b-[3px] border-black">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-extrabold mb-8 text-center">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {faqs.map(faq => (
+          <div class="border-[3px] border-black rounded-2xl p-6 bg-white brutal-shadow">
+            <h3 class="text-xl font-extrabold mb-2">{faq.q}</h3>
+            <p class="text-gray-700 font-medium text-lg">{faq.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-[#E0F2FE] border-b-[3px] border-black">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-extrabold mb-8 text-center">Related Paralives Cheats</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {relatedPages.map(page => (
+          <a href={page.href} class="bg-white border-[3px] border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
+            <h3 class="font-extrabold text-lg mb-1">{page.title}</h3>
+            <p class="text-gray-600 font-medium">{page.desc}</p>
+            <span class="font-bold text-[#6366f1] underline underline-offset-4 decoration-2 text-sm">View Cheats →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const code = btn.getAttribute('data-code');
+      if (!code) return;
+      try {
+        await navigator.clipboard.writeText(code);
+      } catch {
+        const ta = document.createElement('textarea');
+        ta.value = code;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+      }
+      const copyIcon = btn.querySelector('.copy-icon');
+      const checkIcon = btn.querySelector('.check-icon');
+      copyIcon.classList.add('hidden');
+      checkIcon.classList.remove('hidden');
+      setTimeout(() => {
+        copyIcon.classList.remove('hidden');
+        checkIcon.classList.add('hidden');
+      }, 1500);
+    });
+  });
+</script>

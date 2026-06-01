@@ -1,0 +1,141 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const faqs = [
+  { q: 'How do I open the cheat console in Paralives?', a: 'Press Ctrl + F1 or Ctrl + Shift + C on Windows. On Mac, try Ctrl + Fn + F1. The console will appear at the top or bottom of the screen.' },
+  { q: 'Do I need to enable cheats first?', a: 'No! Unlike some games, Paralives does not require any special "enable cheats" command. Just open the console and start typing.' },
+  { q: 'Are cheat codes case-sensitive?', a: 'No. Paralives cheat codes are not case-sensitive. You can type "JACKPOT", "jackpot", or "Jackpot" — they all work.' },
+  { q: 'Do I need a leading slash?', a: 'No. Unlike some games, Paralives cheats do not need a leading slash or any special prefix. Just type the command directly.' },
+  { q: 'How do I see all available commands?', a: 'Type "help" or "cheatlist" in the console to see all available commands for your current version of Paralives.' },
+  { q: 'Can I repeat a previous command?', a: 'Yes! Click on a command\'s confirmation message in the console to quickly repeat it without retyping.' },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+  }))
+};
+
+const relatedPages = [
+  { title: 'All Cheats', href: '/#cheats', desc: 'Browse all 76+ cheat codes' },
+  { title: 'Cheat Codes', href: '/cheat-codes', desc: 'Quick reference table' },
+  { title: 'Money Cheats', href: '/money-cheats', desc: 'Get unlimited Paradimes' },
+  { title: 'WeMod Trainer', href: '/wemod-trainer', desc: 'WeMod alternatives' },
+];
+---
+
+<Layout
+  title="Console Commands"
+  fullTitle="Paralives Console Commands 2026 - How to Open & Use Cheats | Paralives Cheats"
+  description="Complete guide to Paralives console commands. Learn how to open the console, enter cheat codes, and use all available commands in the 2026 Early Access."
+  canonicalPath="/console-commands"
+  schema={[faqSchema]}
+>
+  <Breadcrumb items={[
+    { name: 'Home', href: '/' },
+    { name: 'Console Commands' }
+  ]} />
+
+  <header class="max-w-7xl mx-auto px-6 py-16 md:py-24 text-center">
+    <p class="text-sm font-bold text-gray-400 mb-4 uppercase tracking-wider">Updated: June 2026</p>
+    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6">
+      Paralives <span class="bg-[#3b82f6] text-white px-3 py-1 border-[3px] border-black inline-block rotate-[-1deg]">Console Commands</span>
+    </h1>
+    <p class="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed font-medium mb-6">
+      Everything you need to know about the Paralives cheat console. How to open it, how to use it, and all the commands available.
+    </p>
+  </header>
+
+  <section class="py-16 bg-white border-y-[3px] border-black">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-extrabold mb-8">How to Open the Console</h2>
+      <div class="space-y-6 mb-12">
+        <div class="flex items-start gap-4 bg-[#F9FAFB] border-[3px] border-black rounded-2xl p-6 brutal-shadow">
+          <span class="w-12 h-12 bg-[#3b82f6] text-white rounded-full flex items-center justify-center font-extrabold flex-shrink-0 text-xl">1</span>
+          <div>
+            <h3 class="font-extrabold text-xl mb-2">Open the Cheat Console</h3>
+            <p class="text-gray-700 font-medium text-lg mb-2">Press one of these keyboard shortcuts:</p>
+            <ul class="space-y-2 text-gray-700 font-medium">
+              <li>• <strong>Windows:</strong> <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">Ctrl + F1</code> or <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">Ctrl + Shift + C</code></li>
+              <li>• <strong>Mac:</strong> <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">Ctrl + Fn + F1</code></li>
+            </ul>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 bg-[#F9FAFB] border-[3px] border-black rounded-2xl p-6 brutal-shadow">
+          <span class="w-12 h-12 bg-[#3b82f6] text-white rounded-full flex items-center justify-center font-extrabold flex-shrink-0 text-xl">2</span>
+          <div>
+            <h3 class="font-extrabold text-xl mb-2">Type a Command</h3>
+            <p class="text-gray-700 font-medium text-lg">Type any cheat code and press Enter. Commands are not case-sensitive and don't need a leading slash. Just type and go!</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 bg-[#F9FAFB] border-[3px] border-black rounded-2xl p-6 brutal-shadow">
+          <span class="w-12 h-12 bg-[#3b82f6] text-white rounded-full flex items-center justify-center font-extrabold flex-shrink-0 text-xl">3</span>
+          <div>
+            <h3 class="font-extrabold text-xl mb-2">See All Available Commands</h3>
+            <p class="text-gray-700 font-medium text-lg">Type <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">help</code> or <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">cheatlist</code> to see every command available in your version.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="text-3xl font-extrabold mb-8">Console Tips</h2>
+      <div class="bg-[#E0F2FE] border-[3px] border-black rounded-3xl p-8 brutal-shadow">
+        <ul class="space-y-4 text-gray-800 font-medium text-lg">
+          <li class="flex items-start gap-3">
+            <span class="text-xl">💡</span>
+            <span><strong>Not case-sensitive:</strong> "JACKPOT", "jackpot", and "Jackpot" all work the same way.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-xl">💡</span>
+            <span><strong>No leading slash needed:</strong> Just type the command directly — no "/" or "!" prefix required.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-xl">💡</span>
+            <span><strong>Click to repeat:</strong> Click a command's confirmation message in the console to quickly repeat it.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-xl">💡</span>
+            <span><strong>Select first:</strong> Many commands apply to the "selected" Para. Click on a Para before typing the command.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-xl">💡</span>
+            <span><strong>Save before experimenting:</strong> Use <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">save</code> or <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">zipsavefile</code> before trying destructive commands.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-[#F9FAFB] border-b-[3px] border-black">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-extrabold mb-8 text-center">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {faqs.map(faq => (
+          <div class="border-[3px] border-black rounded-2xl p-6 bg-white brutal-shadow">
+            <h3 class="text-xl font-extrabold mb-2">{faq.q}</h3>
+            <p class="text-gray-700 font-medium text-lg">{faq.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-[#E0F2FE] border-b-[3px] border-black">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-extrabold mb-8 text-center">Related Paralives Cheats</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {relatedPages.map(page => (
+          <a href={page.href} class="bg-white border-[3px] border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
+            <h3 class="font-extrabold text-lg mb-1">{page.title}</h3>
+            <p class="text-gray-600 font-medium">{page.desc}</p>
+            <span class="font-bold text-[#6366f1] underline underline-offset-4 decoration-2 text-sm">View Cheats →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

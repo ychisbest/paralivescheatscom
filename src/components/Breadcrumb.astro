@@ -1,0 +1,40 @@
+---
+interface Crumb {
+  name: string;
+  href?: string;
+}
+
+interface Props {
+  items: Crumb[];
+}
+
+const { items } = Astro.props;
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": items.map((item, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": item.name,
+    ...(item.href ? { "item": `https://paralives-cheats.com${item.href}` } : {})
+  }))
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+<nav class="max-w-7xl mx-auto px-6 pt-8" aria-label="Breadcrumb">
+  <ol class="flex flex-wrap items-center gap-1 text-sm font-bold text-gray-500">
+    {items.map((item, index) => (
+      <li class="flex items-center gap-1">
+        {index > 0 && <span class="text-gray-300">/</span>}
+        {item.href ? (
+          <a href={item.href} class="hover:text-[#6366f1] transition-colors">{item.name}</a>
+        ) : (
+          <span class="text-gray-900">{item.name}</span>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>

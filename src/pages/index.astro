@@ -157,15 +157,48 @@ const latestGuides = [
   { title: 'Building Tips & Tricks', description: 'Master the build mode with tips on grid placement, terrain tools, and creative layouts. Combine these tips with our Paralives cheats for the best experience.', href: '/building-tips' },
   { title: 'Gameplay Guides', description: 'From creating your first Para to mastering careers and relationships. Pair these guides with Paralives cheats for maximum fun.', href: '/gameplay-guides' },
 ];
+
+const webSiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Paralives Cheats",
+  "url": "https://paralives-cheats.com",
+  "description": "The most complete collection of Paralives cheats for the 2026 Early Access release.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://paralives-cheats.com/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.a
+    }
+  }))
+};
 ---
 
-<Layout title="Home">
+<Layout
+  title="Home"
+  fullTitle="Paralives Cheats 2026 - All Cheat Codes (Money, Skills, Pregnancy) | Paralives Cheats"
+  description="The most complete collection of Paralives cheats for the 2026 Early Access. Browse all cheat codes for money, needs, skills, careers, pregnancy, and more. Click to copy and use instantly."
+  canonicalPath="/"
+  schema={[webSiteSchema, faqSchema]}
+>
   <!-- Hero Section -->
   <header class="max-w-7xl mx-auto px-6 py-20 md:py-32 text-center">
     <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.1] mb-8">
       All <span class="bg-[#6366f1] text-white px-3 py-1 border-[3px] border-black inline-block rotate-[-1deg]">Paralives</span> Cheats<br>
       <span class="text-gray-600">in One Place.</span>
     </h1>
+    <p class="text-sm font-bold text-gray-400 mb-4 uppercase tracking-wider">Updated: June 2026</p>
     <p class="text-xl md:text-2xl text-gray-700 max-w-2xl mx-auto leading-relaxed font-medium mb-4">
       The most complete collection of Paralives cheats for the 2026 Early Access release. Click to copy any cheat code, paste it into the console, and enjoy. All Paralives cheats are tested and ready to use.
     </p>
@@ -303,6 +336,46 @@ const latestGuides = [
             <span class="font-bold text-[#6366f1] underline underline-offset-4 decoration-2">Read Guide →</span>
           </a>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Cheat Categories -->
+  <section class="py-24 bg-white border-b-[3px] border-black">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-extrabold text-center mb-4">Browse by <span class="bg-[#22c55e] text-white px-2 border-2 border-black inline-block">Category</span></h2>
+      <p class="text-center text-gray-600 font-medium text-lg max-w-2xl mx-auto mb-12">Find specific Paralives cheats for what you need.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <a href="/money-cheats" class="bg-[#F0FDF4] border-[3px] border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
+          <div class="text-3xl mb-2">💰</div>
+          <h3 class="font-extrabold text-lg mb-1">Money Cheats</h3>
+          <p class="text-gray-600 font-medium text-sm">PIGGYBANK, JACKPOT, setmoney & more</p>
+        </a>
+        <a href="/needs-cheats" class="bg-[#FFFBEB] border-[3px] border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
+          <div class="text-3xl mb-2">🔋</div>
+          <h3 class="font-extrabold text-lg mb-1">Needs Cheats</h3>
+          <p class="text-gray-600 font-medium text-sm">reliefallneeds, setneed & more</p>
+        </a>
+        <a href="/skill-cheats" class="bg-[#FAF5FF] border-[3px] border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
+          <div class="text-3xl mb-2">⭐</div>
+          <h3 class="font-extrabold text-lg mb-1">Skill Cheats</h3>
+          <p class="text-gray-600 font-medium text-sm">setskilllevel, levelupskill & more</p>
+        </a>
+        <a href="/pregnancy-cheats" class="bg-[#FDF2F8] border-[3px] border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
+          <div class="text-3xl mb-2">👶</div>
+          <h3 class="font-extrabold text-lg mb-1">Pregnancy Cheats</h3>
+          <p class="text-gray-600 font-medium text-sm">getpregnant, givebirth & more</p>
+        </a>
+        <a href="/teleport-cheats" class="bg-[#F5F3FF] border-[3px] border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
+          <div class="text-3xl mb-2">📍</div>
+          <h3 class="font-extrabold text-lg mb-1">Teleport Cheats</h3>
+          <p class="text-gray-600 font-medium text-sm">warpcharacter, unstuck & more</p>
+        </a>
+        <a href="/wemod-trainer" class="bg-[#EEF2FF] border-[3px] border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
+          <div class="text-3xl mb-2">🎮</div>
+          <h3 class="font-extrabold text-lg mb-1">WeMod Trainer</h3>
+          <p class="text-gray-600 font-medium text-sm">No WeMod needed — use built-in cheats</p>
+        </a>
       </div>
     </div>
   </section>

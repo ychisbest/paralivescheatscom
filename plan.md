@@ -200,6 +200,38 @@ GSC 数据: 4次展示
 - 创建: seo-plan.md
 - 更新: skill/get_google_search_console.md（添加踩坑记录）
 
+### 迭代 1 - 2026-06-01（全量执行）
+- 完成: T1-T20 全部任务
+- **Phase 1 - 技术 SEO:**
+  - T1: sitemap.xml — 已有 @astrojs/sitemap 集成，无需额外操作 ✓
+  - T2: robots.txt — 已存在于 public/robots.txt ✓
+  - T3: 添加结构化数据 — WebSite Schema + FAQ Schema（首页 + 所有子页面）✓
+  - T4: 添加 canonical URL + Open Graph + Twitter Card 标签 ✓
+- **Phase 2 - 内容扩展:**
+  - T5: 创建 /money-cheats 页面 ✓
+  - T6: 创建 /pregnancy-cheats 页面 ✓
+  - T7: 创建 /skill-cheats 页面 ✓
+  - T8: 创建 /wemod-trainer 页面 ✓
+  - T9: 创建 /teleport-cheats 页面 ✓
+  - T10: 创建 /needs-cheats 页面 ✓
+- **Phase 3 - 内容优化:**
+  - T11: 优化首页 Title 为 "Paralives Cheats 2026 - All Cheat Codes (Money, Skills, Pregnancy)" ✓
+  - T12: 添加面包屑导航 + BreadcrumbList Schema（所有子页面）✓
+  - T13: 添加内部链接策略 — 首页分类卡片 + 子页面相关链接 ✓
+  - T14: FAQ Schema Markup（首页 + 所有子页面）✓
+- **Phase 4 - 高级优化:**
+  - T15: 创建 /console-commands 页面 ✓
+  - T16: 创建 /cheat-codes 页面（完整速查表）✓
+  - T17: 创建 /paralives-kody 页面（波兰语）✓
+  - T18: 创建 /paralives-trucchi 页面（意大利语）✓
+  - T19: 添加 "Updated: June 2026" 标签（所有页面）✓
+  - T20: 创建 /paralives-cheats-pc 页面 ✓
+- **额外改进:**
+  - 创建可复用组件: CheatTable.astro, Breadcrumb.astro
+  - 更新 SiteHeader 添加 Cheat Codes 导航链接
+  - 更新 SiteFooter 添加所有子页面链接
+  - 构建成功: 19 个页面全部生成
+
 ---
 
 ## GSC 数据快照
