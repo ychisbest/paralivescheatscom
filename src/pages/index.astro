@@ -3,153 +3,169 @@ import Layout from '../layouts/Layout.astro';
 import heroImg from '../images/hero.png';
 
 const moneyCheats = [
-  { code: 'PIGGYBANK', desc: 'Add 1,000 Paradimes to your household funds.' },
-  { code: 'MAKEITRAIN', desc: 'Add 10,000 Paradimes to your household funds.' },
-  { code: 'JACKPOT', desc: 'Add 50,000 Paradimes to your household funds.' },
+  { code: 'SETMONEY', desc: 'Change household balance to a specified amount. Example: SETMONEY 20000' },
+  { code: 'PRINTMONEY', desc: 'Add Paradimes to your funds. Example: PRINTMONEY 20000' },
+  { code: 'PAYDAY', desc: 'Receive the salary of the selected Para.' },
+  { code: 'PIGGYBANK', desc: 'Add 1,000 Paradimes.' },
+  { code: 'MAKEITRAIN', desc: 'Add 10,000 Paradimes.' },
+  { code: 'JACKPOT', desc: 'Add 50,000 Paradimes.' },
   { code: 'LOTTERY', desc: 'Receive a random amount between 1 and 100,000 Paradimes.' },
-  { code: 'setmoney [amount]', desc: 'Set household funds to an exact amount. Example: setmoney 500000' },
-  { code: 'printmoney [amount]', desc: 'Add a specified amount without replacing your balance. Example: printmoney 20000' },
-  { code: 'PAYDAY', desc: 'Receive the salary amount of the currently selected Para.' },
-];
-
-const needsCheats = [
-  { code: 'reliefallneeds', desc: 'Instantly fill all needs for the selected Para.' },
-  { code: 'reliefallneedsofallcharacters', desc: 'Restore all needs for every Para in the household.' },
-  { code: 'reliefneed [NeedID]', desc: 'Fully restore one specific need. Example: reliefneed Hunger' },
-  { code: 'setneed [NeedID] [1-10]', desc: 'Set a specific need to a value. Example: setneed Sleep 10' },
-  { code: 'decayneed [NeedID] [amount]', desc: 'Reduce a need by a value. Example: decayneed Hygiene 2' },
-  { code: 'showneeds', desc: 'Display all current need values for the selected Para.' },
-];
-
-const skillCheats = [
-  { code: 'setskilllevel [skill] [level]', desc: 'Set a specific skill to a given level. Example: setskilllevel Cooking 10' },
-  { code: 'levelupskill [skill]', desc: 'Add one level to a skill. Example: levelupskill Programming' },
-  { code: 'showskills', desc: 'Show all current skill levels for the selected Para.' },
-  { code: 'leveluppersonality', desc: 'Level up the personality traits of the selected Para.' },
-];
-
-const careerCheats = [
-  { code: 'clearalloccupations', desc: 'Remove all occupation assignments from the selected Para.' },
-  { code: 'endworkday', desc: 'Immediately end the current work day and collect salary.' },
-  { code: 'clearstrikes', desc: 'Remove all work strikes from the selected Para.' },
-  { code: 'upgradeoccupations', desc: 'Unlock occupation upgrades for the selected Para.' },
-  { code: 'addvacationday', desc: 'Add a vacation day to the selected Para.' },
-  { code: 'unenrollfromalloccupations', desc: 'Quit all current jobs for the selected Para.' },
-];
-
-const characterCheats = [
-  { code: 'editcharacter', desc: 'Return to the character creator to edit the selected household.' },
-  { code: 'setage [number]', desc: 'Set the selected Para\'s age. Example: setage 32' },
-  { code: 'printage', desc: 'Print the selected Para\'s current age.' },
-  { code: 'showpersonalitytraits', desc: 'Show personality-related values for the selected Para.' },
-  { code: 'resetpersonality', desc: 'Reset personality to level 1.' },
-  { code: 'showstatuseffects', desc: 'Display current status effects on the selected Para.' },
-  { code: 'clearstatuseffects', desc: 'Clear all status effects from the selected Para.' },
-  { code: 'gainstorycard', desc: 'Add a story card to the selected Para.' },
-];
-
-const pregnancyCheats = [
-  { code: 'getpregnant [1-3]', desc: 'Make the selected Para pregnant. Optionally specify multiples. Example: getpregnant 2' },
-  { code: 'givebirth', desc: 'Make the selected pregnant Para give birth immediately.' },
-  { code: 'makebabies', desc: 'Make two selected Paras have a baby together.' },
-  { code: 'pregnantstatus', desc: 'Show pregnancy progress and status.' },
-];
-
-const agingCheats = [
-  { code: 'nextlifestage', desc: 'Advance the selected Para to the next life stage.' },
-  { code: 'previouslifestage', desc: 'Revert the selected Para to the previous life stage.' },
-  { code: 'nextgrowthspurt', desc: 'Trigger a growth spurt for infant or teen Paras.' },
-  { code: 'previousgrowthspurt', desc: 'Revert a growth spurt for infant or teen Paras.' },
-  { code: 'killcharacter', desc: 'Kill the selected Para. Warning: can cause game-over in single-person households.' },
-  { code: 'reviveallselectedcharacters', desc: 'Revive all selected Paras.' },
-];
-
-const householdCheats = [
-  { code: 'addselectedcharacterstohousehold', desc: 'Add selected NPC Paras to your current household.' },
-  { code: 'createcharacter [name]', desc: 'Create a Para from a model GUID or display name. Example: createcharacter HumanAdult' },
-  { code: 'kickselectedcharactersfromhousehold', desc: 'Remove selected Paras from the household.' },
-  { code: 'showcharacterrelationships', desc: 'Show the selected Para\'s relationships and labels.' },
-  { code: 'becomeacquaintancewitheveryone', desc: 'Add acquaintance relationship with all Paras in town.' },
+  { code: 'GENERATEBILL', desc: 'Send an updated bank statement to the mailbox.' },
+  { code: 'CLEARBILLS', desc: 'Clear all bills in the mailbox.' },
+  { code: 'CLEARSELECTEDCHARACTERSBILLS', desc: 'Clear all bills for the selected Para.' },
+  { code: 'TOGGLEOGMONEYCHANGES', desc: 'Log money changes in the console.' },
+  { code: 'CAUSEOUTAGE', desc: 'Cut power to the selected lot.' },
+  { code: 'FIXOUTAGE', desc: 'Fix power outage on the selected lot.' },
 ];
 
 const timeCheats = [
-  { code: 'sethour [hour]', desc: 'Set the in-game time to a specific hour. Example: sethour 12' },
-  { code: 'advanceday', desc: 'Advance time by 24 hours.' },
-  { code: 'advancehour', desc: 'Advance time by one hour.' },
-  { code: 'skipto5minutesbeforework', desc: 'Set time to five minutes before the selected Para\'s work starts.' },
+  { code: 'SETTIMESCALE', desc: 'Set game time speed (default is 1). Example: SETTIMESCALE 2' },
+  { code: 'PAUSETIME', desc: 'Pause or resume game time.' },
+  { code: 'SETTIME', desc: 'Set in-game time. Example: SETTIME 14:30' },
+  { code: 'SETDAY', desc: 'Set the day of the week. Example: SETDAY Friday' },
+  { code: 'ADVANCEDAYS', desc: 'Advance a specified number of days. Example: ADVANCEDAYS 3' },
+  { code: 'SEASON', desc: 'Change the season. Example: SEASON Summer' },
 ];
 
-const itemCheats = [
-  { code: 'additemtoinventory [ItemID]', desc: 'Add a specified item to the selected Para\'s inventory.' },
-  { code: 'printinventory', desc: 'Show item IDs for the selected Para\'s inventory.' },
-  { code: 'clearinventory', desc: 'Remove all items from the selected Para\'s inventory.' },
-  { code: 'repairallitems', desc: 'Repair all broken objects in the game.' },
-  { code: 'unspoilallitems', desc: 'Make all spoiled food fresh again.' },
-  { code: 'showiteminfos', desc: 'Show item ID for the selected Build Mode object.' },
+const characterCheats = [
+  { code: 'LEVELUPSKILL', desc: 'Raise a skill for the selected Para. Example: LEVELUPSKILL Piano' },
+  { code: 'SETSKILLLEVEL', desc: 'Set a skill to a specific level. Example: SETSKILLLEVEL Cooking 10' },
+  { code: 'PRINTAGE', desc: 'Display the selected Para\'s age.' },
+  { code: 'RESETPERSONALITY', desc: 'Reset personality to level 1, remove traits and upgrades.' },
+  { code: 'SHOWCHARACTERRELATIONSHIPS', desc: 'Show all relationships and relationship labels.' },
+  { code: 'COMPLETECURRENTWANTS', desc: 'Auto-complete all current wants for the selected Para.' },
+  { code: 'LEARNALLRECIPES', desc: 'Learn all recipes.' },
+  { code: 'LEARNALLSKINS', desc: 'Learn all skin/appearance options.' },
+  { code: 'OPENPARAMAKER', desc: 'Open the Paramaker character editor.' },
+  { code: 'GETEQUIPMENT', desc: 'Show all options chosen when creating this character.' },
+  { code: 'GETSEX', desc: 'Display the selected Para\'s gender.' },
+  { code: 'SHOWCURRENTCHARACTERGUID', desc: 'Show the selected character\'s GUID (unique identifier).' },
 ];
 
-const utilityCheats = [
-  { code: 'completecurrentwants', desc: 'Instantly complete all current wants/goals for the selected Para.' },
-  { code: 'clearwantcooldowns', desc: 'Allow new wants to appear from emotions.' },
-  { code: 'extinguishallfires', desc: 'Extinguish all fires on the lot.' },
-  { code: 'unstuck', desc: 'Fix the selected Para\'s location and pathing.' },
-  { code: 'unstuckall', desc: 'Fix pathing for all Parafolks in the world.' },
-  { code: 'save', desc: 'Save the current game.' },
-  { code: 'zipsavefile', desc: 'Create a zipped backup of the current save file.' },
+const needsCheats = [
+  { code: 'FILLALLNEEDS', desc: 'Fill all needs to max.' },
+  { code: 'FILLNEED', desc: 'Fill a specific need. Example: FILLNEED Hunger' },
+  { code: 'DRAINNEED', desc: 'Drain a specific need. Example: DRAINNEED Energy' },
+  { code: 'SETNEED', desc: 'Set a specific need to a value. Example: SETNEED Hygiene 50' },
+  { code: 'ENABLENEEDDECAY', desc: 'Enable or disable need decay. Example: ENABLENEEDDECAY false' },
+  { code: 'FREEZENEEDS', desc: 'Freeze all needs (no more decay).' },
+];
+
+const pregnancyCheats = [
+  { code: 'GETPREGNANT', desc: 'Make the selected Para pregnant (specify 1-3 babies). Example: GETPREGNANT 1' },
+  { code: 'GIVEBIRTH', desc: 'Selected Para gives birth immediately (no pregnancy required).' },
+];
+
+const agingCheats = [
+  { code: 'SETAGE', desc: 'Set the selected Para\'s age. Example: SETAGE 35' },
+  { code: 'NEWLIFESTAGE', desc: 'Age the Para to the next life stage.' },
+  { code: 'PREVIOUSLIFESTAGE', desc: 'Revert the Para to the previous life stage.' },
+  { code: 'NEXTGROWTHSPURT', desc: 'Move the Para to the next growth spurt if applicable.' },
+  { code: 'KILL', desc: 'Kill the selected Para.' },
+  { code: 'REVIVE', desc: 'Revive the selected Para.' },
+  { code: 'DISABLEAGING', desc: 'Disable or enable aging. Example: DISABLEAGING true' },
+];
+
+const careerCheats = [
+  { code: 'GETJOB', desc: 'Get a specified job. Example: GETJOB Cooking' },
+  { code: 'QUITJOB', desc: 'Quit the current job.' },
+  { code: 'PROMOTE', desc: 'Promote the current job.' },
+  { code: 'DEMOTE', desc: 'Demote the current job.' },
+  { code: 'SETJOBLEVEL', desc: 'Set the job level. Example: SETJOBLEVEL 5' },
+];
+
+const buildCheats = [
+  { code: 'REPAIRALLITEMS', desc: 'Repair all items (remove broken state).' },
+  { code: 'UNSPOILALLITEMS', desc: 'Remove all spoiled state from food.' },
+  { code: 'SETITEMSTATE', desc: 'Change the state of the selected item. Example: SETITEMSTATE IsOn 1' },
+  { code: 'SHOWITEMSTATES', desc: 'Show animation and interaction data for the selected item.' },
+  { code: 'ADDITEMTOINVENTORY', desc: 'Add an item to the Para\'s inventory by ID. Example: ADDITEMTOINVENTORY ClutterClothingRingEngagement' },
+  { code: 'SHOWITEMINFOS', desc: 'Show item ID for the selected Build Mode object.' },
+  { code: 'PRINTINVENTORY', desc: 'Show all item IDs in the Para\'s inventory.' },
+  { code: 'CLEARINVENTORY', desc: 'Remove all items from the Para\'s inventory.' },
+  { code: 'SPAWNALLITEMS', desc: 'Spawn every item on the lot (may crash the game!).' },
+  { code: 'UNLOCKALLITEMS', desc: 'Unlock all items.' },
+];
+
+const fireCheats = [
+  { code: 'EXTINGUISHALLFIRES', desc: 'Extinguish all active fires.' },
+  { code: 'EXTINGUISHSELECTEDCHARACTERSONFIRE', desc: 'Extinguish fire on the selected Para.' },
+  { code: 'SETITEMONFIRE', desc: 'Set the selected item on fire.' },
+  { code: 'SETSELECTEDCHARACTERSONFIRE', desc: 'Set the selected Para on fire.' },
+];
+
+const mailCheats = [
+  { code: 'GENERATEBILL', desc: 'Send an updated bank statement to the mailbox.' },
+  { code: 'CLEARBILLS', desc: 'Clear all bills in the mailbox.' },
+  { code: 'RESETMUSEUMDONATIONS', desc: 'Clear all museum donations.' },
 ];
 
 const debugCheats = [
-  { code: 'fps', desc: 'Show the current frames per second.' },
-  { code: 'capfps [number]', desc: 'Cap the frame rate. Example: capfps 60' },
-  { code: 'benchmarkfps', desc: 'Start a 15-second FPS benchmark.' },
-  { code: 'fullscreen', desc: 'Switch to fullscreen mode.' },
-  { code: 'windowed', desc: 'Switch to windowed mode.' },
-  { code: 'showcharacterposition', desc: 'Show the selected Para\'s coordinates and lot data.' },
-  { code: 'warpcharacter [x,y,z]', desc: 'Teleport the selected Para to specific coordinates.' },
-  { code: 'countitems', desc: 'Count all items in the world.' },
+  { code: 'ALIASES', desc: 'List all aliases.' },
+  { code: 'CLEAR', desc: 'Clear the cheat command box.' },
+  { code: 'HELP', desc: 'Show all cheat codes.' },
+  { code: 'SCHEDULE', desc: 'Schedule a command to run every frame, output in top-left. Example: SCHEDULE FPS' },
+  { code: 'STOP', desc: 'Stop a previously scheduled cheat command.' },
+  { code: 'UNSTUCK', desc: 'Move the selected Para to the correct navmesh position.' },
+  { code: 'UNSTUCKALL', desc: 'Move all Paras to correct navmesh positions.' },
+  { code: 'CANCELALLCHARACTERSINTERACTIONS', desc: 'Cancel all queued interactions in the entire town.' },
+  { code: 'CANCELALLHOUSEHOLDINTERACTIONS', desc: 'Cancel all queued interactions in the household.' },
+  { code: 'SHOWCURRENTSOCIALGROUPCONVERSATION', desc: 'Show current social group conversation in the console.' },
+  { code: 'SHOWSOCIALGROUPSCLUSTERS', desc: 'Show all current social group clusters in the console.' },
+  { code: 'DELETEALLSOCIALGROUPS', desc: 'End any current social groups.' },
+  { code: 'SHOWMANAGERLISTSCOUNT', desc: 'Show manager lists for the current lot in the console.' },
+  { code: 'VIEWMEMORYLOG', desc: 'Show a specific Para\'s memory log in the console.' },
+];
+
+const performanceCheats = [
+  { code: 'FPS', desc: 'Show frame rate.' },
+  { code: 'VSYNC', desc: 'Enable or disable VSync. Example: VSYNC false' },
+  { code: 'RESOLUTION', desc: 'Set resolution. Example: RESOLUTION 1920x1080' },
+  { code: 'WINDOWED', desc: 'Toggle windowed mode. Example: WINDOWED true' },
+  { code: 'QUALITY', desc: 'Set graphics quality. Example: QUALITY High' },
 ];
 
 const easterEggCheats = [
-  { code: 'BEAR', desc: 'Display bear ASCII art in the console.' },
-  { code: 'CAT', desc: 'Display a black cat image in the console.' },
-  { code: 'EIGHTBALL', desc: 'Show a random Magic 8 Ball-style phrase.' },
-  { code: 'SPIN [chance]', desc: 'Spin a chance wheel. Example: spin 15%' },
-  { code: 'RAGEQUIT', desc: 'Instantly exit the game.' },
+  { code: 'BEAR', desc: 'Create bear ASCII art.' },
+  { code: 'CAT', desc: 'Display a cat.' },
+  { code: 'EIGHTBALL', desc: 'Give a random Magic 8 Ball result.' },
+  { code: 'HOTEL', desc: 'Display "Trivago" in the console.' },
+  { code: 'RAGEQUIT', desc: 'Close the game.' },
 ];
 
 const sections = [
   { id: 'money', title: 'Money & Bills', icon: '💰', color: 'bg-[#22c55e]', cheats: moneyCheats, desc: 'Use these Paralives cheats to get unlimited Paradimes and manage household bills.' },
-  { id: 'needs', title: 'Needs & Wants', icon: '🔋', color: 'bg-[#f59e0b]', cheats: needsCheats, desc: 'Paralives cheats for instantly filling hunger, sleep, hygiene, and all other needs.' },
-  { id: 'skills', title: 'Skills', icon: '⭐', color: 'bg-[#a855f7]', cheats: skillCheats, desc: 'Max out any skill instantly with these Paralives cheats for cooking, programming, and more.' },
-  { id: 'career', title: 'Career & Occupation', icon: '💼', color: 'bg-[#ec4899]', cheats: careerCheats, desc: 'Advance your career using Paralives cheats for jobs, promotions, and vacation days.' },
-  { id: 'character', title: 'Character Editing', icon: '🧑', color: 'bg-[#6366f1]', cheats: characterCheats, desc: 'Edit your Para with character Paralives cheats for age, personality, and appearance.' },
-  { id: 'pregnancy', title: 'Pregnancy & Babies', icon: '👶', color: 'bg-[#f472b6]', cheats: pregnancyCheats, desc: 'Control pregnancy and babies with these Paralives cheats for instant birth and more.' },
-  { id: 'aging', title: 'Aging & Life Stages', icon: '⏳', color: 'bg-[#78716c]', cheats: agingCheats, desc: 'Manage aging and life stages with Paralives cheats for growth spurts and revival.' },
-  { id: 'household', title: 'Household & Relationships', icon: '🏠', color: 'bg-[#14b8a6]', cheats: householdCheats, desc: 'Build your household using Paralives cheats for relationships and NPC management.' },
   { id: 'time', title: 'Time Control', icon: '🕐', color: 'bg-[#8b5cf6]', cheats: timeCheats, desc: 'Control the in-game clock with these Paralives cheats for time manipulation.' },
-  { id: 'items', title: 'Items & Inventory', icon: '🎒', color: 'bg-[#f97316]', cheats: itemCheats, desc: 'Manage your inventory with Paralives cheats for adding items and repairing objects.' },
-  { id: 'utility', title: 'Utility & Save', icon: '🔧', color: 'bg-[#3b82f6]', cheats: utilityCheats, desc: 'Essential Paralives cheats for saving, fixing stuck Paras, and managing fires.' },
-  { id: 'debug', title: 'UI & Performance', icon: '🖥️', color: 'bg-[#64748b]', cheats: debugCheats, desc: 'Debug Paralives cheats for FPS, teleportation, and performance monitoring.' },
+  { id: 'character', title: 'Character Attributes', icon: '🧑', color: 'bg-[#6366f1]', cheats: characterCheats, desc: 'Edit your Para with character Paralives cheats for skills, personality, and appearance.' },
+  { id: 'needs', title: 'Needs & Wants', icon: '🔋', color: 'bg-[#f59e0b]', cheats: needsCheats, desc: 'Paralives cheats for instantly filling hunger, sleep, hygiene, and all other needs.' },
+  { id: 'pregnancy', title: 'Pregnancy & Babies', icon: '👶', color: 'bg-[#f472b6]', cheats: pregnancyCheats, desc: 'Control pregnancy and babies with these Paralives cheats for instant birth and more.' },
+  { id: 'aging', title: 'Aging & Death', icon: '⏳', color: 'bg-[#78716c]', cheats: agingCheats, desc: 'Manage aging, life stages, death and revival with these Paralives cheats.' },
+  { id: 'career', title: 'Career & Occupation', icon: '💼', color: 'bg-[#ec4899]', cheats: careerCheats, desc: 'Advance your career using Paralives cheats for jobs, promotions, and job levels.' },
+  { id: 'build', title: 'Build Mode', icon: '🔨', color: 'bg-[#f97316]', cheats: buildCheats, desc: 'Manage items, inventory, and build mode objects with these Paralives cheats.' },
+  { id: 'fire', title: 'Fire', icon: '🔥', color: 'bg-[#ef4444]', cheats: fireCheats, desc: 'Start or extinguish fires with these Paralives cheats.' },
+  { id: 'mail', title: 'Mail & Bills', icon: '📮', color: 'bg-[#14b8a6]', cheats: mailCheats, desc: 'Manage bills and museum donations with these Paralives cheats.' },
+  { id: 'debug', title: 'Debug & Miscellaneous', icon: '🖥️', color: 'bg-[#64748b]', cheats: debugCheats, desc: 'Debug Paralives cheats for stuck Paras, social groups, and memory logs.' },
+  { id: 'performance', title: 'Performance', icon: '📊', color: 'bg-[#3b82f6]', cheats: performanceCheats, desc: 'Performance Paralives cheats for FPS, resolution, and graphics quality.' },
   { id: 'easter', title: 'Fun & Easter Eggs', icon: '🎮', color: 'bg-[#e11d48]', cheats: easterEggCheats, desc: 'Fun Paralives cheats and Easter eggs for entertainment and surprises.' },
 ];
 
 const faqs = [
-  { q: 'How do I open the cheat console in Paralives?', a: 'Press Ctrl + F1 or Ctrl + Shift + C on Windows to open the cheat console. On Mac, try Ctrl + Fn + F1. Once open, type "help" or "cheatlist" to see all available Paralives cheats and commands.' },
+  { q: 'How do I open the cheat console in Paralives?', a: 'Press Ctrl + Shift + C or Ctrl + F1 on Windows. On macOS, press Command + Fn/Globe + F1. The console appears minimized in the top-right corner — click the circle icon to expand it.' },
   { q: 'Are Paralives cheats case-sensitive?', a: 'No. Paralives cheats are not case-sensitive. You also don\'t need a leading slash or any special "enable cheats" command — just open the console and start typing any Paralives cheat.' },
-  { q: 'What are the money cheats in Paralives?', a: 'The most popular Paralives cheats for money are PIGGYBANK (+1,000), MAKEITRAIN (+10,000), JACKPOT (+50,000), or LOTTERY (random up to 100,000). "setmoney [amount]" sets an exact balance, "printmoney [amount]" adds to your current balance, and PAYDAY gives your Para\'s salary. These Paralives cheats are the fastest way to get rich.' },
-  { q: 'How do I fill all needs instantly?', a: 'Type the Paralives cheat "reliefallneeds" to restore all needs for the selected Para. Use "reliefallneedsofallcharacters" for the entire household. For a single need, try "reliefneed Hunger" or "setneed Sleep 10". These Paralives cheats save tons of gameplay time.' },
-  { q: 'How do I set a skill to a specific level?', a: 'Use the Paralives cheat "setskilllevel [skill] [level]" — for example, "setskilllevel Cooking 10". Use "showskills" first to see available skill IDs. You can also use "levelupskill [skill]" to add one level at a time with Paralives cheats.' },
-  { q: 'Can I control pregnancy with Paralives cheats?', a: 'Yes. Use the Paralives cheat "getpregnant" to make a Para pregnant (add a number 1-3 for multiples), "givebirth" for instant delivery, "makebabies" for two selected Paras, and "pregnantstatus" to check progress.' },
-  { q: 'How do I age up or change life stages?', a: 'Use the Paralives cheat "nextlifestage" to advance to the next life stage or "previouslifestage" to go back. For infants and teens, "nextgrowthspurt" and "previousgrowthspurt" control growth spurts specifically. These Paralives cheats give full control over aging.' },
-  { q: 'Can I bring a dead Para back to life?', a: 'Yes — use the Paralives cheat "reviveallselectedcharacters" to revive selected Paras. Be careful with "killcharacter" as it can cause game-over in single-person households. Always save before using destructive Paralives cheats.' },
-  { q: 'How do I fix a stuck Para?', a: 'Type the Paralives cheat "unstuck" to fix the selected Para\'s pathing. If multiple Paras are stuck, use "unstuckall" to fix everyone in the world at once. This is one of the most useful Paralives cheats for bug fixes.' },
-  { q: 'What time control Paralives cheats are available?', a: 'Use "sethour [number]" to jump to a specific hour, "advanceday" to skip 24 hours, "advancehour" to skip one hour, or "skipto5minutesbeforework" to jump right before your Para\'s shift. These Paralives cheats are great for time management.' },
-  { q: 'How do I manage fires?', a: 'Use the Paralives cheat "extinguishallfires" to put out all fires on the lot. You can also set things on fire with "setitemonfire" or "setselectedcharactersonfire" — just save first before using these Paralives cheats.' },
+  { q: 'What are the money cheats in Paralives?', a: 'The most popular Paralives cheats for money are PIGGYBANK (+1,000), MAKEITRAIN (+10,000), JACKPOT (+50,000), or LOTTERY (random up to 100,000). "SETMONEY [amount]" sets an exact balance, "PRINTMONEY [amount]" adds to your current balance, and PAYDAY gives your Para\'s salary. These Paralives cheats are the fastest way to get rich.' },
+  { q: 'How do I fill all needs instantly?', a: 'Type the Paralives cheat "FILLALLNEEDS" to restore all needs for the selected Para. For a single need, try "FILLNEED Hunger" or "SETNEED Hygiene 50". Use "FREEZENEEDS" to stop all need decay entirely. These Paralives cheats save tons of gameplay time.' },
+  { q: 'How do I set a skill to a specific level?', a: 'Use the Paralives cheat "SETSKILLLEVEL [skill] [level]" — for example, "SETSKILLLEVEL Cooking 10". You can also use "LEVELUPSKILL [skill]" to add one level at a time with Paralives cheats.' },
+  { q: 'Can I control pregnancy with Paralives cheats?', a: 'Yes. Use the Paralives cheat "GETPREGNANT" to make a Para pregnant (add a number 1-3 for multiples), and "GIVEBIRTH" for instant delivery.' },
+  { q: 'How do I age up or change life stages?', a: 'Use the Paralives cheat "NEWLIFESTAGE" to advance to the next life stage or "PREVIOUSLIFESTAGE" to go back. "NEXTGROWTHSPURT" controls growth spurts for infants and teens. Use "DISABLEAGING true" to stop aging entirely. These Paralives cheats give full control over aging.' },
+  { q: 'Can I bring a dead Para back to life?', a: 'Yes — use the Paralives cheat "REVIVE" to revive the selected Para. Be careful with "KILL" as it can cause game-over in single-person households. Always save before using destructive Paralives cheats.' },
+  { q: 'How do I fix a stuck Para?', a: 'Type the Paralives cheat "UNSTUCK" to fix the selected Para\'s pathing. If multiple Paras are stuck, use "UNSTUCKALL" to fix everyone in the world at once. This is one of the most useful Paralives cheats for bug fixes.' },
+  { q: 'What time control Paralives cheats are available?', a: 'Use "SETTIME [time]" to jump to a specific time (e.g. SETTIME 14:30), "SETDAY [day]" to change the day, "ADVANCEDAYS [number]" to skip days, "SEASON [name]" to change the season, or "PAUSETIME" to freeze time. "SETTIMESCALE [number]" adjusts game speed. These Paralives cheats are great for time management.' },
+  { q: 'How do I manage fires?', a: 'Use the Paralives cheat "EXTINGUISHALLFIRES" to put out all fires. You can also set things on fire with "SETITEMONFIRE" or "SETSELECTEDCHARACTERSONFIRE" — just save first before using these Paralives cheats.' },
   { q: 'Will using Paralives cheats disable achievements?', a: 'Paralives allows cheats without disabling achievements or features. You can use Paralives cheats freely without worrying about losing progress or locked content.' },
-  { q: 'Are Paralives cheats stable in Early Access?', a: 'Paralives is in Early Access (2026), so Paralives cheats may change, be renamed, or break after patches. Always type "help" to check your current version\'s available Paralives cheats, and save before experimenting.' },
-  { q: 'What are the Easter egg Paralives cheats?', a: 'Fun Paralives cheats include BEAR (ASCII art), CAT (cat image), EIGHTBALL (Magic 8 Ball), and SPIN [chance] (spin a wheel). RAGEQUIT instantly exits the game. These hidden Paralives cheats add fun surprises.' },
-  { q: 'How do I back up my save?', a: 'Use the Paralives cheat "save" to save, then "zipsavefile" to create a zipped backup (reportedly saved to your desktop). Do this before testing any destructive Paralives cheats or debug commands.' },
-  { q: 'What need IDs can I use with Paralives cheats?', a: 'Reported need IDs for Paralives cheats include: Affection, Bathroom, Fun, Grump, Hunger, Hygiene, Peace, Sleep, MeTime, EnergySurplus, GetAwayFromFire, and NeedToMove. Use "showneeds" to see current values for your Paralives cheats.' },
+  { q: 'Are Paralives cheats stable in Early Access?', a: 'Paralives is in Early Access (2026), so Paralives cheats may change, be renamed, or break after patches. Always type "HELP" to check your current version\'s available Paralives cheats, and save before experimenting.' },
+  { q: 'What are the Easter egg Paralives cheats?', a: 'Fun Paralives cheats include BEAR (ASCII art), CAT (cat image), EIGHTBALL (Magic 8 Ball), and HOTEL (displays "Trivago"). RAGEQUIT instantly exits the game. These hidden Paralives cheats add fun surprises.' },
+  { q: 'How do I control need decay?', a: 'Use "ENABLENEEDDECAY false" to disable need decay entirely, or "FREEZENEEDS" to freeze all needs at their current values. Use "ENABLENEEDDECAY true" to re-enable decay. These Paralives cheats let you play without worrying about needs.' },
+  { q: 'How do I manage my career with Paralives cheats?', a: 'Use "GETJOB [field]" to get a job (e.g. GETJOB Cooking), "QUITJOB" to quit, "PROMOTE" to advance, "DEMOTE" to downgrade, and "SETJOBLEVEL [number]" to set your job level directly. These Paralives cheats give full control over careers.' },
   { q: 'Does Paralives support mods?', a: 'Paralives supports user-created content through Steam Workshop. Players can share houses, custom content, and Parafolks. Script mods are not currently planned, but Paralives cheats cover most needs.' },
 ];
 
@@ -187,8 +203,8 @@ const faqSchema = {
 
 <Layout
   title="Home"
-  fullTitle="Paralives Cheats 2026 - All Cheat Codes (Money, Skills, Pregnancy) | Paralives Cheats"
-  description="The most complete collection of Paralives cheats for the 2026 Early Access. Browse all cheat codes for money, needs, skills, careers, pregnancy, and more. Click to copy and use instantly."
+  fullTitle="Paralives Cheats 2026 - All 92+ Cheat Codes (Money, Skills, Pregnancy, Build Mode) | Paralives Cheats"
+  description="The most complete collection of Paralives cheats for the 2026 Early Access. Browse 92+ cheat codes for money, needs, skills, careers, pregnancy, build mode, and more. Click to copy and use instantly."
   canonicalPath="/"
   schema={[webSiteSchema, faqSchema]}
 >
@@ -200,10 +216,10 @@ const faqSchema = {
     </h1>
     <p class="text-sm font-bold text-gray-400 mb-4 uppercase tracking-wider">Updated: June 2026</p>
     <p class="text-xl md:text-2xl text-gray-700 max-w-2xl mx-auto leading-relaxed font-medium mb-4">
-      The most complete collection of Paralives cheats for the 2026 Early Access release. Click to copy any cheat code, paste it into the console, and enjoy. All Paralives cheats are tested and ready to use.
+      The most complete collection of Paralives cheats for the 2026 Early Access release. 92+ cheat codes across 13 categories. Click to copy any cheat code, paste it into the console, and enjoy.
     </p>
     <p class="text-lg text-gray-500 font-bold mb-10 max-w-2xl mx-auto">
-      Press <span class="bg-[#FFD54F] px-2 border-2 border-black">Ctrl + F1</span> or <span class="bg-[#FFD54F] px-2 border-2 border-black">Ctrl + Shift + C</span> to open the console. Type <span class="bg-[#FFD54F] px-2 border-2 border-black">help</span> for all commands.
+      Press <span class="bg-[#FFD54F] px-2 border-2 border-black">Ctrl + Shift + C</span> or <span class="bg-[#FFD54F] px-2 border-2 border-black">Ctrl + F1</span> to open the console. Type <span class="bg-[#FFD54F] px-2 border-2 border-black">HELP</span> for all commands.
     </p>
     <a href="#cheats" class="brutal-btn bg-[#6366f1] text-white font-extrabold text-xl py-4 px-10 rounded-full border border-black brutal-shadow inline-flex items-center gap-2">
       Browse All Cheats
@@ -218,11 +234,11 @@ const faqSchema = {
   <section class="bg-black text-white py-10 border-y-[3px] border-black">
     <p class="text-center text-gray-400 font-bold mb-6 text-sm tracking-wider uppercase">The most comprehensive Paralives cheats database online</p>
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-6 gap-8 text-center divide-x-2 divide-gray-700">
-      <div><div class="text-3xl md:text-4xl font-extrabold text-[#FFD54F]">76+</div><div class="mt-1 font-bold text-gray-300 text-sm">Total Cheats</div></div>
+      <div><div class="text-3xl md:text-4xl font-extrabold text-[#FFD54F]">92+</div><div class="mt-1 font-bold text-gray-300 text-sm">Total Cheats</div></div>
       <div><div class="text-3xl md:text-4xl font-extrabold text-[#22c55e]">13</div><div class="mt-1 font-bold text-gray-300 text-sm">Categories</div></div>
-      <div><div class="text-3xl md:text-4xl font-extrabold text-[#a855f7]">4</div><div class="mt-1 font-bold text-gray-300 text-sm">Skill Codes</div></div>
-      <div><div class="text-3xl md:text-4xl font-extrabold text-[#f472b6]">4</div><div class="mt-1 font-bold text-gray-300 text-sm">Pregnancy</div></div>
-      <div><div class="text-3xl md:text-4xl font-extrabold text-[#14b8a6]">5</div><div class="mt-1 font-bold text-gray-300 text-sm">Household</div></div>
+      <div><div class="text-3xl md:text-4xl font-extrabold text-[#a855f7]">12</div><div class="mt-1 font-bold text-gray-300 text-sm">Character</div></div>
+      <div><div class="text-3xl md:text-4xl font-extrabold text-[#f97316]">10</div><div class="mt-1 font-bold text-gray-300 text-sm">Build Mode</div></div>
+      <div><div class="text-3xl md:text-4xl font-extrabold text-[#14b8a6]">3</div><div class="mt-1 font-bold text-gray-300 text-sm">Mail</div></div>
       <div><div class="text-3xl md:text-4xl font-extrabold text-[#e11d48]">5</div><div class="mt-1 font-bold text-gray-300 text-sm">Easter Eggs</div></div>
     </div>
   </section>
@@ -234,7 +250,7 @@ const faqSchema = {
         All Paralives <span class="bg-[#FFD54F] px-2 border-2 border-black inline-block">Cheat Codes</span>
       </h2>
       <p class="text-center text-gray-600 font-medium text-lg max-w-2xl mx-auto mb-8">
-        Browse every Paralives cheat code below. These Paralives cheats cover money, needs, skills, careers, pregnancy, and more. Click any cheat to copy it instantly.
+        Browse every Paralives cheat code below. These Paralives cheats cover money, time, character attributes, needs, pregnancy, aging, career, build mode, fire, and more. Click any cheat to copy it instantly.
       </p>
 
       <!-- Category Navigation -->
@@ -285,16 +301,16 @@ const faqSchema = {
         <h3 class="text-2xl font-extrabold mb-2">Quick Reference: Most Used Paralives Cheats</h3>
         <p class="text-gray-600 font-medium mb-4">These are the Paralives cheats every player should know. Copy any code below and paste it into the console.</p>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-800 font-medium">
-          <div><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">setmoney 50000</code> — Set exact money</div>
-          <div><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">jackpot</code> — Add 50,000 Paradimes</div>
-          <div><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">reliefallneeds</code> — Fill all needs</div>
-          <div><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">setskilllevel Cooking 10</code> — Max a skill</div>
-          <div><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">advanceday</code> — Skip 24 hours</div>
-          <div><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">unstuck</code> — Fix stuck Para</div>
-          <div><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">editcharacter</code> — Reopen creator</div>
-          <div><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">save</code> — Save game</div>
-          <div><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">zipsavefile</code> — Backup save</div>
-          <div><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">help</code> — Show all commands</div>
+          <div><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">SETMONEY 50000</code> — Set exact money</div>
+          <div><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">JACKPOT</code> — Add 50,000 Paradimes</div>
+          <div><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">FILLALLNEEDS</code> — Fill all needs</div>
+          <div><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">SETSKILLLEVEL Cooking 10</code> — Max a skill</div>
+          <div><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">ADVANCEDAYS 1</code> — Skip a day</div>
+          <div><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">UNSTUCK</code> — Fix stuck Para</div>
+          <div><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">OPENPARAMAKER</code> — Reopen creator</div>
+          <div><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">FREEZENEEDS</code> — Freeze all needs</div>
+          <div><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">NEWLIFESTAGE</code> — Age up Para</div>
+          <div><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">HELP</code> — Show all commands</div>
         </div>
       </div>
 
@@ -303,11 +319,11 @@ const faqSchema = {
         <ul class="space-y-3 text-gray-800 font-medium">
           <li class="flex items-start gap-3">
             <span class="text-xl">⚠️</span>
-            <span>Paralives is in Early Access (2026). These Paralives cheats may change with updates. Type <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">help</code> in the console for the latest list of available Paralives cheats.</span>
+            <span>Paralives is in Early Access (2026). These Paralives cheats may change with updates. Type <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">HELP</code> in the console for the latest list of available Paralives cheats.</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-xl">💾</span>
-            <span>Always save before using destructive Paralives cheats like <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">killcharacter</code>, <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">spawnallitems</code>, or <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">toggleedittown</code>. Use <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">zipsavefile</code> for a backup.</span>
+            <span>Always save before using destructive Paralives cheats like <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">KILL</code>, <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">SPAWNALLITEMS</code>, or <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">SETITEMONFIRE</code>.</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-xl">💡</span>
@@ -348,27 +364,27 @@ const faqSchema = {
         <a href="/money-cheats" class="bg-[#F0FDF4] border border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
           <div class="text-3xl mb-2">💰</div>
           <h3 class="font-extrabold text-lg mb-1">Money Cheats</h3>
-          <p class="text-gray-600 font-medium text-sm">PIGGYBANK, JACKPOT, setmoney & more</p>
+          <p class="text-gray-600 font-medium text-sm">SETMONEY, JACKPOT, PRINTMONEY & more</p>
         </a>
         <a href="/needs-cheats" class="bg-[#FFFBEB] border border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
           <div class="text-3xl mb-2">🔋</div>
           <h3 class="font-extrabold text-lg mb-1">Needs Cheats</h3>
-          <p class="text-gray-600 font-medium text-sm">reliefallneeds, setneed & more</p>
+          <p class="text-gray-600 font-medium text-sm">FILLALLNEEDS, FREEZENEEDS, SETNEED & more</p>
         </a>
         <a href="/skill-cheats" class="bg-[#FAF5FF] border border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
           <div class="text-3xl mb-2">⭐</div>
           <h3 class="font-extrabold text-lg mb-1">Skill Cheats</h3>
-          <p class="text-gray-600 font-medium text-sm">setskilllevel, levelupskill & more</p>
+          <p class="text-gray-600 font-medium text-sm">SETSKILLLEVEL, LEVELUPSKILL & more</p>
         </a>
         <a href="/pregnancy-cheats" class="bg-[#FDF2F8] border border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
           <div class="text-3xl mb-2">👶</div>
           <h3 class="font-extrabold text-lg mb-1">Pregnancy Cheats</h3>
-          <p class="text-gray-600 font-medium text-sm">getpregnant, givebirth & more</p>
+          <p class="text-gray-600 font-medium text-sm">GETPREGNANT, GIVEBIRTH & more</p>
         </a>
         <a href="/teleport-cheats" class="bg-[#F5F3FF] border border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
           <div class="text-3xl mb-2">📍</div>
           <h3 class="font-extrabold text-lg mb-1">Teleport Cheats</h3>
-          <p class="text-gray-600 font-medium text-sm">warpcharacter, unstuck & more</p>
+          <p class="text-gray-600 font-medium text-sm">UNSTUCK, UNSTUCKALL & more</p>
         </a>
         <a href="/wemod-trainer" class="bg-[#EEF2FF] border border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
           <div class="text-3xl mb-2">🎮</div>
@@ -394,7 +410,7 @@ const faqSchema = {
         </div>
         <div class="bg-white border border-black rounded-2xl p-6 brutal-shadow">
           <h3 class="font-extrabold text-lg mb-2">Fix Bugs & Stuck Paras</h3>
-          <p class="text-gray-700 font-medium">Paralives cheats like "unstuck" and "unstuckall" help fix pathing issues. The "save" and "zipsavefile" commands protect your progress.</p>
+          <p class="text-gray-700 font-medium">Paralives cheats like "UNSTUCK" and "UNSTUCKALL" help fix pathing issues. Use "HELP" to discover all available commands.</p>
         </div>
         <div class="bg-white border border-black rounded-2xl p-6 brutal-shadow">
           <h3 class="font-extrabold text-lg mb-2">No Achievements Lost</h3>
@@ -410,7 +426,7 @@ const faqSchema = {
       <h2 class="text-4xl font-extrabold text-center mb-4">
         Frequently Asked <span class="bg-[#a855f7] text-white px-2 border-2 border-black inline-block rotate-[1deg]">Questions</span>
       </h2>
-      <p class="text-center text-gray-600 font-medium text-lg max-w-2xl mx-auto mb-12">Everything you need to know about using Paralives cheats in the 2026 Early Access.</p>
+      <p class="text-center text-gray-600 font-medium text-lg max-w-2xl mx-auto mb-12">Everything you need to know about using 92+ Paralives cheats in the 2026 Early Access.</p>
       <div class="space-y-4">
         {faqs.map(faq => (
           <div class="border border-black rounded-2xl p-6 bg-[#F9FAFB] brutal-shadow">

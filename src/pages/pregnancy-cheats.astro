@@ -4,17 +4,15 @@ import CheatTable from '../components/CheatTable.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 
 const cheats = [
-  { code: 'getpregnant [1-3]', desc: 'Make the selected Para pregnant. Optionally specify multiples. Example: getpregnant 2' },
-  { code: 'givebirth', desc: 'Make the selected pregnant Para give birth immediately.' },
-  { code: 'makebabies', desc: 'Make two selected Paras have a baby together.' },
-  { code: 'pregnantstatus', desc: 'Show pregnancy progress and status.' },
+  { code: 'GETPREGNANT', desc: 'Make the selected Para pregnant (specify 1-3 babies). Example: GETPREGNANT 1' },
+  { code: 'GIVEBIRTH', desc: 'Selected Para gives birth immediately (no pregnancy required).' },
 ];
 
 const faqs = [
-  { q: 'How do I get pregnant in Paralives?', a: 'Select the Para you want to make pregnant, open the console (Ctrl + F1), and type "getpregnant". Add a number 1-3 for multiples, like "getpregnant 2" for twins.' },
-  { q: 'How do I give birth immediately?', a: 'Use the "givebirth" cheat to make the selected pregnant Para give birth instantly. Make sure the Para is actually pregnant first — use "pregnantstatus" to check.' },
-  { q: 'Can I make two Paras have a baby together?', a: 'Yes! Select both Paras and use the "makebabies" cheat. This will create a baby from the two selected Paras.' },
-  { q: 'How do I check pregnancy progress?', a: 'Use "pregnantstatus" to see the current pregnancy progress and status of the selected Para.' },
+  { q: 'How do I get pregnant in Paralives?', a: 'Select the Para you want to make pregnant, open the console, and type "GETPREGNANT". Add a number 1-3 for multiples, like "GETPREGNANT 2" for twins.' },
+  { q: 'How do I give birth immediately?', a: 'Use the "GIVEBIRTH" cheat to make the selected Para give birth instantly. This works even without pregnancy first.' },
+  { q: 'Can I have twins or triplets?', a: 'Yes! Use "GETPREGNANT 2" for twins or "GETPREGNANT 3" for triplets.' },
+  { q: 'Do I need to be pregnant first to give birth?', a: 'No! The GIVEBIRTH cheat works even without pregnancy. Just select a Para and type "GIVEBIRTH".' },
 ];
 
 const faqSchema = {
@@ -31,14 +29,14 @@ const relatedPages = [
   { title: 'Money Cheats', href: '/money-cheats', desc: 'Get unlimited Paradimes' },
   { title: 'Needs Cheats', href: '/needs-cheats', desc: 'Fill all needs instantly' },
   { title: 'Aging Cheats', href: '/#aging', desc: 'Control life stages' },
-  { title: 'All Cheats', href: '/#cheats', desc: 'Browse all 76+ cheats' },
+  { title: 'All Cheats', href: '/#cheats', desc: 'Browse all 92+ cheats' },
 ];
 ---
 
 <Layout
   title="Pregnancy Cheats"
   fullTitle="Paralives Pregnancy Cheats 2026 - Get Pregnant & Give Birth | Paralives Cheats"
-  description="All Paralives pregnancy cheats: getpregnant, givebirth, makebabies, pregnantstatus. Control pregnancy and babies with these tested cheat codes."
+  description="All Paralives pregnancy cheats: GETPREGNANT, GIVEBIRTH. Control pregnancy and babies with these tested cheat codes."
   canonicalPath="/pregnancy-cheats"
   schema={[faqSchema]}
 >
@@ -53,7 +51,7 @@ const relatedPages = [
       Paralives <span class="bg-[#f472b6] text-white px-3 py-1 border border-black inline-block rotate-[-1deg]">Pregnancy Cheats</span>
     </h1>
     <p class="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed font-medium mb-6">
-      Control pregnancy and babies in Paralives with these cheat codes. Get pregnant instantly, have twins or triplets, and give birth on demand.
+      Control pregnancy and babies in Paralives with these cheat codes. Use GETPREGNANT to get pregnant instantly (with twins or triplets), and GIVEBIRTH for instant delivery.
     </p>
     <p class="text-lg text-gray-500 font-bold">
       Press <span class="bg-[#FFD54F] px-2 border-2 border-black">Ctrl + F1</span> to open the console, then type any code below.
@@ -71,19 +69,19 @@ const relatedPages = [
         <ul class="space-y-3 text-gray-800 font-medium">
           <li class="flex items-start gap-3">
             <span class="text-xl">🤰</span>
-            <span>Select the Para you want to make pregnant before typing <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">getpregnant</code>.</span>
+            <span>Select the Para you want to make pregnant before typing <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">GETPREGNANT</code>.</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-xl">👯</span>
-            <span>For twins, use <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">getpregnant 2</code>. For triplets, use <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">getpregnant 3</code>.</span>
+            <span>For twins, use <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">GETPREGNANT 2</code>. For triplets, use <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">GETPREGNANT 3</code>.</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-xl">👶</span>
-            <span>Use <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">makebabies</code> to have two selected Paras create a baby together.</span>
+            <span><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">GIVEBIRTH</code> works even without pregnancy — just select a Para and type it.</span>
           </li>
           <li class="flex items-start gap-3">
-            <span class="text-xl">📋</span>
-            <span>Check pregnancy progress anytime with <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">pregnantstatus</code>.</span>
+            <span class="text-xl">💡</span>
+            <span>These cheats are great for testing family gameplay or quickly expanding your household.</span>
           </li>
         </ul>
       </div>

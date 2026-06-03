@@ -3,11 +3,11 @@ import Layout from '../layouts/Layout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 
 const faqs = [
-  { q: 'How do I open the cheat console in Paralives?', a: 'Press Ctrl + F1 or Ctrl + Shift + C on Windows. On Mac, try Ctrl + Fn + F1. The console will appear at the top or bottom of the screen.' },
+  { q: 'How do I open the cheat console in Paralives?', a: 'Press Ctrl + Shift + C or Ctrl + F1 on Windows. On macOS, press Command + Fn/Globe + F1. The console appears minimized in the top-right corner — click the circle icon to expand it.' },
   { q: 'Do I need to enable cheats first?', a: 'No! Unlike some games, Paralives does not require any special "enable cheats" command. Just open the console and start typing.' },
   { q: 'Are cheat codes case-sensitive?', a: 'No. Paralives cheat codes are not case-sensitive. You can type "JACKPOT", "jackpot", or "Jackpot" — they all work.' },
   { q: 'Do I need a leading slash?', a: 'No. Unlike some games, Paralives cheats do not need a leading slash or any special prefix. Just type the command directly.' },
-  { q: 'How do I see all available commands?', a: 'Type "help" or "cheatlist" in the console to see all available commands for your current version of Paralives.' },
+  { q: 'How do I see all available commands?', a: 'Type "HELP" in the console to see all available commands for your current version of Paralives.' },
   { q: 'Can I repeat a previous command?', a: 'Yes! Click on a command\'s confirmation message in the console to quickly repeat it without retyping.' },
 ];
 
@@ -22,7 +22,7 @@ const faqSchema = {
 };
 
 const relatedPages = [
-  { title: 'All Cheats', href: '/#cheats', desc: 'Browse all 76+ cheat codes' },
+  { title: 'All Cheats', href: '/#cheats', desc: 'Browse all 92+ cheat codes' },
   { title: 'Cheat Codes', href: '/cheat-codes', desc: 'Quick reference table' },
   { title: 'Money Cheats', href: '/money-cheats', desc: 'Get unlimited Paradimes' },
   { title: 'WeMod Trainer', href: '/wemod-trainer', desc: 'WeMod alternatives' },
@@ -77,7 +77,7 @@ const relatedPages = [
           <span class="w-12 h-12 bg-[#3b82f6] text-white rounded-full flex items-center justify-center font-extrabold flex-shrink-0 text-xl">3</span>
           <div>
             <h3 class="font-extrabold text-xl mb-2">See All Available Commands</h3>
-            <p class="text-gray-700 font-medium text-lg">Type <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">help</code> or <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">cheatlist</code> to see every command available in your version.</p>
+            <p class="text-gray-700 font-medium text-lg">Type <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">HELP</code> to see every command available in your version.</p>
           </div>
         </div>
       </div>
@@ -103,7 +103,7 @@ const relatedPages = [
           </li>
           <li class="flex items-start gap-3">
             <span class="text-xl">💡</span>
-            <span><strong>Save before experimenting:</strong> Use <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">save</code> or <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">zipsavefile</code> before trying destructive commands.</span>
+            <span><strong>Save before experimenting:</strong> Always save your game before trying destructive commands like KILL or SPAWNALLITEMS.</span>
           </li>
         </ul>
       </div>

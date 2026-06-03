@@ -5,21 +5,21 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 
 const topCheats = [
   { code: 'JACKPOT', desc: 'Add 50,000 Paradimes instantly.' },
-  { code: 'reliefallneeds', desc: 'Fill all needs for the selected Para.' },
-  { code: 'setskilllevel Cooking 10', desc: 'Max out the Cooking skill.' },
-  { code: 'setmoney 50000', desc: 'Set exact money amount.' },
-  { code: 'advanceday', desc: 'Skip 24 hours ahead.' },
-  { code: 'unstuck', desc: 'Fix a stuck Para.' },
-  { code: 'editcharacter', desc: 'Reopen character creator.' },
-  { code: 'save', desc: 'Save the current game.' },
-  { code: 'zipsavefile', desc: 'Create a save backup.' },
-  { code: 'help', desc: 'Show all commands.' },
+  { code: 'FILLALLNEEDS', desc: 'Fill all needs for the selected Para.' },
+  { code: 'SETSKILLLEVEL Cooking 10', desc: 'Max out the Cooking skill.' },
+  { code: 'SETMONEY 50000', desc: 'Set exact money amount.' },
+  { code: 'ADVANCEDAYS 1', desc: 'Skip 24 hours ahead.' },
+  { code: 'UNSTUCK', desc: 'Fix a stuck Para.' },
+  { code: 'OPENPARAMAKER', desc: 'Open character editor.' },
+  { code: 'FREEZENEEDS', desc: 'Freeze all needs.' },
+  { code: 'NEWLIFESTAGE', desc: 'Age up to next life stage.' },
+  { code: 'HELP', desc: 'Show all commands.' },
 ];
 
 const faqs = [
-  { q: 'How do I use cheats in Paralives on PC?', a: 'Press Ctrl + F1 or Ctrl + Shift + C to open the cheat console on PC. Type any cheat code and press Enter. Codes are not case-sensitive.' },
+  { q: 'How do I use cheats in Paralives on PC?', a: 'Press Ctrl + Shift + C or Ctrl + F1 to open the cheat console on PC. Type any cheat code and press Enter. Codes are not case-sensitive.' },
   { q: 'Are Paralives cheats available on PC only?', a: 'Paralives is currently only available on PC (Steam Early Access, 2026). All cheats work on the PC version through the built-in console.' },
-  { q: 'What are the best PC cheats for Paralives?', a: 'The best PC cheats are: JACKPOT (money), reliefallneeds (fill needs), setskilllevel (max skills), and unstuck (fix bugs). See the full list below.' },
+  { q: 'What are the best PC cheats for Paralives?', a: 'The best PC cheats are: JACKPOT (money), FILLALLNEEDS (fill needs), SETSKILLLEVEL (max skills), and UNSTUCK (fix bugs). See the full list below.' },
   { q: 'Do Paralives cheats work on Steam Deck?', a: 'Paralives cheats should work on Steam Deck, but you may need to map the console shortcut (Ctrl + F1) to a button combination.' },
 ];
 
@@ -34,7 +34,7 @@ const faqSchema = {
 };
 
 const relatedPages = [
-  { title: 'All Cheats', href: '/#cheats', desc: 'Browse all 76+ cheats' },
+  { title: 'All Cheats', href: '/#cheats', desc: 'Browse all 92+ cheats' },
   { title: 'Console Commands', href: '/console-commands', desc: 'How to use the console' },
   { title: 'Cheat Codes', href: '/cheat-codes', desc: 'Quick reference table' },
   { title: 'WeMod Trainer', href: '/wemod-trainer', desc: 'WeMod alternatives' },
@@ -44,7 +44,7 @@ const relatedPages = [
 <Layout
   title="Paralives Cheats PC"
   fullTitle="Paralives Cheats PC 2026 - All PC Cheat Codes | Paralives Cheats"
-  description="All Paralives cheats for PC. How to open the console, enter cheat codes, and use all 76+ cheats on the PC version of Paralives (Steam Early Access 2026)."
+  description="All Paralives cheats for PC. How to open the console, enter cheat codes, and use all 92+ cheats on the PC version of Paralives (Steam Early Access 2026)."
   canonicalPath="/paralives-cheats-pc"
   schema={[faqSchema]}
 >
@@ -89,7 +89,7 @@ const relatedPages = [
           </li>
           <li class="flex items-start gap-3">
             <span class="text-xl">💾</span>
-            <span><strong>Save location:</strong> Use <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">zipsavefile</code> to backup saves (reportedly saved to your desktop).</span>
+            <span><strong>Freeze needs:</strong> Use <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">FREEZENEEDS</code> to stop all need decay permanently.</span>
           </li>
         </ul>
       </div>

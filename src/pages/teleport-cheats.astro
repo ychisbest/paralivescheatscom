@@ -4,17 +4,15 @@ import CheatTable from '../components/CheatTable.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 
 const cheats = [
-  { code: 'warpcharacter [x,y,z]', desc: 'Teleport the selected Para to specific coordinates. Example: warpcharacter 100,50,200' },
-  { code: 'showcharacterposition', desc: 'Show the selected Para\'s current coordinates and lot data.' },
-  { code: 'unstuck', desc: 'Fix the selected Para\'s location and pathing if they\'re stuck.' },
-  { code: 'unstuckall', desc: 'Fix pathing for all Parafolks in the world.' },
+  { code: 'UNSTUCK', desc: 'Move the selected Para to the correct navmesh position.' },
+  { code: 'UNSTUCKALL', desc: 'Move all Paras to correct navmesh positions.' },
 ];
 
 const faqs = [
-  { q: 'How do I teleport in Paralives?', a: 'Use "warpcharacter [x,y,z]" to teleport the selected Para to specific coordinates. First use "showcharacterposition" to see current coordinates, then warp to your desired location.' },
-  { q: 'How do I find my Para\'s current position?', a: 'Type "showcharacterposition" to display the selected Para\'s X, Y, Z coordinates and lot information.' },
-  { q: 'What if my Para is stuck?', a: 'Use "unstuck" to fix the selected Para\'s pathing. If multiple Paras are stuck, use "unstuckall" to fix everyone in the world at once.' },
-  { q: 'Can I teleport to a specific lot?', a: 'You need to know the lot\'s coordinates. Use "showcharacterposition" while on a lot to learn its coordinates, then use "warpcharacter" to go there from anywhere.' },
+  { q: 'What if my Para is stuck?', a: 'Use "UNSTUCK" to fix the selected Para\'s pathing and move them to the correct position. If multiple Paras are stuck, use "UNSTUCKALL" to fix everyone in the world at once.' },
+  { q: 'What does UNSTUCK do exactly?', a: 'The UNSTUCK command moves the selected Para to the correct position on the navigation mesh, fixing any pathing issues that may have caused them to get stuck.' },
+  { q: 'Can I fix all stuck Paras at once?', a: 'Yes! Use "UNSTUCKALL" to fix pathing for every Para in the world. This is great for mass pathing bugs.' },
+  { q: 'Are there teleport cheats in Paralives?', a: 'The UNSTUCK and UNSTUCKALL commands are the primary location-fixing cheats. For more debug commands, check the full cheats list.' },
 ];
 
 const faqSchema = {
@@ -31,14 +29,14 @@ const relatedPages = [
   { title: 'Needs Cheats', href: '/needs-cheats', desc: 'Fill all needs instantly' },
   { title: 'Money Cheats', href: '/money-cheats', desc: 'Get unlimited Paradimes' },
   { title: 'Console Commands', href: '/console-commands', desc: 'How to use the console' },
-  { title: 'All Cheats', href: '/#cheats', desc: 'Browse all 76+ cheats' },
+  { title: 'All Cheats', href: '/#cheats', desc: 'Browse all 92+ cheats' },
 ];
 ---
 
 <Layout
   title="Teleport Cheats"
-  fullTitle="Paralives Teleport Cheats 2026 - warpcharacter & Location Codes | Paralives Cheats"
-  description="All Paralives teleport cheats: warpcharacter, showcharacterposition, unstuck, unstuckall. Teleport your Para anywhere and fix stuck characters."
+  fullTitle="Paralives Teleport Cheats 2026 - UNSTUCK & Location Codes | Paralives Cheats"
+  description="All Paralives teleport cheats: UNSTUCK, UNSTUCKALL. Fix stuck Paras and move them to correct positions."
   canonicalPath="/teleport-cheats"
   schema={[faqSchema]}
 >
@@ -53,7 +51,7 @@ const relatedPages = [
       Paralives <span class="bg-[#8b5cf6] text-white px-3 py-1 border border-black inline-block rotate-[-1deg]">Teleport Cheats</span>
     </h1>
     <p class="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed font-medium mb-6">
-      Teleport your Para anywhere in Paralives with these location cheats. Use warpcharacter to move instantly, or unstuck to fix pathing issues.
+      Fix stuck Paras and move them to correct positions with these Paralives location cheats. Use UNSTUCK and UNSTUCKALL to resolve pathing issues.
     </p>
     <p class="text-lg text-gray-500 font-bold">
       Press <span class="bg-[#FFD54F] px-2 border-2 border-black">Ctrl + F1</span> to open the console, then type any code below.
@@ -71,19 +69,19 @@ const relatedPages = [
         <ul class="space-y-3 text-gray-800 font-medium">
           <li class="flex items-start gap-3">
             <span class="text-xl">🗺️</span>
-            <span>Use <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">showcharacterposition</code> first to see your current coordinates.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-xl">✈️</span>
-            <span>Coordinates use X,Y,Z format. Example: <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">warpcharacter 100,50,200</code></span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-xl">🔧</span>
-            <span>If a Para gets stuck, <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">unstuck</code> fixes their pathing without teleporting.</span>
+            <span>If a Para gets stuck, <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">UNSTUCK</code> fixes their pathing and moves them to the correct position.</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-xl">🌐</span>
-            <span><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">unstuckall</code> fixes every Para in the world at once — great for mass pathing bugs.</span>
+            <span><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">UNSTUCKALL</code> fixes every Para in the world at once — great for mass pathing bugs.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-xl">💡</span>
+            <span>These commands move Paras to the nearest valid position on the navigation mesh.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-xl">⚠️</span>
+            <span>Always save before using debug commands, just in case.</span>
           </li>
         </ul>
       </div>

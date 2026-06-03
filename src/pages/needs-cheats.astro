@@ -4,19 +4,19 @@ import CheatTable from '../components/CheatTable.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 
 const cheats = [
-  { code: 'reliefallneeds', desc: 'Instantly fill all needs for the selected Para.' },
-  { code: 'reliefallneedsofallcharacters', desc: 'Restore all needs for every Para in the household.' },
-  { code: 'reliefneed [NeedID]', desc: 'Fully restore one specific need. Example: reliefneed Hunger' },
-  { code: 'setneed [NeedID] [1-10]', desc: 'Set a specific need to a value. Example: setneed Sleep 10' },
-  { code: 'decayneed [NeedID] [amount]', desc: 'Reduce a need by a value. Example: decayneed Hygiene 2' },
-  { code: 'showneeds', desc: 'Display all current need values for the selected Para.' },
+  { code: 'FILLALLNEEDS', desc: 'Fill all needs to max.' },
+  { code: 'FILLNEED', desc: 'Fill a specific need. Example: FILLNEED Hunger' },
+  { code: 'DRAINNEED', desc: 'Drain a specific need. Example: DRAINNEED Energy' },
+  { code: 'SETNEED', desc: 'Set a specific need to a value. Example: SETNEED Hygiene 50' },
+  { code: 'ENABLENEEDDECAY', desc: 'Enable or disable need decay. Example: ENABLENEEDDECAY false' },
+  { code: 'FREEZENEEDS', desc: 'Freeze all needs (no more decay).' },
 ];
 
 const faqs = [
-  { q: 'How do I fill all needs instantly?', a: 'Type "reliefallneeds" to fill all needs for the selected Para. Use "reliefallneedsofallcharacters" to fill needs for every Para in the household at once.' },
-  { q: 'What need IDs can I use?', a: 'Reported need IDs include: Affection, Bathroom, Fun, Grump, Hunger, Hygiene, Peace, Sleep, MeTime, EnergySurplus, GetAwayFromFire, and NeedToMove. Use "showneeds" to see current values.' },
-  { q: 'How do I set a specific need to a value?', a: 'Use "setneed [NeedID] [1-10]" — for example, "setneed Sleep 10" sets Sleep to maximum. The value range is 1-10.' },
-  { q: 'Can I decrease a need?', a: 'Yes! Use "decayneed [NeedID] [amount]" to reduce a need. For example, "decayneed Hygiene 2" reduces Hygiene by 2 points.' },
+  { q: 'How do I fill all needs instantly?', a: 'Type "FILLALLNEEDS" to fill all needs for the selected Para. For a single need, use "FILLNEED Hunger" or "FILLNEED Energy".' },
+  { q: 'How do I stop needs from decaying?', a: 'Use "FREEZENEEDS" to freeze all needs at their current values, or "ENABLENEEDDECAY false" to disable decay entirely. Use "ENABLENEEDDECAY true" to re-enable.' },
+  { q: 'How do I set a specific need to a value?', a: 'Use "SETNEED [NeedID] [value]" — for example, "SETNEED Hygiene 50" sets Hygiene to 50.' },
+  { q: 'Can I decrease a need?', a: 'Yes! Use "DRAINNEED [NeedID] [amount]" to reduce a need. For example, "DRAINNEED Energy 2" reduces Energy by 2 points.' },
 ];
 
 const faqSchema = {
@@ -33,14 +33,14 @@ const relatedPages = [
   { title: 'Money Cheats', href: '/money-cheats', desc: 'Get unlimited Paradimes' },
   { title: 'Skill Cheats', href: '/skill-cheats', desc: 'Max out any skill' },
   { title: 'Teleport Cheats', href: '/teleport-cheats', desc: 'Teleport anywhere' },
-  { title: 'All Cheats', href: '/#cheats', desc: 'Browse all 76+ cheats' },
+  { title: 'All Cheats', href: '/#cheats', desc: 'Browse all 92+ cheats' },
 ];
 ---
 
 <Layout
   title="Needs Cheats"
-  fullTitle="Paralives Needs Cheats 2026 - reliefallneeds & All Need Codes | Paralives Cheats"
-  description="All Paralives needs cheats: reliefallneeds, setneed, reliefneed, decayneed, showneeds. Fill all needs instantly or control individual needs."
+  fullTitle="Paralives Needs Cheats 2026 - FILLALLNEEDS & All Need Codes | Paralives Cheats"
+  description="All Paralives needs cheats: FILLALLNEEDS, FILLNEED, SETNEED, DRAINNEED, FREEZENEEDS, ENABLENEEDDECAY. Fill all needs instantly or control individual needs."
   canonicalPath="/needs-cheats"
   schema={[faqSchema]}
 >
@@ -55,7 +55,7 @@ const relatedPages = [
       Paralives <span class="bg-[#f59e0b] text-white px-3 py-1 border border-black inline-block rotate-[-1deg]">Needs Cheats</span>
     </h1>
     <p class="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed font-medium mb-6">
-      Fill all needs instantly or control individual needs with Paralives needs cheats. Use reliefallneeds, setneed, and more to keep your Paras happy.
+      Fill all needs instantly or control individual needs with Paralives needs cheats. Use FILLALLNEEDS, FREEZENEEDS, SETNEED, and more to keep your Paras happy.
     </p>
     <p class="text-lg text-gray-500 font-bold">
       Press <span class="bg-[#FFD54F] px-2 border-2 border-black">Ctrl + F1</span> to open the console, then type any code below.
@@ -73,19 +73,19 @@ const relatedPages = [
         <ul class="space-y-3 text-gray-800 font-medium">
           <li class="flex items-start gap-3">
             <span class="text-xl">⚡</span>
-            <span><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">reliefallneeds</code> is the fastest way to fill all needs at once.</span>
+            <span><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">FILLALLNEEDS</code> is the fastest way to fill all needs at once.</span>
           </li>
           <li class="flex items-start gap-3">
-            <span class="text-xl">👨‍👩‍👧‍👦</span>
-            <span>Use <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">reliefallneedsofallcharacters</code> to fix the entire household in one command.</span>
+            <span class="text-xl">❄️</span>
+            <span>Use <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">FREEZENEEDS</code> to stop all need decay permanently.</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-xl">📋</span>
-            <span>Run <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">showneeds</code> first to see all need IDs and current values.</span>
+            <span>Use <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">ENABLENEEDDECAY false</code> to disable decay, or <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">ENABLENEEDDECAY true</code> to re-enable.</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-xl">🎚️</span>
-            <span><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">setneed Sleep 10</code> sets Sleep to max. Values range from 1 (empty) to 10 (full).</span>
+            <span><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">SETNEED Hygiene 50</code> sets Hygiene to 50. Use <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">DRAINNEED</code> to decrease needs.</span>
           </li>
         </ul>
       </div>

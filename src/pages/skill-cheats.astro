@@ -4,17 +4,15 @@ import CheatTable from '../components/CheatTable.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 
 const cheats = [
-  { code: 'setskilllevel [skill] [level]', desc: 'Set a specific skill to a given level. Example: setskilllevel Cooking 10' },
-  { code: 'levelupskill [skill]', desc: 'Add one level to a skill. Example: levelupskill Programming' },
-  { code: 'showskills', desc: 'Show all current skill levels for the selected Para.' },
-  { code: 'leveluppersonality', desc: 'Level up the personality traits of the selected Para.' },
+  { code: 'SETSKILLLEVEL', desc: 'Set a specific skill to a given level. Example: SETSKILLLEVEL Cooking 10' },
+  { code: 'LEVELUPSKILL', desc: 'Add one level to a skill. Example: LEVELUPSKILL Piano' },
 ];
 
 const faqs = [
-  { q: 'How do I max out a skill in Paralives?', a: 'Use "setskilllevel [skill] 10" to instantly max a skill to level 10. For example, "setskilllevel Cooking 10" maxes out the Cooking skill.' },
-  { q: 'What skill IDs are available in Paralives?', a: 'Common skill IDs include: Cooking, Programming, Painting, Writing, Music, Gardening, Athletic, Charisma, Logic, and more. Use "showskills" to see all available skills for your Para.' },
-  { q: 'How do I see my current skill levels?', a: 'Type "showskills" in the console to display all current skill levels for the selected Para.' },
-  { q: 'Can I level up personality traits?', a: 'Yes! Use "leveluppersonality" to level up the personality traits of the selected Para.' },
+  { q: 'How do I max out a skill in Paralives?', a: 'Use "SETSKILLLEVEL [skill] 10" to instantly max a skill to level 10. For example, "SETSKILLLEVEL Cooking 10" maxes out the Cooking skill.' },
+  { q: 'What skill IDs are available in Paralives?', a: 'Common skill IDs include: Cooking, Programming, Painting, Writing, Music, Gardening, Athletic, Charisma, Logic, Piano, and more.' },
+  { q: 'How do I add one skill level at a time?', a: 'Use "LEVELUPSKILL [skill]" to add one level. For example, "LEVELUPSKILL Piano" raises Piano skill by one level.' },
+  { q: 'Can I level up personality traits?', a: 'Personality traits can be managed with RESETPERSONALITY (reset to level 1) and other character attribute cheats. See the full character cheats list for more.' },
 ];
 
 const faqSchema = {
@@ -31,14 +29,14 @@ const relatedPages = [
   { title: 'Career Cheats', href: '/#career', desc: 'Advance your career' },
   { title: 'Money Cheats', href: '/money-cheats', desc: 'Get unlimited Paradimes' },
   { title: 'Needs Cheats', href: '/needs-cheats', desc: 'Fill all needs instantly' },
-  { title: 'All Cheats', href: '/#cheats', desc: 'Browse all 76+ cheats' },
+  { title: 'All Cheats', href: '/#cheats', desc: 'Browse all 92+ cheats' },
 ];
 ---
 
 <Layout
   title="Skill Cheats"
-  fullTitle="Paralives Skill Cheats 2026 - setskilllevel & All Skill Codes | Paralives Cheats"
-  description="All Paralives skill cheats: setskilllevel, levelupskill, showskills, leveluppersonality. Max out any skill instantly with these tested cheat codes."
+  fullTitle="Paralives Skill Cheats 2026 - SETSKILLLEVEL & All Skill Codes | Paralives Cheats"
+  description="All Paralives skill cheats: SETSKILLLEVEL, LEVELUPSKILL. Max out any skill instantly with these tested cheat codes."
   canonicalPath="/skill-cheats"
   schema={[faqSchema]}
 >
@@ -53,7 +51,7 @@ const relatedPages = [
       Paralives <span class="bg-[#a855f7] text-white px-3 py-1 border border-black inline-block rotate-[-1deg]">Skill Cheats</span>
     </h1>
     <p class="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed font-medium mb-6">
-      Max out any skill instantly with Paralives skill cheats. Use setskilllevel, levelupskill, and more to master cooking, programming, and every other skill.
+      Max out any skill instantly with Paralives skill cheats. Use SETSKILLLEVEL and LEVELUPSKILL to master cooking, programming, piano, and every other skill.
     </p>
     <p class="text-lg text-gray-500 font-bold">
       Press <span class="bg-[#FFD54F] px-2 border-2 border-black">Ctrl + F1</span> to open the console, then type any code below.
@@ -71,19 +69,19 @@ const relatedPages = [
         <ul class="space-y-3 text-gray-800 font-medium">
           <li class="flex items-start gap-3">
             <span class="text-xl">📊</span>
-            <span>Use <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">showskills</code> first to see all available skill IDs for your Para.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-xl">⬆️</span>
-            <span><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">setskilllevel Cooking 10</code> sets Cooking to max level 10 instantly.</span>
+            <span><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">SETSKILLLEVEL Cooking 10</code> sets Cooking to max level 10 instantly.</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-xl">📈</span>
-            <span>Use <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">levelupskill</code> to add one level at a time — great for gradual progression.</span>
+            <span>Use <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">LEVELUPSKILL</code> to add one level at a time — great for gradual progression.</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-xl">🧠</span>
-            <span>Personality traits can be leveled up separately with <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">leveluppersonality</code>.</span>
+            <span>Personality traits can be reset with <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">RESETPERSONALITY</code> — see character cheats for more.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-xl">💡</span>
+            <span>Common skill IDs: Cooking, Programming, Painting, Writing, Music, Gardening, Athletic, Charisma, Logic, Piano.</span>
           </li>
         </ul>
       </div>
