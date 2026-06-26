@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import partnerLinks from '../../links.json';
+
+type PartnerLink = {
+  html: string;
+};
+
+const links = partnerLinks as PartnerLink[];
+---
+
+<Layout
+  title="Partner Links"
+  description="Partner links published on Paralives Cheats."
+  canonicalPath="/links"
+>
+  <section class="max-w-4xl mx-auto px-6 py-16">
+    <div class="mb-10">
+      <p class="font-extrabold uppercase tracking-[0.18em] text-[#6366f1] mb-3">Links</p>
+      <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-4">Partner Links</h1>
+      <p class="text-lg font-medium text-gray-600 max-w-2xl">
+        This page collects the partner links assigned specifically to Paralives Cheats.
+      </p>
+    </div>
+
+    <div class="space-y-5">
+      {
+        links.map((link, index) => (
+          <article class="bg-white border border-black rounded-2xl p-6 brutal-shadow">
+            <p class="mb-3 text-xs font-extrabold uppercase tracking-[0.18em] text-gray-500">
+              Link {index + 1}
+            </p>
+            <div
+              class="text-lg leading-8 font-medium text-gray-700 [&_a]:font-extrabold [&_a]:text-[#6366f1] [&_a]:underline-offset-4 [&_a]:hover:underline"
+              set:html={link.html}
+            />
+          </article>
+        ))
+      }
+    </div>
+  </section>
+</Layout>
