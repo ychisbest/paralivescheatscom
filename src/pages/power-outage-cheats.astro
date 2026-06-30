@@ -1,0 +1,170 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CheatTable from '../components/CheatTable.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const cheats = [
+  { code: 'FIXOUTAGE', desc: 'Restore power on the selected lot after an outage.' },
+  { code: 'CAUSEOUTAGE', desc: 'Create a power outage on the selected lot for testing.' },
+  { code: 'GENERATEBILL', desc: 'Send an updated bank statement to the mailbox.' },
+  { code: 'CLEARBILLS', desc: 'Clear all bills currently in the mailbox.' },
+];
+
+const faqs = [
+  { q: 'How do I fix a power outage in Paralives?', a: 'Select the affected lot, open the cheat console, and type "FIXOUTAGE" to restore power. If the command does not run, type "HELP" first to confirm the command name in your current Early Access build.' },
+  { q: 'What cheat causes a power outage in Paralives?', a: 'Use "CAUSEOUTAGE" to cut power to the selected lot. Save first if you are testing utility behavior, then use "FIXOUTAGE" when you want power restored.' },
+  { q: 'Are power outage cheats the same as money cheats?', a: 'They appear with the money and bills commands because outages, bills, and household utility state are connected. The dedicated outage commands are "FIXOUTAGE" and "CAUSEOUTAGE".' },
+  { q: 'Can I clear bills while fixing an outage?', a: 'Yes. "CLEARBILLS" clears mailbox bills, while "FIXOUTAGE" restores power. Use the two commands separately so you know which state changed.' },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+  }))
+};
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to fix a power outage in Paralives",
+  "description": "Restore power on a selected Paralives lot with the FIXOUTAGE cheat command.",
+  "step": [
+    { "@type": "HowToStep", "name": "Select the affected lot", "text": "Load the household or lot where the power outage is happening." },
+    { "@type": "HowToStep", "name": "Open the cheat console", "text": "Press Ctrl + F1 or Ctrl + Shift + C on Windows. On Mac, use the shortcut supported by your keyboard layout." },
+    { "@type": "HowToStep", "name": "Run FIXOUTAGE", "text": "Type FIXOUTAGE and press Enter to restore power on the selected lot." }
+  ]
+};
+
+const relatedPages = [
+  { title: 'Money Cheats', href: '/money-cheats', desc: 'Paradimes, bills, and utility commands' },
+  { title: 'Cheat Codes', href: '/cheat-codes', desc: 'Complete command reference' },
+  { title: 'Console Commands', href: '/console-commands', desc: 'How to open and use the console' },
+  { title: 'WeMod Trainer', href: '/wemod-trainer', desc: 'Why the built-in console is usually enough' },
+];
+---
+
+<Layout
+  title="Power Outage Cheats"
+  fullTitle="Paralives Power Outage Cheat 2026 - FIXOUTAGE & CAUSEOUTAGE | Paralives Cheats"
+  description="How to fix a power outage in Paralives with FIXOUTAGE, how to cause an outage with CAUSEOUTAGE, and which bill commands to use with utility cheats."
+  canonicalPath="/power-outage-cheats"
+  schema={[faqSchema, howToSchema]}
+>
+  <Breadcrumb items={[
+    { name: 'Home', href: '/' },
+    { name: 'Power Outage Cheats' }
+  ]} />
+
+  <header class="max-w-7xl mx-auto px-6 py-16 md:py-24 text-center">
+    <p class="text-sm font-bold text-gray-400 mb-4 uppercase tracking-wider">Updated: June 2026</p>
+    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6">
+      Paralives <span class="bg-[#14b8a6] text-white px-3 py-1 border border-black inline-block rotate-[-1deg]">Power Outage Cheat</span>
+    </h1>
+    <p class="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed font-medium mb-6">
+      Use FIXOUTAGE to restore power on the selected lot, or CAUSEOUTAGE when you want to test a utility outage on purpose.
+    </p>
+    <p class="text-lg text-gray-500 font-bold">
+      Press <span class="bg-[#FFD54F] px-2 border-2 border-black">Ctrl + F1</span> or <span class="bg-[#FFD54F] px-2 border-2 border-black">Ctrl + Shift + C</span>, then type <span class="bg-[#FFD54F] px-2 border-2 border-black">FIXOUTAGE</span>.
+    </p>
+  </header>
+
+  <section class="py-16 bg-white border-y-[3px] border-black">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-extrabold mb-2">Power Outage and Utility Cheat Codes</h2>
+      <p class="text-gray-600 font-medium mb-8">Click any code to copy it to your clipboard, then paste into the Paralives console.</p>
+      <CheatTable cheats={cheats} color="bg-[#14b8a6]" />
+
+      <div class="mt-12 bg-[#F0FDFA] border border-black rounded-3xl p-8 brutal-shadow">
+        <h3 class="text-2xl font-extrabold mb-4">How to Restore Power</h3>
+        <ol class="space-y-3 text-gray-800 font-medium list-decimal list-inside">
+          <li>Load or select the lot where the outage is happening.</li>
+          <li>Open the cheat console with <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">Ctrl + F1</code> or <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">Ctrl + Shift + C</code>.</li>
+          <li>Type <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">FIXOUTAGE</code> and press Enter.</li>
+          <li>If your build does not recognize the command, run <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">HELP</code> to confirm the current Early Access command list.</li>
+        </ol>
+      </div>
+
+      <div class="mt-8 bg-[#FFFBEB] border border-black rounded-3xl p-8 brutal-shadow">
+        <h3 class="text-2xl font-extrabold mb-4">When to Use Each Command</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="bg-white border border-black rounded-2xl p-5">
+            <h4 class="font-extrabold text-lg mb-2">Fix an outage</h4>
+            <p class="text-gray-700 font-medium">Use <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">FIXOUTAGE</code> when the lot is already without power.</p>
+          </div>
+          <div class="bg-white border border-black rounded-2xl p-5">
+            <h4 class="font-extrabold text-lg mb-2">Test an outage</h4>
+            <p class="text-gray-700 font-medium">Use <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">CAUSEOUTAGE</code> only when you intentionally want to create an outage.</p>
+          </div>
+          <div class="bg-white border border-black rounded-2xl p-5">
+            <h4 class="font-extrabold text-lg mb-2">Refresh bills</h4>
+            <p class="text-gray-700 font-medium"><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">GENERATEBILL</code> sends an updated bank statement to the mailbox.</p>
+          </div>
+          <div class="bg-white border border-black rounded-2xl p-5">
+            <h4 class="font-extrabold text-lg mb-2">Clear mailbox bills</h4>
+            <p class="text-gray-700 font-medium"><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">CLEARBILLS</code> removes bills, but it is separate from restoring power.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-[#F9FAFB] border-b-[3px] border-black">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-extrabold mb-8 text-center">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {faqs.map(faq => (
+          <div class="border border-black rounded-2xl p-6 bg-white brutal-shadow">
+            <h3 class="text-xl font-extrabold mb-2">{faq.q}</h3>
+            <p class="text-gray-700 font-medium text-lg">{faq.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-[#E0F2FE] border-b-[3px] border-black">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-extrabold mb-8 text-center">Related Paralives Cheats</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {relatedPages.map(page => (
+          <a href={page.href} class="bg-white border border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
+            <h3 class="font-extrabold text-lg mb-1">{page.title}</h3>
+            <p class="text-gray-600 font-medium">{page.desc}</p>
+            <span class="font-bold text-[#6366f1] underline underline-offset-4 decoration-2 text-sm">View Cheats -></span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const code = btn.getAttribute('data-code');
+      if (!code) return;
+      try {
+        await navigator.clipboard.writeText(code);
+      } catch {
+        const ta = document.createElement('textarea');
+        ta.value = code;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+      }
+      const copyIcon = btn.querySelector('.copy-icon');
+      const checkIcon = btn.querySelector('.check-icon');
+      copyIcon.classList.add('hidden');
+      checkIcon.classList.remove('hidden');
+      setTimeout(() => {
+        copyIcon.classList.remove('hidden');
+        checkIcon.classList.add('hidden');
+      }, 1500);
+    });
+  });
+</script>
