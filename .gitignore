@@ -20,6 +20,7 @@ pnpm-debug.log*
 # Google OAuth credentials
 skill/gsc-tools/client_secret.json
 skill/gsc-tools/token.json
+gsc-latest.json
 
 # macOS-specific files
 .DS_Store

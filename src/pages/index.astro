@@ -167,11 +167,48 @@ const faqs = [
   { q: 'How do I control need decay?', a: 'Use "ENABLENEEDDECAY false" to disable need decay entirely, or "FREEZENEEDS" to freeze all needs at their current values. Use "ENABLENEEDDECAY true" to re-enable decay. These Paralives cheats let you play without worrying about needs.' },
   { q: 'How do I manage my career with Paralives cheats?', a: 'Use "GETJOB [field]" to get a job (e.g. GETJOB Cooking), "QUITJOB" to quit, "PROMOTE" to advance, "DEMOTE" to downgrade, and "SETJOBLEVEL [number]" to set your job level directly. These Paralives cheats give full control over careers.' },
   { q: 'Does Paralives support mods?', a: 'Paralives supports user-created content through Steam Workshop. Players can share houses, custom content, and Parafolks. Script mods are not currently planned, but Paralives cheats cover most needs.' },
+  { q: 'Is there a Paralives WeMod trainer?', a: 'You usually do not need a WeMod trainer for Paralives. The built-in cheat console already includes money, needs, skills, pregnancy, location-fixing, and debug commands. Open the console and type "HELP" to see what your current build supports.' },
+  { q: 'How do I fix a power outage in Paralives?', a: 'Select the affected lot and type "FIXOUTAGE" in the cheat console to restore power. If you want to test an outage intentionally, use "CAUSEOUTAGE" first.' },
 ];
 
 const latestGuides = [
   { title: 'Building Tips & Tricks', description: 'Master the build mode with tips on grid placement, terrain tools, and creative layouts. Combine these tips with our Paralives cheats for the best experience.', href: '/building-tips' },
   { title: 'Gameplay Guides', description: 'From creating your first Para to mastering careers and relationships. Pair these guides with Paralives cheats for maximum fun.', href: '/gameplay-guides' },
+];
+
+const searchIntentGuides = [
+  {
+    query: 'Paralives pregnancy cheat',
+    answer: 'Use GETPREGNANT to start pregnancy, add 1-3 for multiples, or use GIVEBIRTH for instant delivery.',
+    href: '/pregnancy-cheats',
+    cta: 'Open pregnancy cheats',
+    code: 'GETPREGNANT 2',
+    color: 'bg-[#FDF2F8]',
+  },
+  {
+    query: 'Paralives teleport cheat',
+    answer: 'Use UNSTUCK for the selected Para or UNSTUCKALL when several Paras are trapped by pathing.',
+    href: '/teleport-cheats',
+    cta: 'Open teleport cheats',
+    code: 'UNSTUCK',
+    color: 'bg-[#F5F3FF]',
+  },
+  {
+    query: 'Paralives WeMod trainer',
+    answer: 'You do not need a trainer for most use cases because Paralives includes a built-in cheat console.',
+    href: '/wemod-trainer',
+    cta: 'Compare WeMod alternatives',
+    code: 'HELP',
+    color: 'bg-[#EEF2FF]',
+  },
+  {
+    query: 'How to fix power outage in Paralives',
+    answer: 'Use FIXOUTAGE to restore power on the selected lot. CAUSEOUTAGE creates an outage for testing.',
+    href: '/money-cheats',
+    cta: 'Open money and utility cheats',
+    code: 'FIXOUTAGE',
+    color: 'bg-[#F0FDF4]',
+  },
 ];
 
 const webSiteSchema = {
@@ -311,6 +348,23 @@ const faqSchema = {
           <div><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">FREEZENEEDS</code> — Freeze all needs</div>
           <div><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">NEWLIFESTAGE</code> — Age up Para</div>
           <div><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">HELP</code> — Show all commands</div>
+        </div>
+      </div>
+
+      <div class="mt-8 bg-white border border-black rounded-3xl p-8 brutal-shadow">
+        <h3 class="text-2xl font-extrabold mb-2">Players Are Searching For These Paralives Cheats</h3>
+        <p class="text-gray-600 font-medium mb-6">Fast answers for common cheat searches, with deeper guides for each command group.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {searchIntentGuides.map(item => (
+            <a href={item.href} class={`${item.color} border border-black rounded-2xl p-5 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block`}>
+              <p class="text-xs uppercase tracking-wider font-extrabold text-gray-500 mb-2">{item.query}</p>
+              <h4 class="text-lg font-extrabold mb-2">
+                <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">{item.code}</code>
+              </h4>
+              <p class="text-gray-700 font-medium mb-3">{item.answer}</p>
+              <span class="font-bold text-[#6366f1] underline underline-offset-4 decoration-2 text-sm">{item.cta} →</span>
+            </a>
+          ))}
         </div>
       </div>
 
