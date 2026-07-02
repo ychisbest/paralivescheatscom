@@ -9,6 +9,8 @@ const cheats = [
 ];
 
 const faqs = [
+  { q: 'How do I teleport a Para in Paralives?', a: 'Select the stuck Para, open the cheat console, and type "UNSTUCK". Paralives uses this pathing fix as the practical teleport command because it moves the selected Para back to a valid navmesh position.' },
+  { q: 'What is the Paralives teleport command?', a: 'The command to use is "UNSTUCK" for one selected Para or "UNSTUCKALL" for every Para in the world. There is not a separate free-map teleport command in the current Early Access cheat list.' },
   { q: 'What if my Para is stuck?', a: 'Use "UNSTUCK" to fix the selected Para\'s pathing and move them to the correct position. If multiple Paras are stuck, use "UNSTUCKALL" to fix everyone in the world at once.' },
   { q: 'What does UNSTUCK do exactly?', a: 'The UNSTUCK command moves the selected Para to the correct position on the navigation mesh, fixing any pathing issues that may have caused them to get stuck.' },
   { q: 'Can I fix all stuck Paras at once?', a: 'Yes! Use "UNSTUCKALL" to fix pathing for every Para in the world. This is great for mass pathing bugs.' },
@@ -25,20 +27,33 @@ const faqSchema = {
   }))
 };
 
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to teleport a Para in Paralives",
+  "description": "Move a stuck Para back to a valid position with the UNSTUCK command.",
+  "step": [
+    { "@type": "HowToStep", "name": "Select the Para", "text": "Click the Para that is stuck or needs to be moved back to a valid pathing position." },
+    { "@type": "HowToStep", "name": "Open the cheat console", "text": "Press Ctrl + F1 or Ctrl + Shift + C on Windows. On Mac, use the shortcut supported by your keyboard layout." },
+    { "@type": "HowToStep", "name": "Run UNSTUCK", "text": "Type UNSTUCK and press Enter to move the selected Para to the correct navmesh position." },
+    { "@type": "HowToStep", "name": "Use UNSTUCKALL if needed", "text": "If several Paras are trapped, type UNSTUCKALL to fix every Para in the world at once." }
+  ]
+};
+
 const relatedPages = [
   { title: 'Needs Cheats', href: '/needs-cheats', desc: 'Fill all needs instantly' },
+  { title: 'Power Outage Cheats', href: '/power-outage-cheats', desc: 'Fix lot utility problems' },
   { title: 'Money Cheats', href: '/money-cheats', desc: 'Get unlimited Paradimes' },
   { title: 'Console Commands', href: '/console-commands', desc: 'How to use the console' },
-  { title: 'All Cheats', href: '/#cheats', desc: 'Browse all 92+ cheats' },
 ];
 ---
 
 <Layout
   title="Teleport Cheats"
-  fullTitle="Paralives Teleport Cheats 2026 - UNSTUCK & Location Codes | Paralives Cheats"
-  description="All Paralives teleport cheats: UNSTUCK, UNSTUCKALL. Fix stuck Paras and move them to correct positions."
+  fullTitle="How to Teleport in Paralives 2026 - UNSTUCK Command Guide | Paralives Cheats"
+  description="How to teleport a Para in Paralives with UNSTUCK and UNSTUCKALL. Fix stuck Paras, move them to valid navmesh positions, and avoid unsupported commands."
   canonicalPath="/teleport-cheats"
-  schema={[faqSchema]}
+  schema={[faqSchema, howToSchema]}
 >
   <Breadcrumb items={[
     { name: 'Home', href: '/' },
@@ -48,13 +63,13 @@ const relatedPages = [
   <header class="max-w-7xl mx-auto px-6 py-16 md:py-24 text-center">
     <p class="text-sm font-bold text-gray-400 mb-4 uppercase tracking-wider">Updated: June 2026</p>
     <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6">
-      Paralives <span class="bg-[#8b5cf6] text-white px-3 py-1 border border-black inline-block rotate-[-1deg]">Teleport Cheats</span>
+      How to <span class="bg-[#8b5cf6] text-white px-3 py-1 border border-black inline-block rotate-[-1deg]">Teleport</span> in Paralives
     </h1>
     <p class="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed font-medium mb-6">
-      Fix stuck Paras and move them to correct positions with these Paralives location cheats. Use UNSTUCK and UNSTUCKALL to resolve pathing issues.
+      The practical Paralives teleport command is UNSTUCK. Use it to move the selected Para back to a valid navmesh position, or use UNSTUCKALL when several Paras are trapped.
     </p>
     <p class="text-lg text-gray-500 font-bold">
-      Press <span class="bg-[#FFD54F] px-2 border-2 border-black">Ctrl + F1</span> to open the console, then type any code below.
+      Press <span class="bg-[#FFD54F] px-2 border-2 border-black">Ctrl + F1</span> or <span class="bg-[#FFD54F] px-2 border-2 border-black">Ctrl + Shift + C</span>, then type <span class="bg-[#FFD54F] px-2 border-2 border-black">UNSTUCK</span>.
     </p>
   </header>
 
@@ -63,6 +78,16 @@ const relatedPages = [
       <h2 class="text-3xl font-extrabold mb-2">All Teleport Cheat Codes</h2>
       <p class="text-gray-600 font-medium mb-8">Click any code to copy it to your clipboard, then paste into the console.</p>
       <CheatTable cheats={cheats} color="bg-[#8b5cf6]" />
+
+      <div class="mt-12 bg-[#F5F3FF] border border-black rounded-3xl p-8 brutal-shadow">
+        <h3 class="text-2xl font-extrabold mb-4">How to Teleport a Para</h3>
+        <ol class="space-y-3 text-gray-800 font-medium list-decimal list-inside">
+          <li>Select the Para that is stuck or needs to be moved back to a valid pathing position.</li>
+          <li>Open the console with <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">Ctrl + F1</code> or <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">Ctrl + Shift + C</code>.</li>
+          <li>Type <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">UNSTUCK</code> and press Enter.</li>
+          <li>If multiple Paras are stuck, use <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">UNSTUCKALL</code> instead.</li>
+        </ol>
+      </div>
 
       <div class="mt-12 bg-[#EDE9FE] border border-black rounded-3xl p-8 brutal-shadow">
         <h3 class="text-2xl font-extrabold mb-4">📍 Teleport Cheat Tips</h3>
@@ -78,6 +103,10 @@ const relatedPages = [
           <li class="flex items-start gap-3">
             <span class="text-xl">💡</span>
             <span>These commands move Paras to the nearest valid position on the navigation mesh.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-xl">🔎</span>
+            <span>If you are looking for a free-map teleport command, type <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">HELP</code> in your current build to confirm whether a newer Early Access command has been added.</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-xl">⚠️</span>

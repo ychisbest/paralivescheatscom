@@ -176,6 +176,27 @@ const latestGuides = [
   { title: 'Gameplay Guides', description: 'From creating your first Para to mastering careers and relationships. Pair these guides with Paralives cheats for maximum fun.', href: '/gameplay-guides' },
 ];
 
+const quickFixGuides = [
+  {
+    title: 'How to teleport a Para',
+    description: 'Use UNSTUCK for one selected Para or UNSTUCKALL when several Paras are trapped by pathing.',
+    href: '/teleport-cheats',
+    code: 'UNSTUCK',
+  },
+  {
+    title: 'How to fix a power outage',
+    description: 'Use FIXOUTAGE on the affected lot, or CAUSEOUTAGE only when you want to test an outage.',
+    href: '/power-outage-cheats',
+    code: 'FIXOUTAGE',
+  },
+  {
+    title: 'How to avoid WeMod',
+    description: 'Open the built-in console and type HELP before installing any external trainer.',
+    href: '/wemod-trainer',
+    code: 'HELP',
+  },
+];
+
 const searchIntentGuides = [
   {
     query: 'Paralives pregnancy cheat',
@@ -187,9 +208,9 @@ const searchIntentGuides = [
   },
   {
     query: 'Paralives teleport cheat',
-    answer: 'Use UNSTUCK for the selected Para or UNSTUCKALL when several Paras are trapped by pathing.',
+    answer: 'Paralives does not use a free-map teleport command; use UNSTUCK for the selected Para or UNSTUCKALL for every stuck Para.',
     href: '/teleport-cheats',
-    cta: 'Open teleport cheats',
+    cta: 'Learn how to teleport a Para',
     code: 'UNSTUCK',
     color: 'bg-[#F5F3FF]',
   },
@@ -203,9 +224,9 @@ const searchIntentGuides = [
   },
   {
     query: 'How to fix power outage in Paralives',
-    answer: 'Use FIXOUTAGE to restore power on the selected lot. CAUSEOUTAGE creates an outage for testing.',
+    answer: 'Select the affected lot and run FIXOUTAGE to restore power. CAUSEOUTAGE creates an outage for testing.',
     href: '/power-outage-cheats',
-    cta: 'Open power outage cheats',
+    cta: 'Fix a power outage',
     code: 'FIXOUTAGE',
     color: 'bg-[#F0FDF4]',
   },
@@ -266,6 +287,20 @@ const faqSchema = {
       <img src={heroImg.src} alt="Paralives gameplay" class="w-full rounded-3xl border border-black brutal-shadow" />
     </div>
   </header>
+
+  <!-- Quick Fixes -->
+  <section class="max-w-6xl mx-auto px-6 pb-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      {quickFixGuides.map(guide => (
+        <a href={guide.href} class="bg-white border border-black rounded-2xl p-5 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
+          <p class="text-xs uppercase tracking-wider font-extrabold text-gray-500 mb-2">Quick fix</p>
+          <h2 class="text-xl font-extrabold mb-2">{guide.title}</h2>
+          <p class="text-gray-700 font-medium mb-3">{guide.description}</p>
+          <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">{guide.code}</code>
+        </a>
+      ))}
+    </div>
+  </section>
 
   <!-- Stats Bar -->
   <section class="bg-black text-white py-10 border-y-[3px] border-black">
