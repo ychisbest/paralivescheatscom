@@ -10,6 +10,7 @@ const cheats = [
 
 const faqs = [
   { q: 'How do I teleport a Para in Paralives?', a: 'Select the stuck Para, open the cheat console, and type "UNSTUCK". Paralives uses this pathing fix as the practical teleport command because it moves the selected Para back to a valid navmesh position.' },
+  { q: 'How do I teleport Paras in Paralives?', a: 'Use "UNSTUCK" for one selected Para. If multiple Paras are stuck or trapped, use "UNSTUCKALL" to move every Para back to valid navmesh positions.' },
   { q: 'What is the Paralives teleport command?', a: 'The command to use is "UNSTUCK" for one selected Para or "UNSTUCKALL" for every Para in the world. There is not a separate free-map teleport command in the current Early Access cheat list.' },
   { q: 'What if my Para is stuck?', a: 'Use "UNSTUCK" to fix the selected Para\'s pathing and move them to the correct position. If multiple Paras are stuck, use "UNSTUCKALL" to fix everyone in the world at once.' },
   { q: 'What does UNSTUCK do exactly?', a: 'The UNSTUCK command moves the selected Para to the correct position on the navigation mesh, fixing any pathing issues that may have caused them to get stuck.' },
@@ -43,6 +44,7 @@ const howToSchema = {
 const relatedPages = [
   { title: 'Needs Cheats', href: '/needs-cheats', desc: 'Fill all needs instantly' },
   { title: 'Power Outage Cheats', href: '/power-outage-cheats', desc: 'Fix lot utility problems' },
+  { title: 'WeMod Trainer', href: '/wemod-trainer', desc: 'Use the built-in console instead' },
   { title: 'Money Cheats', href: '/money-cheats', desc: 'Get unlimited Paradimes' },
   { title: 'Console Commands', href: '/console-commands', desc: 'How to use the console' },
 ];
@@ -87,6 +89,16 @@ const relatedPages = [
           <li>Type <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">UNSTUCK</code> and press Enter.</li>
           <li>If multiple Paras are stuck, use <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">UNSTUCKALL</code> instead.</li>
         </ol>
+      </div>
+
+      <div class="mt-8 bg-white border border-black rounded-3xl p-8 brutal-shadow">
+        <h3 class="text-2xl font-extrabold mb-4">Quick Answer for Stuck Paras</h3>
+        <p class="text-gray-700 font-medium text-lg mb-4">
+          If you searched for how to teleport Paras in Paralives, start with <strong>UNSTUCK</strong>. It moves the selected Para back to a valid route when they are trapped by furniture, terrain, or pathing.
+        </p>
+        <p class="text-gray-700 font-medium text-lg">
+          Use <strong>UNSTUCKALL</strong> only when more than one Para is stuck. For console setup issues, use the <a href="/console-commands" class="text-[#6366f1] font-extrabold underline underline-offset-4 decoration-2">console commands guide</a> before installing any external trainer.
+        </p>
       </div>
 
       <div class="mt-12 bg-[#EDE9FE] border border-black rounded-3xl p-8 brutal-shadow">
