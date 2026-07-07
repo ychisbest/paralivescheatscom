@@ -1,0 +1,122 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const trainerOptions = [
+  {
+    title: 'Built-in cheat console',
+    bestFor: 'Money, needs, skills, pregnancy, time control, stuck Paras, power outages',
+    setup: 'No install. Open the console and type a command.',
+    link: '/console-commands',
+    cta: 'Open console guide',
+  },
+  {
+    title: 'WeMod trainer',
+    bestFor: 'Players who prefer trainer toggles and external trainer UI',
+    setup: 'Requires third-party trainer software and may need updates after game patches.',
+    link: '/wemod-trainer',
+    cta: 'Compare WeMod',
+  },
+  {
+    title: 'Quick cheat list',
+    bestFor: 'Copying exact commands without installing anything',
+    setup: 'Use the table, copy a command, paste it into Paralives.',
+    link: '/cheat-codes',
+    cta: 'View cheat codes',
+  },
+];
+
+const faqs = [
+  { q: 'Is there a Paralives trainer?', a: 'Yes, third-party trainer tools such as WeMod may list Paralives support. For most common goals, the built-in cheat console is the simpler trainer alternative because it does not require extra software.' },
+  { q: 'What is the best Paralives trainer alternative?', a: 'The built-in cheat console is the best alternative for money, needs, skills, pregnancy, time, debug fixes, and power outage commands. Open the console with Ctrl + Shift + C or Ctrl + F1, then type HELP.' },
+  { q: 'Can I get unlimited money without a Paralives trainer?', a: 'Yes. Use JACKPOT, MAKEITRAIN, PIGGYBANK, PRINTMONEY, or SETMONEY in the in-game console to change household funds without a trainer.' },
+  { q: 'Can a trainer teleport Paras?', a: 'The built-in command to fix stuck or trapped Paras is UNSTUCK for one selected Para or UNSTUCKALL for all Paras. Paralives does not need a separate free-map teleport trainer for that use case.' },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+  }))
+};
+---
+
+<Layout
+  title="Paralives Trainer"
+  fullTitle="Paralives Trainer 2026 - WeMod vs Built-in Cheat Console | Paralives Cheats"
+  description="Looking for a Paralives trainer? Compare WeMod and other trainer options with the built-in cheat console for money, needs, skills, teleport fixes, and more."
+  canonicalPath="/paralives-trainer"
+  schema={[faqSchema]}
+>
+  <Breadcrumb items={[
+    { name: 'Home', href: '/' },
+    { name: 'Paralives Trainer' }
+  ]} />
+
+  <header class="max-w-7xl mx-auto px-6 py-16 md:py-24 text-center">
+    <p class="text-sm font-bold text-gray-400 mb-4 uppercase tracking-wider">Updated: July 2026</p>
+    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6">
+      Paralives <span class="bg-[#6366f1] text-white px-3 py-1 border border-black inline-block rotate-[-1deg]">Trainer</span> Guide
+    </h1>
+    <p class="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-medium mb-6">
+      If you searched for a Paralives trainer, start here. The built-in cheat console already handles the biggest trainer-style requests: money, needs, skills, pregnancy, time control, stuck Paras, and utility fixes.
+    </p>
+    <div class="flex flex-wrap justify-center gap-3">
+      <a href="/cheat-codes" class="brutal-btn bg-[#6366f1] text-white font-extrabold py-3 px-6 rounded-full border border-black brutal-shadow inline-block">View cheat codes</a>
+      <a href="/wemod-trainer" class="brutal-btn bg-[#FFD54F] text-black font-extrabold py-3 px-6 rounded-full border border-black brutal-shadow inline-block">WeMod comparison</a>
+    </div>
+  </header>
+
+  <section class="py-16 bg-white border-y-[3px] border-black">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="bg-[#E0F2FE] border border-black rounded-3xl p-8 brutal-shadow mb-12">
+        <h2 class="text-2xl font-extrabold mb-4">Quick Answer</h2>
+        <p class="text-gray-700 font-medium text-lg mb-4">
+          You can use a third-party Paralives trainer if you prefer a trainer app, but most players should try the in-game console first. It is built into Paralives, needs no download, and covers the same practical goals people search for when they type "Paralives trainer".
+        </p>
+        <p class="text-gray-700 font-medium text-lg">
+          Open the console with <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">Ctrl + Shift + C</code> or <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">Ctrl + F1</code>, then type <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">HELP</code> to confirm commands in your Early Access build.
+        </p>
+      </div>
+
+      <h2 class="text-3xl font-extrabold mb-8 text-center">Paralives Trainer Options</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        {trainerOptions.map(option => (
+          <a href={option.link} class="bg-[#F9FAFB] border border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
+            <h3 class="text-xl font-extrabold mb-3">{option.title}</h3>
+            <p class="text-gray-700 font-medium mb-3"><strong>Best for:</strong> {option.bestFor}</p>
+            <p class="text-gray-600 font-medium mb-4">{option.setup}</p>
+            <span class="font-bold text-[#6366f1] underline underline-offset-4 decoration-2 text-sm">{option.cta} -></span>
+          </a>
+        ))}
+      </div>
+
+      <h2 class="text-3xl font-extrabold mb-6">Trainer-Style Cheats You Can Use Now</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-800 font-medium">
+        <div class="bg-white border border-black rounded-2xl p-5 brutal-shadow"><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">SETMONEY 50000</code> - Set household funds.</div>
+        <div class="bg-white border border-black rounded-2xl p-5 brutal-shadow"><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">FILLALLNEEDS</code> - Fill every need.</div>
+        <div class="bg-white border border-black rounded-2xl p-5 brutal-shadow"><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">SETSKILLLEVEL Cooking 10</code> - Set a skill level.</div>
+        <div class="bg-white border border-black rounded-2xl p-5 brutal-shadow"><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">UNSTUCK</code> - Move a stuck Para to valid routing.</div>
+        <div class="bg-white border border-black rounded-2xl p-5 brutal-shadow"><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">FIXOUTAGE</code> - Restore power on the selected lot.</div>
+        <div class="bg-white border border-black rounded-2xl p-5 brutal-shadow"><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">FREEZENEEDS</code> - Stop needs from changing.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-[#F9FAFB] border-b-[3px] border-black">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-extrabold mb-8 text-center">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {faqs.map(faq => (
+          <div class="border border-black rounded-2xl p-6 bg-white brutal-shadow">
+            <h3 class="text-xl font-extrabold mb-2">{faq.q}</h3>
+            <p class="text-gray-700 font-medium text-lg">{faq.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
