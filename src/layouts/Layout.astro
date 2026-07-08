@@ -22,9 +22,11 @@ const {
 } = Astro.props;
 
 const pageTitle = fullTitle || `${title} | Paralives Cheats`;
-const canonicalUrl = canonicalPath
-  ? `https://paralives-cheats.com${canonicalPath}`
-  : `https://paralives-cheats.com${Astro.url.pathname}`;
+const canonicalSourcePath = canonicalPath || Astro.url.pathname;
+const normalizedCanonicalPath = canonicalSourcePath === '/' || canonicalSourcePath.endsWith('/')
+  ? canonicalSourcePath
+  : `${canonicalSourcePath}/`;
+const canonicalUrl = `https://paralives-cheats.com${normalizedCanonicalPath}`;
 ---
 
 <!doctype html>
