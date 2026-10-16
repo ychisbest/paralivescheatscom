@@ -1,0 +1,197 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CheatTable from '../components/CheatTable.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const cheats = [
+  { code: 'SHOWCHARACTERRELATIONSHIPS', desc: 'Show all relationships and relationship labels for the selected Para.' },
+  { code: 'SHOWCURRENTSOCIALGROUPCONVERSATION', desc: 'Show the current social-group conversation in the console.' },
+  { code: 'SHOWSOCIALGROUPSCLUSTERS', desc: 'List current social-group clusters.' },
+  { code: 'DELETEALLSOCIALGROUPS', desc: 'End current social groups.' },
+  { code: 'CANCELALLCHARACTERSINTERACTIONS', desc: 'Cancel queued interactions town-wide.' },
+  { code: 'CANCELALLHOUSEHOLDINTERACTIONS', desc: 'Cancel queued interactions in the household.' },
+  { code: 'COMPLETECURRENTWANTS', desc: 'Auto-complete current wants for the selected Para.' },
+  { code: 'VIEWMEMORYLOG', desc: 'Show a Para’s memory log in the console.' },
+];
+
+const faqs = [
+  { q: 'Is there a Paralives cheat relationships code to max friendship?', a: 'Not in the current documented set. Use SHOWCHARACTERRELATIONSHIPS to inspect bonds, and support social play with needs, time, and wants cheats.' },
+  { q: 'How do I cheat relationships in Paralives quickly?', a: 'Open the console, select the Para, run SHOWCHARACTERRELATIONSHIPS, then use needs/time helpers so social interactions can finish.' },
+  { q: 'Do relationship cheats need enabling first?', a: 'No special toggle — enable the console and type. See /how-to-enable-paralives-cheats.' },
+  { q: 'Can a Paralives trainer change relationships?', a: 'Some trainer apps advertise social toggles, but this site’s recommended path is the built-in console for transparency and fewer install risks.' },
+  { q: 'Where is the full command list?', a: 'All Paralives cheat codes are listed at /cheat-codes.' },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+  }))
+};
+
+const relatedPages = [
+  { title: 'All Cheat Codes', href: '/cheat-codes', desc: 'Complete reference' },
+  { title: 'How to Enable Cheats', href: '/how-to-enable-paralives-cheats', desc: 'Open the console' },
+  { title: 'Needs Cheats', href: '/needs-cheats', desc: 'Fill / freeze needs' },
+  { title: 'Pregnancy Cheats', href: '/pregnancy-cheats', desc: 'GETPREGNANT / GIVEBIRTH' },
+  { title: 'Money Cheats', href: '/money-cheats', desc: 'Remove money stress' },
+  { title: 'Paralives Trainer', href: '/paralives-trainer', desc: 'Console vs trainer' },
+];
+---
+
+<Layout
+  title="Relationship Cheats"
+  fullTitle="Paralives Relationship Cheats 2026 – View Relationships & Social Tools | Paralives Cheats"
+  description="Paralives relationship cheats: SHOWCHARACTERRELATIONSHIPS to list bonds and labels, plus social-group debug commands. How to open the console and what Early Access does (and does not) include."
+  canonicalPath="/relationship-cheats"
+  schema={[faqSchema]}
+>
+  <Breadcrumb items={[
+    { name: 'Home', href: '/' },
+    { name: 'Relationship Cheats' }
+  ]} />
+
+  <header class="max-w-7xl mx-auto px-6 py-16 md:py-24 text-center">
+    <p class="text-sm font-bold text-gray-400 mb-4 uppercase tracking-wider">Updated: October 2026</p>
+    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6">
+      Paralives <span class="bg-[#ec4899] text-white px-3 py-1 border border-black inline-block rotate-[-1deg]">Relationship Cheats</span>
+    </h1>
+    <p class="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-medium mb-6">
+      Looking for <strong>Paralives relationship cheats</strong> or codes to <strong>cheat relationships</strong>? Start with the built-in console command that surfaces relationship data, then use social debug tools when conversations or groups get stuck. This page sticks to commands already documented on Paralives Cheats — it does <strong>not</strong> invent fake “max romance” or “force best friends” codes.
+    </p>
+    <p class="text-lg text-gray-500 font-bold">
+      Select a Para, open the console, then run <code class="bg-[#FFD54F] px-2 border-2 border-black">SHOWCHARACTERRELATIONSHIPS</code>
+    </p>
+  </header>
+
+  <section class="py-16 bg-white border-y-[3px] border-black">
+    <div class="max-w-4xl mx-auto px-6 space-y-10">
+      <div>
+        <h2 class="text-3xl font-extrabold mb-2">Relationship &amp; social cheat codes</h2>
+        <p class="text-gray-600 font-medium mb-8">
+          For how to open the console with no extra toggle, see <a href="/how-to-enable-paralives-cheats" class="text-[#6366f1] font-extrabold underline underline-offset-4 decoration-2">how to enable Paralives cheats</a>. Full table: <a href="/cheat-codes" class="text-[#6366f1] font-extrabold underline underline-offset-4 decoration-2">all cheat codes</a>.
+        </p>
+        <CheatTable cheats={cheats} color="bg-[#ec4899]" />
+      </div>
+
+      <div>
+        <h2 class="text-3xl font-extrabold mb-4">What relationship cheats exist today?</h2>
+        <p class="text-gray-700 font-medium text-lg leading-relaxed mb-4">
+          In the English cheat database used across this site, the primary relationship-facing command is <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">SHOWCHARACTERRELATIONSHIPS</code>. Nearby social / debug commands help when social play breaks.
+        </p>
+        <p class="text-gray-700 font-medium text-lg leading-relaxed">
+          There is <strong>no</strong> documented one-line “set friendship to 100” or “force marriage” cheat in the same reference set that powers the homepage and <a href="/cheat-codes" class="text-[#6366f1] font-extrabold underline underline-offset-4 decoration-2">cheat codes</a> table. If a patch adds relationship setters later, they will appear under HELP — re-check after updates.
+        </p>
+      </div>
+
+      <div class="bg-[#FDF2F8] border border-black rounded-3xl p-8 brutal-shadow">
+        <h2 class="text-2xl font-extrabold mb-4">How to use SHOWCHARACTERRELATIONSHIPS</h2>
+        <ol class="space-y-3 text-gray-800 font-medium list-decimal list-inside text-lg">
+          <li>Click the Para whose relationships you want to inspect.</li>
+          <li>Open the console (<a href="/how-to-enable-paralives-cheats" class="text-[#6366f1] font-extrabold underline underline-offset-4 decoration-2">enable guide</a>).</li>
+          <li>Type <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">SHOWCHARACTERRELATIONSHIPS</code> and press Enter.</li>
+          <li>Read the console output for bonds and labels.</li>
+          <li>If the console is cluttered, run <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">CLEAR</code>, then repeat.</li>
+        </ol>
+      </div>
+
+      <div>
+        <h2 class="text-3xl font-extrabold mb-4">Cheating the social loop without fake romance codes</h2>
+        <ul class="space-y-3 text-gray-800 font-medium text-lg">
+          <li><strong>Needs out of the way:</strong> FILLALLNEEDS or FREEZENEEDS — <a href="/needs-cheats" class="text-[#6366f1] font-extrabold underline underline-offset-4 decoration-2">needs cheats</a>.</li>
+          <li><strong>Time control:</strong> PAUSETIME, SETTIME, ADVANCEDAYS (Time category on <a href="/cheat-codes" class="text-[#6366f1] font-extrabold underline underline-offset-4 decoration-2">cheat codes</a>).</li>
+          <li><strong>Wants:</strong> COMPLETECURRENTWANTS when a want is blocking progress.</li>
+          <li><strong>Stuck after a social beat:</strong> UNSTUCK / UNSTUCKALL — <a href="/teleport-cheats" class="text-[#6366f1] font-extrabold underline underline-offset-4 decoration-2">teleport cheats</a>.</li>
+          <li><strong>Career pressure:</strong> GETJOB, PROMOTE, SETJOBLEVEL (Career rows on the full list).</li>
+          <li><strong>Money stress:</strong> <a href="/money-cheats" class="text-[#6366f1] font-extrabold underline underline-offset-4 decoration-2">money cheats</a> if bills wreck date nights.</li>
+        </ul>
+        <p class="mt-4 text-gray-700 font-medium text-lg">
+          Prefer the <a href="/paralives-trainer" class="text-[#6366f1] font-extrabold underline underline-offset-4 decoration-2">built-in console over a trainer</a> unless you specifically want an overlay app.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-3xl font-extrabold mb-4">Relationship cheats vs pregnancy &amp; household cheats</h2>
+        <ul class="space-y-3 text-gray-800 font-medium text-lg">
+          <li>Pregnancy: GETPREGNANT / GIVEBIRTH — <a href="/pregnancy-cheats" class="text-[#6366f1] font-extrabold underline underline-offset-4 decoration-2">pregnancy cheats</a></li>
+          <li>Aging / next stage for kids: NEWLIFESTAGE, SETAGE — Aging on <a href="/cheat-codes" class="text-[#6366f1] font-extrabold underline underline-offset-4 decoration-2">cheat codes</a></li>
+          <li>Personality reset: RESETPERSONALITY — use carefully</li>
+        </ul>
+        <p class="mt-4 text-gray-700 font-medium text-lg">
+          Keep relationship <strong>inspection</strong> (SHOWCHARACTERRELATIONSHIPS) separate from pregnancy and aging so you always know which system you changed.
+        </p>
+      </div>
+
+      <div class="bg-[#FFFBEB] border border-black rounded-3xl p-8 brutal-shadow">
+        <h2 class="text-2xl font-extrabold mb-4">Early Access honesty</h2>
+        <p class="text-gray-700 font-medium text-lg leading-relaxed mb-4">
+          Paralives is Early Access. Command lists evolve. This page only documents relationship-related tools that already appear in this site’s English cheat reference. If another site lists undocumented romance force-codes, treat them as unverified until HELP on your build shows them.
+        </p>
+        <ul class="space-y-2 text-gray-800 font-medium text-lg">
+          <li>Save before canceling all interactions or deleting social groups.</li>
+          <li>Re-run HELP after patches.</li>
+          <li>Use moderate experimentation — debug social commands can wipe active group state.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-[#F9FAFB] border-b-[3px] border-black">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-extrabold mb-8 text-center">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {faqs.map(faq => (
+          <div class="border border-black rounded-2xl p-6 bg-white brutal-shadow">
+            <h3 class="text-xl font-extrabold mb-2">{faq.q}</h3>
+            <p class="text-gray-700 font-medium text-lg">{faq.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-[#E0F2FE] border-b-[3px] border-black">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-extrabold mb-8 text-center">Related guides</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {relatedPages.map(page => (
+          <a href={page.href} class="bg-white border border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
+            <h3 class="font-extrabold text-lg mb-1">{page.title}</h3>
+            <p class="text-gray-600 font-medium">{page.desc}</p>
+            <span class="font-bold text-[#6366f1] underline underline-offset-4 decoration-2 text-sm">Open →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const code = btn.getAttribute('data-code');
+      if (!code) return;
+      try {
+        await navigator.clipboard.writeText(code);
+      } catch {
+        const ta = document.createElement('textarea');
+        ta.value = code;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+      }
+      const copyIcon = btn.querySelector('.copy-icon');
+      const checkIcon = btn.querySelector('.check-icon');
+      copyIcon.classList.add('hidden');
+      checkIcon.classList.remove('hidden');
+      setTimeout(() => {
+        copyIcon.classList.remove('hidden');
+        checkIcon.classList.add('hidden');
+      }, 1500);
+    });
+  });
+</script>

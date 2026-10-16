@@ -30,17 +30,18 @@ const faqSchema = {
 };
 
 const relatedPages = [
+  { title: 'All Cheat Codes', href: '/cheat-codes', desc: 'Complete list' },
+  { title: 'How to Enable Cheats', href: '/how-to-enable-paralives-cheats', desc: 'Console setup' },
   { title: 'Money Cheats', href: '/money-cheats', desc: 'Get unlimited Paradimes' },
   { title: 'Skill Cheats', href: '/skill-cheats', desc: 'Max out any skill' },
   { title: 'Teleport Cheats', href: '/teleport-cheats', desc: 'Teleport anywhere' },
-  { title: 'All Cheats', href: '/#cheats', desc: 'Browse all 92+ cheats' },
 ];
 ---
 
 <Layout
   title="Needs Cheats"
-  fullTitle="Paralives Needs Cheats 2026 - FILLALLNEEDS & All Need Codes | Paralives Cheats"
-  description="All Paralives needs cheats: FILLALLNEEDS, FILLNEED, SETNEED, DRAINNEED, FREEZENEEDS, ENABLENEEDDECAY. Fill all needs instantly or control individual needs."
+  fullTitle="Paralives Needs Cheat 2026 – Fill Needs & FREEZENEEDS Codes"
+  description="How to cheat needs in Paralives: FILLALLNEEDS, FILLNEED, SETNEED, DRAINNEED, FREEZENEEDS, ENABLENEEDDECAY. Fill needs instantly or stop decay."
   canonicalPath="/needs-cheats"
   schema={[faqSchema]}
 >
@@ -55,7 +56,7 @@ const relatedPages = [
       Paralives <span class="bg-[#f59e0b] text-white px-3 py-1 border border-black inline-block rotate-[-1deg]">Needs Cheats</span>
     </h1>
     <p class="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed font-medium mb-6">
-      Fill all needs instantly or control individual needs with Paralives needs cheats. Use FILLALLNEEDS, FREEZENEEDS, SETNEED, and more to keep your Paras happy.
+      How to cheat needs in Paralives: fill needs for one Para, set exact values, or freeze decay so Hunger, Energy, and Hygiene stop dropping.
     </p>
     <p class="text-lg text-gray-500 font-bold">
       Press <span class="bg-[#FFD54F] px-2 border-2 border-black">Ctrl + F1</span> to open the console, then type any code below.
@@ -88,6 +89,30 @@ const relatedPages = [
             <span><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">SETNEED Hygiene 50</code> sets Hygiene to 50. Use <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">DRAINNEED</code> to decrease needs.</span>
           </li>
         </ul>
+      </div>
+
+      <div class="mt-12 space-y-8">
+        <div>
+          <h2 class="text-3xl font-extrabold mb-4">How to cheat needs (step-by-step)</h2>
+          <ol class="space-y-3 text-gray-800 font-medium list-decimal list-inside text-lg">
+            <li>Select the Para.</li>
+            <li>Open console (<code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">Ctrl + F1</code> / <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">Ctrl + Shift + C</code>).</li>
+            <li><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">FILLALLNEEDS</code> to max everything, or <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">FILLNEED Hunger</code> for one need.</li>
+            <li><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">SETNEED Hygiene 50</code> for a precise value; <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">DRAINNEED Energy 2</code> to lower a need for storytelling.</li>
+            <li><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">FREEZENEEDS</code> or <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">ENABLENEEDDECAY false</code> when you want to stop managing meters.</li>
+          </ol>
+          <p class="mt-4 text-gray-700 font-medium text-lg">
+            Also see <a href="/how-to-enable-paralives-cheats" class="text-[#6366f1] font-extrabold underline underline-offset-4 decoration-2">how to enable cheats</a> and <a href="/cheat-codes" class="text-[#6366f1] font-extrabold underline underline-offset-4 decoration-2">all cheat codes</a>.
+          </p>
+        </div>
+        <div>
+          <h2 class="text-3xl font-extrabold mb-4">Fill needs vs freeze needs</h2>
+          <ul class="space-y-3 text-gray-800 font-medium text-lg">
+            <li><strong>Fill needs now:</strong> FILLALLNEEDS / FILLNEED.</li>
+            <li><strong>Stop decay:</strong> FREEZENEEDS or ENABLENEEDDECAY false.</li>
+            <li>Re-enable decay with ENABLENEEDDECAY true when you want normal play.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>

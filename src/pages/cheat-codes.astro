@@ -110,22 +110,31 @@ const faqSchema = {
       "@type": "Question",
       "name": "What is the most useful cheat in Paralives?",
       "acceptedAnswer": { "@type": "Answer", "text": "The most useful Paralives cheats are: FILLALLNEEDS (fill all needs), SETMONEY (set exact money), SETSKILLLEVEL (max skills), UNSTUCK (fix stuck Paras), and FREEZENEEDS (stop need decay)." }
+    },
+    {
+      "@type": "Question",
+      "name": "Where is the full money cheat guide?",
+      "acceptedAnswer": { "@type": "Answer", "text": "For infinite money, SETMONEY, JACKPOT, and related money cheat codes, open the dedicated money cheats guide at /money-cheats." }
     }
   ]
 };
 
 const relatedPages = [
-  { title: 'Money Cheats', href: '/money-cheats', desc: 'Detailed money guide' },
-  { title: 'Needs Cheats', href: '/needs-cheats', desc: 'Detailed needs guide' },
-  { title: 'Console Commands', href: '/console-commands', desc: 'How to use the console' },
-  { title: 'WeMod Trainer', href: '/wemod-trainer', desc: 'WeMod alternatives' },
+  { title: 'How to Enable Cheats', href: '/how-to-enable-paralives-cheats', desc: 'Open console & start typing' },
+  { title: 'Money Cheats', href: '/money-cheats', desc: 'Infinite money & money cheat codes' },
+  { title: 'Needs Cheats', href: '/needs-cheats', desc: 'Fill needs / freeze decay' },
+  { title: 'Skill Cheats', href: '/skill-cheats', desc: 'SETSKILLLEVEL & LEVELUPSKILL' },
+  { title: 'Teleport Cheats', href: '/teleport-cheats', desc: 'How to teleport with UNSTUCK' },
+  { title: 'Paralives Trainer', href: '/paralives-trainer', desc: 'Trainer vs built-in console' },
+  { title: 'Relationship Cheats', href: '/relationship-cheats', desc: 'View relationships & social tools' },
+  { title: 'Power Outage', href: '/power-outage-cheats', desc: 'How to fix power outage' },
 ];
 ---
 
 <Layout
   title="Cheat Codes"
-  fullTitle="Paralives Cheat Codes 2026 - Complete Quick Reference (92+ Codes) | Paralives Cheats"
-  description="Complete list of all Paralives cheat codes in one table. 92+ codes for money, needs, skills, pregnancy, career, build mode, and more. Quick reference for the 2026 Early Access."
+  fullTitle="Paralives Cheat Codes 2026 – All Cheats Quick Reference (92+)"
+  description="Complete Paralives cheat codes list: all cheats for money, needs, skills, career, aging, build mode, and more. Copy any code — Early Access 2026 quick reference."
   canonicalPath="/cheat-codes"
   schema={[faqSchema]}
 >
@@ -139,8 +148,11 @@ const relatedPages = [
     <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6">
       All Paralives <span class="bg-[#e11d48] text-white px-3 py-1 border border-black inline-block rotate-[-1deg]">Cheat Codes</span>
     </h1>
-    <p class="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed font-medium">
-      The complete quick reference list of all 92+ Paralives cheat codes. Find any cheat code fast.
+    <p class="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed font-medium mb-4">
+      Complete Paralives cheat codes table. Every listed command in one place — then open specialty guides for money, needs, skills, teleport, trainer, and relationships.
+    </p>
+    <p class="text-lg text-gray-500 font-bold">
+      New to the console? Start with <a href="/how-to-enable-paralives-cheats" class="text-[#6366f1] underline underline-offset-4 decoration-2">how to enable Paralives cheats</a>.
     </p>
   </header>
 
@@ -167,6 +179,26 @@ const relatedPages = [
             ))}
           </tbody>
         </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white border-b-[3px] border-black">
+    <div class="max-w-4xl mx-auto px-6 space-y-12">
+      <div>
+        <h2 class="text-3xl font-extrabold mb-4">Job cheats (career codes)</h2>
+        <p class="text-gray-700 font-medium text-lg leading-relaxed">
+          Paralives job cheats live in the Career category of this table. Use <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">GETJOB [field]</code> (example: <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">GETJOB Cooking</code>) to assign work, <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">QUITJOB</code> to leave, <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">PROMOTE</code> / <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">DEMOTE</code> to move ranks, and <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">SETJOBLEVEL [number]</code> to jump to a specific level. Select the Para first, open the console, then run the command. Pair with <a href="/money-cheats" class="text-[#6366f1] font-extrabold underline underline-offset-4 decoration-2">money cheats</a> if you also want salary via <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">PAYDAY</code>. For the full career list, filter this page’s table by category <strong>Career</strong>. Early Access builds can rename fields — type <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">HELP</code> if a job id fails.
+        </p>
+      </div>
+      <div>
+        <h2 class="text-3xl font-extrabold mb-4">Age up cheat &amp; life stages</h2>
+        <p class="text-gray-700 font-medium text-lg leading-relaxed">
+          To age up a Para, use <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">NEWLIFESTAGE</code> for the next life stage, <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">PREVIOUSLIFESTAGE</code> to step back, or <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">SETAGE [years]</code> for an exact age. Infants and teens may also respond to <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">NEXTGROWTHSPURT</code>. Stop aging with <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">DISABLEAGING true</code> (re-enable with <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">false</code>). Always save before <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">KILL</code> / life-stage jumps. These age-up cheats appear under <strong>Aging</strong> in the table above. For pregnancy-related aging of households, see <a href="/pregnancy-cheats" class="text-[#6366f1] font-extrabold underline underline-offset-4 decoration-2">pregnancy cheats</a>.
+        </p>
+        <p class="text-gray-700 font-medium text-lg leading-relaxed mt-4">
+          Detailed money guide → <a href="/money-cheats" class="text-[#6366f1] font-extrabold underline underline-offset-4 decoration-2">/money-cheats</a>.
+        </p>
       </div>
     </div>
   </section>

@@ -152,7 +152,7 @@ const sections = [
 const faqs = [
   { q: 'How do I open the cheat console in Paralives?', a: 'Press Ctrl + Shift + C or Ctrl + F1 on Windows. On macOS, press Command + Fn/Globe + F1. The console appears minimized in the top-right corner — click the circle icon to expand it.' },
   { q: 'Are Paralives cheats case-sensitive?', a: 'No. Paralives cheats are not case-sensitive. You also don\'t need a leading slash or any special "enable cheats" command — just open the console and start typing any Paralives cheat.' },
-  { q: 'What are the money cheats in Paralives?', a: 'The most popular Paralives cheats for money are PIGGYBANK (+1,000), MAKEITRAIN (+10,000), JACKPOT (+50,000), or LOTTERY (random up to 100,000). "SETMONEY [amount]" sets an exact balance, "PRINTMONEY [amount]" adds to your current balance, and PAYDAY gives your Para\'s salary. These Paralives cheats are the fastest way to get rich.' },
+  { q: 'What are the money cheats in Paralives?', a: 'The most popular Paralives cheats for money are PIGGYBANK (+1,000), MAKEITRAIN (+10,000), JACKPOT (+50,000), or LOTTERY (random up to 100,000). "SETMONEY [amount]" sets an exact balance, "PRINTMONEY [amount]" adds to your current balance, and PAYDAY gives your Para\'s salary. See the full money cheat guide at /money-cheats.' },
   { q: 'How do I fill all needs instantly?', a: 'Type the Paralives cheat "FILLALLNEEDS" to restore all needs for the selected Para. For a single need, try "FILLNEED Hunger" or "SETNEED Hygiene 50". Use "FREEZENEEDS" to stop all need decay entirely. These Paralives cheats save tons of gameplay time.' },
   { q: 'How do I set a skill to a specific level?', a: 'Use the Paralives cheat "SETSKILLLEVEL [skill] [level]" — for example, "SETSKILLLEVEL Cooking 10". You can also use "LEVELUPSKILL [skill]" to add one level at a time with Paralives cheats.' },
   { q: 'Can I control pregnancy with Paralives cheats?', a: 'Yes. Use the Paralives cheat "GETPREGNANT" to make a Para pregnant (add a number 1-3 for multiples), and "GIVEBIRTH" for instant delivery.' },
@@ -190,7 +190,7 @@ const quickFixGuides = [
     code: 'FIXOUTAGE',
   },
   {
-    title: 'Paralives trainer alternative',
+    title: 'Open Paralives trainer guide',
     description: 'Compare trainer tools with the built-in console before installing external software.',
     href: '/paralives-trainer',
     code: 'HELP',
@@ -218,7 +218,7 @@ const searchIntentGuides = [
     query: 'Paralives trainer',
     answer: 'Third-party trainer tools exist, but the built-in cheat console covers most money, needs, skills, and debug use cases.',
     href: '/paralives-trainer',
-    cta: 'Compare trainer options',
+    cta: 'Open Paralives trainer guide',
     code: 'HELP',
     color: 'bg-[#EEF2FF]',
   },
@@ -261,8 +261,8 @@ const faqSchema = {
 
 <Layout
   title="Home"
-  fullTitle="Paralives Cheats 2026 - All 92+ Cheat Codes (Money, Skills, Pregnancy, Build Mode) | Paralives Cheats"
-  description="The most complete collection of Paralives cheats for the 2026 Early Access. Browse 92+ cheat codes for money, needs, skills, careers, pregnancy, build mode, and more. Click to copy and use instantly."
+  fullTitle="Paralives Cheats 2026 – Official Cheat Hub (Money, Needs, Trainer & More)"
+  description="Browse Paralives cheats for Early Access 2026. Hub for money, needs, skills, trainer options, teleport fixes, and the full cheat-code list — open a specialty guide or the complete reference."
   canonicalPath="/"
   schema={[webSiteSchema, faqSchema]}
 >
@@ -270,19 +270,24 @@ const faqSchema = {
   <header class="max-w-7xl mx-auto px-6 py-20 md:py-32 text-center">
     <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.1] mb-8">
       All <span class="bg-[#6366f1] text-white px-3 py-1 border border-black inline-block rotate-[-1deg]">Paralives</span> Cheats<br>
-      <span class="text-gray-600">in One Place.</span>
+      <span class="text-gray-600">Your Early Access Cheat Hub.</span>
     </h1>
     <p class="text-sm font-bold text-gray-400 mb-4 uppercase tracking-wider">Updated: June 2026</p>
     <p class="text-xl md:text-2xl text-gray-700 max-w-2xl mx-auto leading-relaxed font-medium mb-4">
-      The most complete collection of Paralives cheats for the 2026 Early Access release. 92+ cheat codes across 13 categories. Click to copy any cheat code, paste it into the console, and enjoy.
+      Find Paralives cheats fast. Use this hub to open money, needs, skills, trainer, teleport, and power-outage guides — or jump to the full cheat-code reference when you need every command in one table.
     </p>
     <p class="text-lg text-gray-500 font-bold mb-10 max-w-2xl mx-auto">
       Press <span class="bg-[#FFD54F] px-2 border-2 border-black">Ctrl + Shift + C</span> or <span class="bg-[#FFD54F] px-2 border-2 border-black">Ctrl + F1</span> to open the console. Type <span class="bg-[#FFD54F] px-2 border-2 border-black">HELP</span> for all commands.
     </p>
-    <a href="#cheats" class="brutal-btn bg-[#6366f1] text-white font-extrabold text-xl py-4 px-10 rounded-full border border-black brutal-shadow inline-flex items-center gap-2">
-      Browse All Cheats
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
-    </a>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="#cheats" class="brutal-btn bg-[#6366f1] text-white font-extrabold text-xl py-4 px-10 rounded-full border border-black brutal-shadow inline-flex items-center gap-2">
+        Browse Categories
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+      </a>
+      <a href="/cheat-codes" class="brutal-btn bg-[#FFD54F] text-black font-extrabold text-xl py-4 px-10 rounded-full border border-black brutal-shadow inline-flex items-center gap-2">
+        All cheat codes
+      </a>
+    </div>
     <div class="mt-12 max-w-4xl mx-auto">
       <img src={heroImg.src} alt="Paralives gameplay" class="w-full rounded-3xl border border-black brutal-shadow" />
     </div>
@@ -319,10 +324,15 @@ const faqSchema = {
   <section id="cheats" class="py-24 bg-white border-b-[3px] border-black">
     <div class="max-w-7xl mx-auto px-6">
       <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-center">
-        All Paralives <span class="bg-[#FFD54F] px-2 border-2 border-black inline-block">Cheat Codes</span>
+        Paralives cheat categories <span class="bg-[#FFD54F] px-2 border-2 border-black inline-block">(quick browse)</span>
       </h2>
+      <p class="text-center text-gray-600 font-medium text-lg max-w-2xl mx-auto mb-4">
+        Need the full table of every code? Open
+        <a href="/cheat-codes" class="text-[#6366f1] font-extrabold underline underline-offset-4 decoration-2">Paralives cheat codes (all cheats)</a>.
+        This homepage is an overview hub.
+      </p>
       <p class="text-center text-gray-600 font-medium text-lg max-w-2xl mx-auto mb-8">
-        Browse every Paralives cheat code below. These Paralives cheats cover money, time, character attributes, needs, pregnancy, aging, career, build mode, fire, and more. Click any cheat to copy it instantly.
+        Browse category overviews below — money, time, character, needs, pregnancy, aging, career, build mode, and more. Click any cheat to copy it instantly.
       </p>
 
       <!-- Category Navigation -->
@@ -383,6 +393,11 @@ const faqSchema = {
           <div><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">FREEZENEEDS</code> — Freeze all needs</div>
           <div><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">NEWLIFESTAGE</code> — Age up Para</div>
           <div><code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">HELP</code> — Show all commands</div>
+        </div>
+        <div class="mt-6 flex flex-wrap gap-4 text-sm font-bold">
+          <a href="/money-cheats" class="text-[#6366f1] underline underline-offset-4 decoration-2">Money cheats / infinite money →</a>
+          <a href="/how-to-enable-paralives-cheats" class="text-[#6366f1] underline underline-offset-4 decoration-2">How to enable cheats →</a>
+          <a href="/relationship-cheats" class="text-[#6366f1] underline underline-offset-4 decoration-2">Relationship cheats →</a>
         </div>
       </div>
 
@@ -475,20 +490,40 @@ const faqSchema = {
           <h3 class="font-extrabold text-lg mb-1">Teleport Cheats</h3>
           <p class="text-gray-600 font-medium text-sm">UNSTUCK, UNSTUCKALL & more</p>
         </a>
-        <a href="/wemod-trainer" class="bg-[#EEF2FF] border border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
-          <div class="text-3xl mb-2">🎮</div>
-          <h3 class="font-extrabold text-lg mb-1">WeMod Trainer</h3>
-          <p class="text-gray-600 font-medium text-sm">Compare WeMod with built-in cheats</p>
-        </a>
         <a href="/paralives-trainer" class="bg-[#EEF2FF] border border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
           <div class="text-3xl mb-2">🕹️</div>
           <h3 class="font-extrabold text-lg mb-1">Paralives Trainer</h3>
-          <p class="text-gray-600 font-medium text-sm">Trainer options vs console commands</p>
+          <p class="text-gray-600 font-medium text-sm">Open Paralives trainer guide →</p>
         </a>
         <a href="/power-outage-cheats" class="bg-[#F0FDFA] border border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
           <div class="text-3xl mb-2">⚡</div>
           <h3 class="font-extrabold text-lg mb-1">Power Outage Cheats</h3>
           <p class="text-gray-600 font-medium text-sm">FIXOUTAGE, CAUSEOUTAGE & utility commands</p>
+        </a>
+        <a href="/how-to-enable-paralives-cheats" class="bg-[#FFF7ED] border border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
+          <div class="text-3xl mb-2">⌨️</div>
+          <h3 class="font-extrabold text-lg mb-1">How to enable cheats</h3>
+          <p class="text-gray-600 font-medium text-sm">Console shortcuts, no toggle required</p>
+        </a>
+        <a href="/relationship-cheats" class="bg-[#FDF2F8] border border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
+          <div class="text-3xl mb-2">💞</div>
+          <h3 class="font-extrabold text-lg mb-1">Relationship cheats</h3>
+          <p class="text-gray-600 font-medium text-sm">View relationships & social debug</p>
+        </a>
+        <a href="/cheat-codes" class="bg-[#FEF2F2] border border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
+          <div class="text-3xl mb-2">📋</div>
+          <h3 class="font-extrabold text-lg mb-1">Cheat codes (all)</h3>
+          <p class="text-gray-600 font-medium text-sm">Complete quick-reference table</p>
+        </a>
+        <a href="/#career" class="bg-[#FCE7F3] border border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
+          <div class="text-3xl mb-2">💼</div>
+          <h3 class="font-extrabold text-lg mb-1">Job & career</h3>
+          <p class="text-gray-600 font-medium text-sm">GETJOB, PROMOTE, SETJOBLEVEL</p>
+        </a>
+        <a href="/wemod-trainer" class="bg-[#EEF2FF] border border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
+          <div class="text-3xl mb-2">🎮</div>
+          <h3 class="font-extrabold text-lg mb-1">WeMod Trainer</h3>
+          <p class="text-gray-600 font-medium text-sm">Compare WeMod with built-in cheats</p>
         </a>
       </div>
     </div>

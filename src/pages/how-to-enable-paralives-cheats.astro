@@ -1,0 +1,210 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const faqs = [
+  { q: 'Do I need to type testingcheats or enablecheats first?', a: 'No. Open the console and enter the command you want.' },
+  { q: 'Are Paralives cheats case-sensitive?', a: 'No. jackpot and JACKPOT both work.' },
+  { q: 'Can I use cheats on Mac?', a: 'Yes — use the Mac shortcut for your keyboard (often involving Fn/Globe + F1). If F1 is captured by the OS, try the alternate documented combo or check in-game help for your build.' },
+  { q: 'Where is the full list after I enable the console?', a: 'Use all Paralives cheat codes at /cheat-codes, or specialty pages for money, needs, skills, relationships, pregnancy, and trainer.' },
+  { q: 'Why did a command fail?', a: 'Wrong selection (Para vs lot), typo, or renamed Early Access command. Run HELP and retry.' },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+  }))
+};
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to enable Paralives cheats",
+  "description": "Open the built-in Paralives cheat console and type codes. No testingcheats toggle required.",
+  "step": [
+    { "@type": "HowToStep", "name": "Load a household", "text": "Load a household or lot where you want to cheat." },
+    { "@type": "HowToStep", "name": "Select a Para if needed", "text": "Select a Para when the command affects a character." },
+    { "@type": "HowToStep", "name": "Open the console", "text": "Press Ctrl + Shift + C or Ctrl + F1 on Windows, or Command + Fn/Globe + F1 on macOS." },
+    { "@type": "HowToStep", "name": "Type a command", "text": "Type a command such as FILLALLNEEDS or JACKPOT and press Enter." }
+  ]
+};
+
+const relatedPages = [
+  { title: 'All Cheat Codes', href: '/cheat-codes', desc: 'Full quick-reference table' },
+  { title: 'Money Cheats', href: '/money-cheats', desc: 'Infinite money codes' },
+  { title: 'Needs Cheats', href: '/needs-cheats', desc: 'Fill / freeze needs' },
+  { title: 'Relationship Cheats', href: '/relationship-cheats', desc: 'View relationships' },
+  { title: 'Paralives Trainer', href: '/paralives-trainer', desc: 'Console vs trainer apps' },
+  { title: 'Teleport Cheats', href: '/teleport-cheats', desc: 'UNSTUCK guide' },
+  { title: 'Power Outage', href: '/power-outage-cheats', desc: 'FIXOUTAGE guide' },
+];
+---
+
+<Layout
+  title="How to Enable Paralives Cheats"
+  fullTitle="How to Enable Paralives Cheats 2026 – Does Paralives Have Cheats? | Paralives Cheats"
+  description="Yes — Paralives has built-in cheats. How to enable them: open the console with Ctrl+Shift+C or Ctrl+F1, then type codes. No testingcheats-style toggle required."
+  canonicalPath="/how-to-enable-paralives-cheats"
+  schema={[faqSchema, howToSchema]}
+>
+  <Breadcrumb items={[
+    { name: 'Home', href: '/' },
+    { name: 'How to Enable Cheats' }
+  ]} />
+
+  <header class="max-w-7xl mx-auto px-6 py-16 md:py-24 text-center">
+    <p class="text-sm font-bold text-gray-400 mb-4 uppercase tracking-wider">Updated: October 2026</p>
+    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6">
+      How to Enable <span class="bg-[#f97316] text-white px-3 py-1 border border-black inline-block rotate-[-1deg]">Paralives Cheats</span>
+    </h1>
+    <p class="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-medium mb-6">
+      <strong>Yes, Paralives has cheats.</strong> You do <strong>not</strong> need a separate “enable cheats” or <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">testingcheats true</code> style command. Open the in-game cheat console, then type any supported code and press Enter. Cheats are <strong>not case-sensitive</strong>, and you do not need a leading slash.
+    </p>
+  </header>
+
+  <section class="py-16 bg-white border-y-[3px] border-black">
+    <div class="max-w-4xl mx-auto px-6 space-y-10">
+      <div class="bg-[#FFF7ED] border border-black rounded-3xl p-8 brutal-shadow">
+        <h2 class="text-2xl font-extrabold mb-4">Open the console</h2>
+        <div class="overflow-x-auto mb-4">
+          <table class="w-full border border-black rounded-2xl overflow-hidden">
+            <thead class="bg-black text-white">
+              <tr>
+                <th class="p-3 text-left font-extrabold text-sm">Platform</th>
+                <th class="p-3 text-left font-extrabold text-sm">Shortcut</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bg-white"><td class="p-3 font-bold border-b border-gray-200">Windows</td><td class="p-3 border-b border-gray-200"><code class="bg-[#f97316] text-white px-2 py-0.5 rounded-full text-sm font-bold">Ctrl + Shift + C</code> or <code class="bg-[#f97316] text-white px-2 py-0.5 rounded-full text-sm font-bold">Ctrl + F1</code></td></tr>
+              <tr class="bg-[#F9FAFB]"><td class="p-3 font-bold">macOS</td><td class="p-3"><code class="bg-[#f97316] text-white px-2 py-0.5 rounded-full text-sm font-bold">Command + Fn/Globe + F1</code> (layout-dependent)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-gray-700 font-medium text-lg">
+          The console often appears minimized in the top-right — click the circle / expand control if you only see a small icon. Type <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">HELP</code> to list commands available in your current Early Access build.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-3 text-sm font-bold">
+          <a href="/cheat-codes" class="text-[#6366f1] underline underline-offset-4 decoration-2">All cheat codes →</a>
+          <a href="/money-cheats" class="text-[#6366f1] underline underline-offset-4 decoration-2">Money →</a>
+          <a href="/needs-cheats" class="text-[#6366f1] underline underline-offset-4 decoration-2">Needs →</a>
+          <a href="/paralives-trainer" class="text-[#6366f1] underline underline-offset-4 decoration-2">Trainer →</a>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-3xl font-extrabold mb-4">Does Paralives have cheats?</h2>
+        <p class="text-gray-700 font-medium text-lg leading-relaxed mb-4">
+          Paralives ships with a <strong>built-in debug / cheat console</strong> aimed at players, creators, and testers. Community guides on this site document <strong>90+</strong> commands covering money (Paradimes), needs, skills, careers, aging, pregnancy, build/inventory tools, fires, mail/bills, performance, and fun Easter eggs.
+        </p>
+        <p class="text-gray-700 font-medium text-lg leading-relaxed mb-4">
+          That means most “does Paralives have cheat codes?” searches are answered by the console — not by downloading a crack or a random trainer first. Third-party trainers (for example WeMod listings) may exist, but for money, needs, skills, stuck Paras, and power outages, the built-in console is usually enough. Compare options on the <a href="/paralives-trainer" class="text-[#6366f1] font-extrabold underline underline-offset-4 decoration-2">trainer guide</a>.
+        </p>
+        <p class="text-gray-700 font-medium text-lg leading-relaxed">
+          Paralives is in <strong>Early Access</strong>, so command names can change after patches. Always verify with <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">HELP</code> on your build. Save before destructive commands such as <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">KILL</code> or <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">SPAWNALLITEMS</code>.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-3xl font-extrabold mb-4">How to enable Paralives cheats step by step</h2>
+        <ol class="space-y-3 text-gray-800 font-medium list-decimal list-inside text-lg">
+          <li><strong>Load a household / lot</strong> where you want to cheat.</li>
+          <li><strong>Select a Para</strong> when the command affects a character (needs, skills, pregnancy, UNSTUCK, etc.).</li>
+          <li><strong>Open the console</strong> with the shortcuts above.</li>
+          <li><strong>Expand</strong> the console UI if it starts minimized.</li>
+          <li><strong>Type a command</strong> such as <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">FILLALLNEEDS</code> or <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">JACKPOT</code> and press Enter.</li>
+          <li><strong>Read the confirmation</strong> in the console; some UIs let you click a previous result to repeat it.</li>
+          <li>If nothing happens, type <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">HELP</code>, confirm spelling, and make sure the right Para or lot is selected.</li>
+        </ol>
+        <p class="mt-4 text-gray-700 font-medium text-lg">
+          There is <strong>no</strong> mandatory unlock phrase before other codes. If a video tells you to enter a Sims-style enable line first, skip it — that pattern does not match how this game’s console is documented on this site.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-3xl font-extrabold mb-4">Console tips that feel like “enabling” features</h2>
+        <ul class="space-y-3 text-gray-800 font-medium text-lg">
+          <li><strong>Needs never drop:</strong> FREEZENEEDS or ENABLENEEDDECAY false — see <a href="/needs-cheats" class="text-[#6366f1] font-extrabold underline underline-offset-4 decoration-2">needs cheats</a>.</li>
+          <li><strong>Aging off:</strong> DISABLEAGING true.</li>
+          <li><strong>See every command:</strong> HELP.</li>
+          <li><strong>Clear the box:</strong> CLEAR.</li>
+          <li><strong>Fix a stuck Para (“teleport”):</strong> UNSTUCK — <a href="/teleport-cheats" class="text-[#6366f1] font-extrabold underline underline-offset-4 decoration-2">how to teleport</a>.</li>
+          <li><strong>Restore lot power:</strong> FIXOUTAGE — <a href="/power-outage-cheats" class="text-[#6366f1] font-extrabold underline underline-offset-4 decoration-2">how to fix power outage</a>.</li>
+        </ul>
+        <p class="mt-4 text-gray-700 font-medium text-lg">
+          Money “enable rich mode” is just running <a href="/money-cheats" class="text-[#6366f1] font-extrabold underline underline-offset-4 decoration-2">money cheat codes</a> like SETMONEY, PRINTMONEY, JACKPOT, MAKEITRAIN, or PIGGYBANK.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-3xl font-extrabold mb-4">Achievements, saves, and Early Access safety</h2>
+        <p class="text-gray-700 font-medium text-lg leading-relaxed mb-4">
+          According to the site’s existing FAQ stance: Paralives lets you use cheats <strong>without</strong> the classic “achievements disabled forever” punishment some other life sims apply. Still treat cheats as powerful debug tools:
+        </p>
+        <ul class="space-y-3 text-gray-800 font-medium text-lg">
+          <li>Save before KILL, fire commands, or SPAWNALLITEMS (can crash).</li>
+          <li>Avoid absurd money values that break UI.</li>
+          <li>After a game update, re-check HELP before assuming an old alias still exists.</li>
+        </ul>
+        <p class="mt-4 text-gray-700 font-medium text-lg">
+          Mods and Steam Workshop custom content are separate from console cheats. Script mods are not the focus of this page; cheats cover most day-to-day quality-of-life needs.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-3xl font-extrabold mb-4">Trainer vs enabling the built-in console</h2>
+        <div class="overflow-x-auto">
+          <table class="w-full border border-black rounded-2xl overflow-hidden">
+            <thead class="bg-black text-white">
+              <tr>
+                <th class="p-3 text-left font-extrabold text-sm">Goal</th>
+                <th class="p-3 text-left font-extrabold text-sm">Prefer</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bg-white"><td class="p-3 border-b border-gray-200 font-medium">Quick money / needs / skills</td><td class="p-3 border-b border-gray-200 font-medium">Built-in console (this page)</td></tr>
+              <tr class="bg-[#F9FAFB]"><td class="p-3 border-b border-gray-200 font-medium">Toggle UI from an overlay app</td><td class="p-3 border-b border-gray-200 font-medium">Third-party trainer (optional)</td></tr>
+              <tr class="bg-white"><td class="p-3 border-b border-gray-200 font-medium">Stuck Para / outage</td><td class="p-3 border-b border-gray-200 font-medium">Console: UNSTUCK, FIXOUTAGE</td></tr>
+              <tr class="bg-[#F9FAFB]"><td class="p-3 font-medium">Full code list</td><td class="p-3 font-medium"><a href="/cheat-codes" class="text-[#6366f1] font-extrabold underline">/cheat-codes</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-4 text-gray-700 font-medium text-lg">
+          If you only came here to turn cheats on: <strong>open the console and type</strong>. That is the entire enable flow.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-[#F9FAFB] border-b-[3px] border-black">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-extrabold mb-8 text-center">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {faqs.map(faq => (
+          <div class="border border-black rounded-2xl p-6 bg-white brutal-shadow">
+            <h3 class="text-xl font-extrabold mb-2">{faq.q}</h3>
+            <p class="text-gray-700 font-medium text-lg">{faq.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-[#E0F2FE] border-b-[3px] border-black">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-extrabold mb-8 text-center">Related guides</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {relatedPages.map(page => (
+          <a href={page.href} class="bg-white border border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
+            <h3 class="font-extrabold text-lg mb-1">{page.title}</h3>
+            <p class="text-gray-600 font-medium">{page.desc}</p>
+            <span class="font-bold text-[#6366f1] underline underline-offset-4 decoration-2 text-sm">Open →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

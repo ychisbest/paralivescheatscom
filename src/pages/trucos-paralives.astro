@@ -1,0 +1,154 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const cheats = [
+  { code: 'JACKPOT', desc: '+50 000 Paradimes (truco dinero rápido)' },
+  { code: 'MAKEITRAIN', desc: '+10 000 Paradimes' },
+  { code: 'PIGGYBANK', desc: '+1 000 Paradimes' },
+  { code: 'SETMONEY 20000', desc: 'Fija el saldo exacto' },
+  { code: 'PRINTMONEY 20000', desc: 'Suma al saldo actual' },
+  { code: 'PAYDAY', desc: 'Cobra el sueldo del Para seleccionado' },
+  { code: 'LOTTERY', desc: 'Cantidad aleatoria (1–100 000)' },
+  { code: 'FILLALLNEEDS', desc: 'Llena todas las necesidades' },
+  { code: 'FREEZENEEDS', desc: 'Congela las necesidades' },
+  { code: 'SETSKILLLEVEL Cooking 10', desc: 'Nivel de habilidad' },
+  { code: 'GETPREGNANT 1', desc: 'Embarazo (1–3)' },
+  { code: 'GIVEBIRTH', desc: 'Parto inmediato' },
+  { code: 'UNSTUCK', desc: 'Desbloquea al Para seleccionado' },
+  { code: 'FIXOUTAGE', desc: 'Repara un apagón' },
+  { code: 'HELP', desc: 'Lista de comandos' },
+];
+
+const faqs = [
+  { q: '¿Paralives tiene trucos?', a: 'Sí, con la consola integrada.' },
+  { q: '¿Hay que “activar” trucos antes?', a: 'No. Abre la consola y escribe.' },
+  { q: '¿Cuál es el mejor truco dinero?', a: 'JACKPOT para un plus grande, o SETMONEY para un total concreto. Más en /money-cheats.' },
+  { q: '¿Cómo teletransportar / desatascar?', a: 'UNSTUCK o UNSTUCKALL — ver /teleport-cheats.' },
+  { q: '¿Hace falta un trainer?', a: 'Casi nunca — ver /paralives-trainer.' },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+  }))
+};
+---
+
+<Layout
+  title="Trucos Paralives"
+  fullTitle="Trucos Paralives 2026 – Códigos y Truco Dinero (SETMONEY, JACKPOT) | Paralives Cheats"
+  description="Trucos Paralives y códigos de la consola: truco dinero con JACKPOT y SETMONEY, FILLALLNEEDS, UNSTUCK, FIXOUTAGE. Guía Early Access en español."
+  canonicalPath="/trucos-paralives"
+  schema={[faqSchema]}
+  lang="es"
+>
+  <Breadcrumb items={[
+    { name: 'Home', href: '/' },
+    { name: 'Trucos Paralives' }
+  ]} />
+
+  <header class="max-w-7xl mx-auto px-6 py-16 md:py-24 text-center">
+    <p class="text-sm font-bold text-gray-400 mb-4 uppercase tracking-wider">Actualizado: Octubre 2026</p>
+    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6">
+      <span class="bg-[#22c55e] text-white px-3 py-1 border border-black inline-block rotate-[-1deg]">Trucos</span> Paralives
+    </h1>
+    <p class="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed font-medium mb-6">
+      Si buscas <strong>trucos Paralives</strong>, <strong>códigos</strong> o un <strong>truco dinero</strong>, el juego incluye una <strong>consola integrada</strong>. No hace falta un comando previo tipo testingcheats. Abre la consola, escribe el código y pulsa Enter.
+    </p>
+    <p class="text-lg text-gray-500 font-bold">
+      Windows: <span class="bg-[#FFD54F] px-2 border-2 border-black">Ctrl + Shift + C</span> o <span class="bg-[#FFD54F] px-2 border-2 border-black">Ctrl + F1</span>
+    </p>
+  </header>
+
+  <section class="py-16 bg-white border-y-[3px] border-black">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="bg-[#F0FDF4] border border-black rounded-3xl p-8 brutal-shadow mb-12">
+        <h2 class="text-2xl font-extrabold mb-4">Abrir la consola</h2>
+        <ul class="space-y-2 text-gray-800 font-medium text-lg mb-4">
+          <li>Windows: <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">Ctrl + Shift + C</code> o <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">Ctrl + F1</code></li>
+          <li>macOS: <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">Command + Fn/Globe + F1</code> (según el teclado)</li>
+        </ul>
+        <p class="text-gray-700 font-medium text-lg">
+          La consola puede aparecer minimizada arriba a la derecha. Escribe <code class="bg-black text-white px-2 py-0.5 rounded-full text-sm font-bold">HELP</code> para ver los comandos de tu versión Early Access. Guía en inglés: <a href="/how-to-enable-paralives-cheats" class="text-[#6366f1] font-extrabold underline underline-offset-4 decoration-2">how to enable cheats</a>. Tabla completa: <a href="/cheat-codes" class="text-[#6366f1] font-extrabold underline underline-offset-4 decoration-2">cheat codes</a>.
+        </p>
+      </div>
+
+      <h2 class="text-3xl font-extrabold mb-4">Trucos populares (incluye truco dinero)</h2>
+      <p class="text-gray-600 font-medium mb-8">Los <strong>nombres de comando son en inglés</strong> (no distinguen mayúsculas).</p>
+      <div class="space-y-3 mb-8">
+        {cheats.map(cheat => (
+          <div class="flex items-center justify-between gap-4 bg-[#F9FAFB] border border-black rounded-2xl p-4 md:p-5 brutal-shadow">
+            <div class="flex-1 min-w-0">
+              <code class="bg-[#22c55e] text-white px-3 py-1 rounded-full text-sm font-bold border border-black">{cheat.code}</code>
+              <span class="ml-3 text-gray-700 font-medium">{cheat.desc}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+      <p class="text-gray-700 font-medium text-lg mb-8">
+        Guía detallada de dinero (EN): <a href="/money-cheats" class="text-[#6366f1] font-extrabold underline underline-offset-4 decoration-2">money cheats</a>. Necesidades: <a href="/needs-cheats" class="text-[#6366f1] font-extrabold underline underline-offset-4 decoration-2">needs cheats</a>.
+      </p>
+
+      <h2 class="text-3xl font-extrabold mb-4">Cómo usar los trucos</h2>
+      <ol class="space-y-3 text-gray-800 font-medium list-decimal list-inside text-lg mb-4">
+        <li>Carga el hogar o solar.</li>
+        <li>Selecciona el Para si el truco afecta al personaje.</li>
+        <li>Abre la consola.</li>
+        <li>Escribe el código (por ejemplo JACKPOT) y Enter.</li>
+        <li>Guarda antes de comandos peligrosos (KILL, fuego, SPAWNALLITEMS).</li>
+      </ol>
+      <p class="text-gray-700 font-medium text-lg">En Early Access los nombres pueden cambiar: si falla un código, vuelve a ejecutar HELP.</p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-[#F9FAFB] border-b-[3px] border-black">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-extrabold mb-8 text-center">FAQ – trucos Paralives</h2>
+      <div class="space-y-4">
+        {faqs.map(faq => (
+          <div class="border border-black rounded-2xl p-6 bg-white brutal-shadow">
+            <h3 class="text-xl font-extrabold mb-2">{faq.q}</h3>
+            <p class="text-gray-700 font-medium text-lg">{faq.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-[#E0F2FE] border-b-[3px] border-black">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-extrabold mb-4">Enlaces relacionados</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <a href="/cheat-codes" class="bg-white border border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
+          <h3 class="font-extrabold text-lg mb-1">Todos los cheat codes</h3>
+          <p class="text-gray-600 font-medium">Lista completa</p>
+        </a>
+        <a href="/money-cheats" class="bg-white border border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
+          <h3 class="font-extrabold text-lg mb-1">Money cheats / truco dinero</h3>
+          <p class="text-gray-600 font-medium">SETMONEY, JACKPOT</p>
+        </a>
+        <a href="/needs-cheats" class="bg-white border border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
+          <h3 class="font-extrabold text-lg mb-1">Needs cheats</h3>
+          <p class="text-gray-600 font-medium">FILLALLNEEDS</p>
+        </a>
+        <a href="/how-to-enable-paralives-cheats" class="bg-white border border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
+          <h3 class="font-extrabold text-lg mb-1">Activar consola (EN)</h3>
+          <p class="text-gray-600 font-medium">How to enable</p>
+        </a>
+        <a href="/paralives-trucchi" class="bg-white border border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
+          <h3 class="font-extrabold text-lg mb-1">Paralives Trucchi (IT)</h3>
+          <p class="text-gray-600 font-medium">Versión italiana</p>
+        </a>
+        <a href="/paralives-kody" class="bg-white border border-black rounded-2xl p-6 brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all block">
+          <h3 class="font-extrabold text-lg mb-1">Paralives Kody (PL)</h3>
+          <p class="text-gray-600 font-medium">Versión polaca</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
